@@ -2,41 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hqin-2020.github.io/tags/index.html</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/categories/index.html</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/about/index.html</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/</loc>
     
     <lastmod>2021-01-01</lastmod>
@@ -51,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Preliminaries-of-Probability-Limit-Theorems/</loc>
     
     <lastmod>2021-01-01</lastmod>
@@ -65,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -79,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Weak-Convergence/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -93,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Integration-By-Parts/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Weak-Convergence/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Integration-By-Parts/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -114,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -135,7 +93,14 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/</loc>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -310,21 +275,7 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/</loc>
-    
-    <lastmod>2021-01-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/</loc>
+    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Complex-Numbers/</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -338,7 +289,56 @@
   </url>
   
   <url>
-    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Complex-Numbers/</loc>
+    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/tags/index.html</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/categories/index.html</loc>
+    
+    <lastmod>2021-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/about/index.html</loc>
     
     <lastmod>2021-01-01</lastmod>
     
@@ -352,6 +352,34 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://hqin-2020.github.io/tags/Abstract-Algebra/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/tags/Linear-Algebra/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/tags/Real-Analysis/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hqin-2020.github.io/tags/Measure-Theoretic-Probability/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 
   
