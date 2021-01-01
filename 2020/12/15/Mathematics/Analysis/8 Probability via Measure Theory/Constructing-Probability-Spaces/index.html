@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Constructing Probability Spaces | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">Constructing Probability Spaces</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-8-Probability-via-Measure-Theory/">1.1.8 Probability via Measure Theory</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Constructing Probability Spaces&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Constructing Probability Spaces&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/&title=Constructing Probability Spaces" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Constructing Probability Spaces&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/&text=Constructing Probability Spaces" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Constructing-Probability-Spaces"><a href="#Constructing-Probability-Spaces" class="headerlink" title="Constructing Probability Spaces"></a>Constructing Probability Spaces</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Distribution Function</strong>: </p>
+<ul>
+<li>A map $F\in \mathbb{R} \rightarrow [0, 1]$ is said to be a <strong>distribution function</strong> if it is increasing, right-continuous, and $F(-\infty) = 0 = 1-F(\infty)$.</li>
+</ul>
+<blockquote>
+<p>Every Borel probability measure on $\mathbb{R}$ induces a distribution function in a natural manner. Indeed, it is easy to see that the map $t \mapsto\mathbf{p}(-\infty, t]$ on $\mathbb{R}$ is a distribution function for any $\mathbf{p}\in \Delta(\mathbb{R})$</p>
+</blockquote>
+<p><strong>Distribution function induced by</strong> $\mathbf{p}$:</p>
+<ul>
+<li><p>For any $\mathbf{p}\in \Delta(\mathbb{R})$, the map $F_\mathbf{p} :\mathbb{R}\to [0, 1]$ defined by $F (t) := \mathbf{p}(-\infty, t]$, is a distribution function. </p>
+</li>
+<li><p>We refer to $F_\mathbf{p}$ <strong>the distribution function induced by $\mathbf{p}$.</strong></p>
+</li>
+</ul>
+<p><strong>Lebesgue-Stieltjes Probability Measure induced by $F$ on $\mathbb{R} $</strong>: </p>
+<ul>
+<li>Let $\mathcal{S}$ be the semialgebra of all right-semiclosed intervals. </li>
+<li>Taking any distribution function $F$, define the map $\mathbf{q}\in[0, 1]^{\mathcal {S}}$ as</li>
+</ul>
+<p>$$<br>\mathbf{q}(a,b]:=F(b)-F(a).\ \ \ -\infty\leq a\leq b&lt;\infty<br>$$</p>
+<ul>
+<li><p>and<br>$$<br>\mathbf{q}(a,\infty):=1-F(a),\ \ \ \ -\infty\leq a.<br>$$</p>
+</li>
+<li><p>The probability measure on $\sigma(\mathcal{S})=\mathcal{B}(\mathbb{R} )$ which accords with $\mathbf{q}$, and denoted by $\mathbf{p}_F$ is called the <strong>Lebesgue-Stieltjes probability measure induced by $F$ on $\mathbb{R} $.</strong></p>
+<ul>
+<li><p>Carathéodory’s Extension Theorem would then say that there is a unique extension of $\mathbf{q}$ to a probability measure on $\mathcal{B}(\mathbb{R} )$.</p>
+</li>
+<li><p>To prove $\mathbf{q}$ is $\sigma$-additive on $\mathcal{S}$, let us take any countably infinite set $\mathcal{T}$ of pairwise disjoint right-semiclosed intervals, and assume that $\bigsqcup{T}$ is itself a right-semiclosed interval, say, $(a,b]$. </p>
+</li>
+<li><p>As things are trivial when $a = b$, we assume in what follows that $a &lt; b$ </p>
+</li>
+<li><p>We will assume here that $\bigsqcup \mathcal{T}$ is bounded from above, that is, it is an interval of the form $(a,b]$,  where $-\infty\leq a &lt; b &lt;\infty$</p>
+</li>
+<li><p>Let us then enumerate $T$ as ${f(a_1, b_1], (a_2, b_2],\cdots}$. </p>
+</li>
+<li><p>Then we can show that<br>$$<br>\mathbf{q}(a,b]=\sum^\infty_{i=1}\mathbf{q}(a_i,b_i].<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A Borel probability measure on $\mathbb{R} $ can actually be identified with a distribution function.</p>
+</blockquote>
+<p><strong>Lebesgue-Stieltjes probability measure induced by $F$ on $(a, b]$ / Lebesgue-Stieltjes measure induced by $F$ on $(a, b]$</strong>: </p>
+<ul>
+<li>If $X := (a, b]$ with $-\infty&lt; a &lt; b &lt; \infty$, and $F \in [0,1]^X$ is an increasing and right-continuous function with $F(a+) = 0$ and $F(b) = 1$, then we can define <strong>the Lebesgue-Stieltjes probability measure induced by $F$ on $(a, b] $</strong>, analogously.</li>
+<li>Drop the conditions $F(a+) = 0$ and $F(b) = 1$, and allow $F \in \mathbb{R}^X$ then we can define <strong>the Lebesgue-Stieltjes measure induced by $F$ on $(a, b] $</strong>, analogously.</li>
+</ul>
+<p><strong>Lebesque Measure on $\mathbb{R} $</strong>: </p>
+<ul>
+<li><p>Take any integer $i$, let $X_i := (i,i+1]$, and define $F_i : X_i \rightarrow [0,1]$ by $F_i(t) := t-i$.</p>
+</li>
+<li><p>Let $\ell_i$ denote the Lebesgue-Stieltjes measure induced by $F_i$ on $X_i$ for each $i$</p>
+</li>
+<li><p>We define the <strong>Lebesgue measure on $\mathbb{R} $</strong> as the $[0,\infty]$-valued map $\ell$ on $\mathcal{B}(\mathbb{R} )$ with<br>$$<br>\ell(S):=\sum_{i\in\mathbb{Z}}\ell_i(S\cap X_i)<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>As such, $\ell$ is both regular and tight.</p>
+<p>Furthermore, it assigns to any interval its length as its measure. </p>
+<p>In particular, it is readily verified that $\ell(a, b] = b$  a for any real numbers $a$ and $b$ with $a &lt; b$, while $\ell(I) = \infty$ for any unbounded interval $I$</p>
+</blockquote>
+<blockquote>
+<p>Lebesque Measure on $\mathbb{R} $ is, geometrically speaking, the natural measure on the real line.</p>
+<p>This is indeed a $\sigma$-finite measure on $\mathcal{B}(\mathbb{R} )$.</p>
+<p>The restriction of $\ell$ to any Borel subset $X$ of $\mathbb{R}$ is a Borel measure on $X$; that is, $(X,\mathcal{B}(X),\ell|_{\mathcal{B}(X)})$ is a Borel measure space for any $X\in\mathcal{B}(\mathbb{R} )$. </p>
+<p>For brevity, we denote this measure space simply as $(X,\mathcal{B}(X),\ell)$ in what follows. For instance, $([0,1],\mathcal{B}([0,1]),\ell)$ is a Borel probability space.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Carathéodory’s Extension Theorem</strong>: </p>
+<ul>
+<li><p>Let $\mathcal{S}$ be a semialgebra on a nonempty set $X$ and take any $\mathbf{q}: \mathcal{S}\rightarrow [0,\infty]$. </p>
+</li>
+<li><p>If $\mathbf{q}$ is $\sigma$-additive, then there exists a measure $\mathbf{p}$ on $\sigma(\mathcal{S})$ such that $\mathbf{p}(S) = \mathbf{q}(S)$ for each $S \in \mathcal{S}$. </p>
+</li>
+<li><p>Moreover, if $\mathbf{q}(X) &lt; \infty$, then $\mathbf{p}$ is unique.</p>
+</li>
+</ul>
+<blockquote>
+<p>We can always extend a $\sigma$-additive $[0,\infty]$-valued map on an algebra $\mathcal{A}$ to a $\sigma$-additive $[0,\infty]$-valued map on $\sigma(\mathcal{A})$ </p>
+<p>Moreover, this extension is unique, provided that our map is real-valued.</p>
+</blockquote>
+<blockquote>
+<p>We can always obtain a probability measure, uniquely, on a $\sigma$-algebra by specifying the behavior of the measure only on a semialgebra that generates this $\sigma$-algebra. Since semialgebras and algebras are often easier than $\sigma$-algebras to work with, this fact is quite useful in constructing probability measures.</p>
+</blockquote>
+<p><strong>Proposition 3.1</strong>: </p>
+<ul>
+<li>For any real number a and Borel subset $S$ of $\mathbb{R} $, the set $S + a$ is Borel, and $\ell (S + a) =\ell (S)$.</li>
+</ul>
+<p><strong>Proposition 3.4</strong>: </p>
+<ul>
+<li><p>Let $f$ be an additive self-map on $\mathbb{R} $.</p>
+</li>
+<li><p>If $f$ is bounded on some Borel subset $S$ of $\mathbb{R} $ with $\ell(S) &gt; 0$, then it is linear.</p>
+</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example</strong>:</p>
+<ul>
+<li>Any singleton set in $\mathbb{R}$ has Lebesgue measure zero.</li>
+<li>Since the Lebesgue measure of any singleton is zero, so must be the Lebesgue measure of any countable subset of $\mathbb{R}$, because the $\sigma$-additivity of $\ell$ implies that $\ell{a_1, a_2\dots, } = \sum^\infty \ell{a_i}=0$ for any real sequence $(a_m)$. </li>
+<li>For instance: $\ell(\mathbb{Q}) = 0$</li>
+</ul>
+<p><strong>Example 3.5</strong>:</p>
+<ul>
+<li><p>There are in fact uncountable sets in $\mathbb{R}$ which have Lebesgue measure zero.</p>
+</li>
+<li><p>For example, the Contor Set.</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Elements-of-Probability-Theory/">
+        <span>Elements of Probability Theory</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Constructing-Probability-Spaces"><span class="toc-number">1.</span> <span class="toc-text">Constructing Probability Spaces</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.3.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

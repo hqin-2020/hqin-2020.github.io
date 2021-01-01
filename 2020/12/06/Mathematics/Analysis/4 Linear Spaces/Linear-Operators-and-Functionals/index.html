@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Linear Operators and Functionals | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/">Linear Operators and Functionals</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-4-Linear-Spaces/">1.1.4 Linear Spaces</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Linear Operators and Functionals&url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Linear Operators and Functionals&url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/&title=Linear Operators and Functionals" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Linear Operators and Functionals&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/&text=Linear Operators and Functionals" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Linear-Operators-and-Functionals"><a href="#Linear-Operators-and-Functionals" class="headerlink" title="Linear Operators and Functionals"></a>Linear Operators and Functionals</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=F27200>Linear Operator, Linear Transformation</font></strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two linear spaces. </li>
+<li>A function $L : X → Y$ is called a <strong><font color=F27200>linear operator</font></strong> (or a <strong><font color=F27200>linear transformation</font></strong>) if</li>
+</ul>
+<p>$$<br>L(α\mathbf{x}+\mathbf{x}’)=αL(\mathbf{x})+L(\mathbf{x}’)\ \ \ \mbox{for all}\ \ \ \ \mathbf{x},\mathbf{x}’ ∈X\ \ \ \mbox{and}\ \ \ \ α∈\mathbb{R}<br>$$</p>
+<ul>
+<li>or equivalently,<br>$$<br>L\left(\sum^m_{i=1}\alpha_i\mathbf{x}^i\right)=\sum^m_{i=1} α_iL(\mathbf{x}^i)\ \ \ \ \ \mbox{for all}\ \ \ \ m ∈ \mathbb{N}\ \ \ \ \ \mbox{and}\ \ \ \ (\mathbf{x}^i, α_i) ∈ X × \mathbb{R},\ \ \ i = 1, …, m.<br>$$</li>
+</ul>
+<blockquote>
+<p>As is customary, we don’t adopt a notation that makes this explicit</p>
+<p>The $+$ operation on the left of the equation in<br>$$<br>L(α\mathbf{x}+\mathbf{x}’)=αL(\mathbf{x})+L(\mathbf{x}’)\ \ \ \mbox{for all}\ \ \ \ \mathbf{x},\mathbf{x}’ ∈X\ \ \ \mbox{and}\ \ \ \ α∈\mathbb{R}<br>$$<br>is not the same as the $+$ operation on the right of this equation. Indeed, the former one is the addition operation on $X$ while the latter is that on $Y$. </p>
+<p>The same comment applies to the $\cdot $ operation as well — we use the scalar multiplication operation on $X$ when writing $αx$, and that on $Y$ when writing $αL(x)$.</p>
+</blockquote>
+<p><strong>Null Space, Kernel</strong>: </p>
+<ul>
+<li>The set $L^{−1}(0)$ is called the null space (or the kernel) of $L$, and is denoted by $null(L)$, that is,</li>
+</ul>
+<p>$$<br>null(L):={x∈X :L(x)=0}.<br>$$</p>
+<p><strong><font color=941751>Linear Funtional</font></strong>: </p>
+<ul>
+<li>A real-valued linear operator is referred to as a **<font color=941751>linear functional </font>**on $X$.</li>
+</ul>
+<blockquote>
+<p>The set of all linear operators from a linear space $X$ into a linear space $Y$ is denoted as $\mathcal{L}(X,Y)$. So, $L$ is a linear functional on $X$ iff $L ∈ \mathcal{L}(X,\mathbb{R} )$.</p>
+</blockquote>
+<p><strong>Linear Correspondence</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two linear spaces, and $Γ : X \rightrightarrows  Y$ a correspondence. We say that $Γ$ is a linear correspondence if</li>
+</ul>
+<p>$$<br>αΓ(x) ⊆ Γ(αx)\ \ \ \ \mbox{and}\ \ \ \ Γ(x) + Γ(x’) ⊆ Γ(x + x’)<br>$$</p>
+<ul>
+<li>for all $x, x’ ∈ X$ and $α ∈ \mathbb{R} $.</li>
+</ul>
+<p><strong><font color=941751>Linear Function</font></strong>:  </p>
+<ul>
+<li>Let $S$ be a nonempty subset of a linear space $X$, and denote by $\mathcal{P}(S)$ the class of all nonempty finite subsets of $S$. </li>
+<li>A real map $φ ∈ \mathbb{R}^S$ is linear if</li>
+</ul>
+<p>$$<br>φ\left(\sum_{\mathbf{x}\in A}λ(\mathbf{x})\mathbf{x}\right) = \sum_{\mathbf{x}\in A}λ(\mathbf{x})φ(\mathbf{x})<br>$$</p>
+<ul>
+<li>for any $A∈\mathcal{P}(S)$ and $λ∈\mathbb{R}^A $ such that $\sum_{\mathbf{x}∈A}λ(\mathbf{x})\mathbf{x}∈S$.</li>
+</ul>
+<p><strong>Affine Function</strong>: </p>
+<ul>
+<li>Let $S$ be a nonempty subset of a linear space $X$, and denote by $\mathcal{P}(S)$ the class of all nonempty finite subsets of $S$. </li>
+<li>A real map $φ ∈ \mathbb{R}^S$ is called <strong>affine</strong> if</li>
+</ul>
+<p>$$<br>φ\left(\sum_{x\in A}λ(\mathbf{x})\mathbf{x}\right) = \sum_{\mathbf{x}\in A}λ(\mathbf{x})φ(\mathbf{x})<br>$$</p>
+<ul>
+<li>for any $A∈\mathcal{P}(S)$ and $λ∈\mathbb{R}^A$ such that $\sum_{\mathbf{x}∈A}λ(\mathbf{x})=1$ and $\sum_{\mathbf{x}∈A}λ(\mathbf{x})\mathbf{x}∈S$.</li>
+</ul>
+<p><strong>Linear Isomorphism</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two linear spaces and $L ∈ \mathcal{L}(X,Y)$. </li>
+<li>If $L$ is a bijection, then it is called a <strong>linear isomorphism</strong> between $X$ and $Y$, and we say that $X$ and $Y$ are <strong>isomorphic</strong>.</li>
+</ul>
+<blockquote>
+<p>Just like two isometric metric spaces are indistinguishable from each other insofar as their metric properties are concerned, the linear algebraic structures of two isomorphic linear spaces coincide. </p>
+<p>Put differently, from the perspective of linear algebra, one can regard two isomorphic linear spaces as differing from each other only in the labelling of their constituent vectors.</p>
+<p>It is quite intuitive that a finite dimensional linear space can never be isomorphic to an infinite dimensional linear space. But there is more to the story. Given the interpretation of the notion of isomorphism, you might expect that the dimensions of any two isomorphic linear spaces must in fact be identical. </p>
+</blockquote>
+<p><strong>Closed Halfspace, Open Halfspace</strong>: </p>
+<ul>
+<li><p>Given Corollary 4, we may identify a hyperplane $H$ in a linear space $X$ with a real number and a nonzero linear functional $L$ on $X$. </p>
+</li>
+<li><p>This allows us to give an analytic form to the intuition that a hyperplane “divides” the entire space into two parts. </p>
+</li>
+<li><p>In keeping with this, we refer to either one of the sets<br>$$<br>{x∈X :L(x)≥α}\ \ \ \mbox{and}\ \ \  {x∈X :L(x)≤α}<br>$$</p>
+</li>
+<li><p>as a <strong>closed halfspace</strong> induced by $H$, and to either one of the sets<br>$$<br>{x∈X :L(x)&gt;α}\ \ \ \ \mbox{and}\ \ \ \ {x∈X :L(x)&lt;α}<br>$$</p>
+</li>
+<li><p>as an <strong>open halfspace</strong> induced by $H$.</p>
+</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Lemma 1</strong>: </p>
+<ul>
+<li>Let $T$ be a subset of a linear space with $\mathbf{0} ∈T$. Then $φ∈\mathbb{R}^T $ is affine iff, $φ − φ(\mathbf{0} )$ is a linear real map on $T$ .</li>
+</ul>
+<blockquote>
+<p>It is important to note that this fact remains true even if the domain of the affine map is not a linear space.</p>
+</blockquote>
+<p><strong>Proposition 4</strong>: </p>
+<ul>
+<li>Let $n∈\mathbb{N} $ and $∅\neq S⊆\mathbb{R}^n$. Then $φ∈\mathbb{R}^S$ is affine iff, there exist real numbers $α_1, …, α_n, \beta$, such that $φ(x) =\sum^n α_ix_i + β$ for all $x ∈ S$.</li>
+</ul>
+<p><strong>Proposition 5</strong>: </p>
+<ul>
+<li>Two finite dimensional linear spaces are isomorphic iff, they have the same dimension.</li>
+</ul>
+<p><strong>Corollary 3</strong>: </p>
+<ul>
+<li>Every nontrivial finite dimensional linear space is isomorphic to $\mathbb{R}^n$, for some $n ∈ \mathbb{N} $.</li>
+</ul>
+<p><strong>Proposition 6</strong>: </p>
+<ul>
+<li><p>Let $Y$ be a subset of a linear space $X$. </p>
+</li>
+<li><p>Then, $Y$ is a $⊇$-maximal proper linear subspace of $X$ iff,<br>$$<br>Y = null(L)<br>$$</p>
+</li>
+<li><p>for some nonzero linear functional $L$ on $X$.</p>
+</li>
+</ul>
+<p><strong>Corollary 4</strong>: </p>
+<ul>
+<li>A subset $H$ of a linear space $X$ is a hyperplane in $X$ iff,</li>
+</ul>
+<p>$$<br>H ={x∈X :L(x)=α}<br>$$</p>
+<ul>
+<li>for some $α ∈ \mathbb{R} $ and nonzero linear functional $L$ on $X$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Algebra/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Linear Algebra</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Elements-of-Linear-Spaces/">
+        <span>Elements of Linear Spaces</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linear-Operators-and-Functionals"><span class="toc-number">1.</span> <span class="toc-text">Linear Operators and Functionals</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
