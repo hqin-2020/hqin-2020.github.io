@@ -1,277 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta charset="utf-8">
     
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    <title>Continuity and Connectedness | hqin</title>
     
     
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+        <meta name="keywords" content="Continuity and Connectedness" />
     
-    
-    
-        <link rel="shortcut icon" href="/icons/favicon.ico">
-    
-
-    
-    
-        
-<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
-
-    
-    
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/iconfont.css">
-
-
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Continuity and ConnectednessPropositions and TheoremsTheorem 3.6.36, Proposition 2:   Let $X$ and $Y$ be two metric spaces, and $f ∈ Y^X$ a continuous function.   If $X$ is connected, then $f(X)$ is a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Continuity and Connectedness">
+<meta property="og:url" content="https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/index.html">
+<meta property="og:site_name" content="hqin">
+<meta property="og:description" content="Continuity and ConnectednessPropositions and TheoremsTheorem 3.6.36, Proposition 2:   Let $X$ and $Y$ be two metric spaces, and $f ∈ Y^X$ a continuous function.   If $X$ is connected, then $f(X)$ is a">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-25T09:45:00.000Z">
+<meta property="article:modified_time" content="2021-01-01T10:05:33.574Z">
+<meta property="article:author" content="hqin">
+<meta name="twitter:card" content="summary">
     
 
+    
+        <link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml" />
+    
 
+    
+        <link rel="icon" href="/favicon.ico" />
+    
 
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
 
-
-
-
-
-
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
     
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-          
+<link rel="stylesheet" href="/css/style.css">
 
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
 
     
     
-    <title>
-        
-            Continuity and Connectedness | hqin
-        
-    </title>
     
+    
+    
+    
+
+
     
 <meta name="generator" content="Hexo 5.3.0"></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
-  
-  <header class="mdui-appbar mdui-appbar-fixed">
-  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
-    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
-    <a href="/" class="mdui-typo-headline">hqin</a>
-    <a href="/" class="header-subtitle mdui-typo-headline"></a>
-    <div class="mdui-toolbar-spacer"></div>
-    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
-  </div>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">hqin</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
 </header>
 
-<div class="mdui-dialog" id="search">
-  
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
-    <div class="search-result"></div>
-  
-</div>
-
-  <aside id="sidebar" class="mdui-drawer">
-    <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
-    </div>
-
-    
-    <div id="sidebar-tab1" class="mdui-p-a-1">
-        <div class="mdui-list">
+        <div class="outer">
             
-                
-                <a href="/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-home"></i>
-                    </div>
-                    <div class="mdui-list-item-content">Home</div>
-                </a>
             
-                
-                <a href="/categories/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-folder"></i>
-                    </div>
-                    <div class="mdui-list-item-content">Categories</div>
-                </a>
-            
-            <div class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-icon">
-                    <i class="iconfont icon-moon"></i>
-                </div>
-                <div class="mdui-list-item-content">Night Mode</div>
-                <label class="mdui-switch" id="darkmode">
-                  <input type="checkbox" id="nightmode_switch"/>
-                  <i class="mdui-switch-icon"></i>
-                </label>
-            </div>           
-        </div>
-    </div>
-
-    
-    <div id="sidebar-tab2" class="mdui-p-a-1">
-        <div class="sidebar-overview">
-            <div class="sidebar-avatar">
-                
-                    <img src="/icons/avatar.gif"/>
-                
-            </div>
-            <div class="sidebar-author-name">hqin</div>
-            <div class="sidebar-description"></div>
-        </div>
-        <div class="sidebar-links">
-            
-        </div>
-        <ul class="mdui-list" mdui-collapse="{accordion: true}">
-            <li class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-link"></i>
-                    </div>
-                    <div class="mdui-list-item-content">Links</div>
-                    <div class="mdui-collapse-item-arrow">
-                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
-                    </div>
-                </div>
-                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                    
-                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
-                            Guangnan&#39;s Notes
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1 Mathematics
                         </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1 Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.A Preliminaries of Real Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/">Elements of Set Theory</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/">Countability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/">Elements of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Real-Numbers/">Constructing Real Numbers</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Complex-Numbers/">Constructing Complex Numbers</a></li>  </ul> 
+                    </li> 
                     
-                </ul>
-            </li>
-        </ul>
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.B Metric Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Topology-of-Metric-Spaces/">Topology of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Connectedness/">Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Separability/">Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Compactness/">Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/">Completeness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Contraction-Mapping-Theorem/">The Contraction Mapping Theorem</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Completion-of-Metric-Spaces/">The Completion of Metric Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1.C Continuity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/">Continuity of Functions</a></li>  <li class="file active"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/">Continuity and Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Separability/">Continuity and Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Compactness/">Continuity and Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/The-Space-of-Functions/">The Space of Functions</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.D Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Elements-of-Linear-Spaces/">Elements of Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/">Linear Operators and Functionals</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Algebra/">Linear Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.E Convexity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/5%20Convexity/Convex-Sets/">Convex Sets</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.F Metric Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/6%20Metric%20Linear%20Spaces/Elements-of-Metric-Linear-Spaces/">Elements of Metric Linear Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.G Normed Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Elements-of-Normed-Linear-Spaces/">Elements of Normed Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Banach-Spaces/">Banach Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.H Probability via Measure Theory
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Measurable-Spaces/">Measurable Spaces</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Elements-of-Probability-Theory/">Elements of Probability Theory</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">Constructing Probability Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.I Random Variables
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">The Distribution of a Random Variable</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.J Expectation via the Lebesgue Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/">The Expectation Functional of Simple Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/">The Expectation Functional of Arbitrary Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/">Elementary Probability Inequalities</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Spaces-of-Integrable-Random-Variables/">Spaces of Integrable Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.K Expectation via the Stieltjes Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/">The Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Expectation-as-a-Stieltjes-Integral/">Expectation as a Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Integration-By-Parts/">Integration By Parts</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.L Weak Convergence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Weak-Convergence/">Weak Convergence</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Convergence-of-Random-Variables/">Convergence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.M Stochastic Independence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/">Independence of Collection of Events</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/">Independence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.N A Primer on Probability Limit Theorems
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Preliminaries-of-Probability-Limit-Theorems/">Preliminaries of Probability Limit Theorems</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.O Stochastic Dependence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2 Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.A Abstract Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.B Linear Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">17</span></li></ul>
+        </div>
     </div>
 
-    <div class="mdui-divider"></div>
     
-    
+    <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
-  
-  <main id="main-contain" class="mdui-container mdui-m-t-5">
-    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
-  <header class="mdui-card-media">
-    
-    
-      <div class="post-header"> 
-  <a class="post-header-title" href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/">Continuity and Connectedness</a>
-  <div class="post-header-meta">
+            
+            <section id="main"><article id="post-Mathematics/Analysis/3 Continuity/Continuity-and-Connectedness" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/1-Mathematics/">1 Mathematics</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/">1.1.C Continuity</a>
+    </div>
 
-    <span>
-      <span class="iconfont icon-folder"></span>
-      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/">1.1.C Continuity</a>
-    </span>
-    
-  </div>
-</div>   
-    
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/">
+            <time datetime="2020-11-25T09:45:00.000Z" itemprop="datePublished">2020-11-25</time>
+        </a>
+    </div>
 
 
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Continuity and Connectedness
+        </h1>
+    
 
-    
-    
-    <div class="mdui-card-menu">
-    
-      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
-      <ul class="mdui-menu" id="share_menu">
-        <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=Continuity and Connectedness&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=Continuity and Connectedness&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/" target="_blank" class="mdui-ripple">Share to Facebook</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/" target="_blank" class="mdui-ripple">Share to Google+</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/&title=Continuity and Connectedness" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Continuity and Connectedness&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/" target="_blank" class="mdui-ripple">Share to QQ</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/&text=Continuity and Connectedness" target="_blank" class="mdui-ripple">Share to Telegram</a>
-        </li>
-      </ul>
-    
-  </div>
-  </header>
-  
-  
-  
-  
-  
-  <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="Continuity-and-Connectedness"><a href="#Continuity-and-Connectedness" class="headerlink" title="Continuity and Connectedness"></a>Continuity and Connectedness</h1><h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Theorem 3.6.36, Proposition 2</strong>: </p>
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="Continuity-and-Connectedness"><a href="#Continuity-and-Connectedness" class="headerlink" title="Continuity and Connectedness"></a>Continuity and Connectedness</h1><h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Theorem 3.6.36, Proposition 2</strong>: </p>
 <ul>
 <li><p>Let $X$ and $Y$ be two metric spaces, and $f ∈ Y^X$ a continuous function. </p>
 </li>
@@ -308,81 +503,94 @@
 <li>张筑生，1990，”数学分析新讲“；</li>
 </ol>
 
-  </div>
-  <!--文末结束语-->
-  
-  <!--页脚广告-->
-  
-  <div class="mdui-divider"></div>
-  
-  <nav>
-    
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Separability/">
-        <i class="iconfont icon-angle-left"></i>
-        <span>Continuity and Separability</span>
-      </a>
-    
-    
-      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/">
-        <span>Continuity of Functions</span>
-        <i class="iconfont icon-angle-right"></i>
-      </a>
-    
-  </nav>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
 </article>
 
 
-
-
-  <div class="toc-button"  style="z-index: 100;">
-    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
-    <ul class="mdui-menu" id="toc">
-      <li class="mdui-menu-item">
-        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/" id="toc-header" class="mdui-ripple">Table of Contents</a>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Continuity-and-Connectedness"><span class="toc-number">1.</span> <span class="toc-text">Continuity and Connectedness</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.1.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.2.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
-      </li>
-    </ul>
-  </div>
-
-
-
-  </main>
-  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-      
-      <span>
-        &copy; 2020 - 2021 
-        
-        hqin
-      </span>
-    </div>
-    <div class="mdui-row">
-      
-    </div>
-    <div class="mdui-row">
-      
-    </div>
- </div>
-</footer>
-  
-  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
-  
-  
-
-
+    
+<nav id="article-nav">
+    
+        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Separability/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Continuity and Separability
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Continuity of Functions</div>
+        </a>
+    
+</nav>
 
 
 
 
 
     
-<script src="/js/mdui.min.v1.0.0.js"></script>
+    
 
 
 
 
-<script src="/js/meadow.js"></script>
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            hqin &copy; 2020 - 2021
+           
+            
+        </div>
+    </div>
+</footer>
 
+        
+
+    
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
 </body>
-</html >
+</html>
