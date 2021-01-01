@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Connectedness | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/">Connectedness</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-2-Metric-Spaces/">1.1.2 Metric Spaces</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Connectedness&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Connectedness&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/&title=Connectedness" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Connectedness&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/&text=Connectedness" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h1><p><strong><font color=941751>Connectedness</font>,</strong> gives one a glimpse of how one would study the geometry of an arbitrary metric space.</p>
+<p>Intuitively speaking, a connected subset of a metric space is one that cannot be partitioned into two (or more) separate pieces, it is rather in one whole piece. </p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=941751>Connected</font></strong>:</p>
+<ul>
+<li>A metric space $X$ is <strong><font color=941751>connected</font></strong> if there do not exist two <u>nonempty</u> and <u>disjoint open</u> subsets $O$ and $U$ of $X$ such that $ O ∪ U = X$. </li>
+<li>A subset $S ⊆ X$ is <strong><font color=941751>connected</font></strong> in $X$ iff it cannot be written as a <u>disjoint</u> union of two <u>nonempty</u> sets that are <u>open</u> in $S$.</li>
+</ul>
+<p><strong>Disconnected</strong>:</p>
+<ul>
+<li>Let $X$ be a metric space and $A ⊂ X$. </li>
+<li>$A$ is <strong>disconnected</strong> if there exist open sets $U, V ⊂ X$ such that<ul>
+<li> $ U∩A\neq∅$ and $V ∩A\neq∅$</li>
+<li>$ (U ∩ A) ∩ (V ∩ A) = ∅$</li>
+<li>$A = (U ∩ A) ∪ (V ∩ A)$</li>
+</ul>
+</li>
+<li>Let $X$ be a metric space and $A ⊂ X$. $A$ is <strong><font color=941751>connected</font></strong> if $A$ is not disconnected.</li>
+</ul>
+<blockquote>
+<p>Above definitions are equivalent to each other.</p>
+</blockquote>
+<blockquote>
+<p>To show disconnected, find a good pair of sets. </p>
+<p>To show connected, check every potential pair of sets.</p>
+</blockquote>
+<p><strong>Connected Component, Totally Disconnected</strong>:</p>
+<ul>
+<li><p>If $X$ is a metric space and $x_0\in X$</p>
+</li>
+<li><p>The <strong>connected component</strong> of $x_0$ in $X$ is the union of the connected sets that contain $x_0$.</p>
+</li>
+<li><p>A metric space $X$ is <strong>totally disconnected</strong> if the connected component of each point is the point itself.</p>
+</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 2</strong>: </p>
+<ul>
+<li>Let $X$ be a metric space. $X$ is connected iff, the only clopen subsets of $X$ are $∅$ and $X$.<ul>
+<li>Proof:<ul>
+<li>Suppose $S\notin {\emptyset ,X}$ is a clopen subset of $X$, then $X\setminus S$ can be an open subset such that <ul>
+<li>$S\cap X = S\neq \emptyset$ and $(X\setminus S)\cap X= (X\setminus S)\neq \emptyset$</li>
+<li>$S\cap(X\setminus S)=\emptyset$</li>
+<li>$X = S \cup (X\setminus S)$</li>
+<li>So $X$ is not connected, contradiction!</li>
+</ul>
+</li>
+<li>Suppose that $X$ is not connected, then we can find nonempty and disjoint open subsets $O\neq X$ and $X\setminus O$ such that $O \cup (X\setminus O) = X$. <ul>
+<li>Since $O$ is open, then $X\setminus O$ is closed, so it is a clopen set.</li>
+<li>Since the only clopen subsets of $X$ are $\emptyset$ and $X$, contradiction!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Exercise 3.6.35, Example 3.6.45</strong>:</p>
+<ul>
+<li>A discrete metric space $X$ is totally disconnected.</li>
+<li>A subset of a discrete metric space is connected iff its cardinality is at most 1. <ul>
+<li>Discrete metric spaces only have isolated points, if its cardinality is 2, then take two points $a,\ b$, and consider $B_\varepsilon(a),\ B_\varepsilon(b)$, where $\varepsilon&lt;1$.</li>
+<li>According to the proposition 2, a discrete space is not connected unless it contains only one element, because any subset of the discrete space is clopen.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.6.35</strong>:</p>
+<ul>
+<li>A finite subset of any metric space is connected iff its cardinality is at most 1.<ul>
+<li>If its cardinality is 2, then take two points $a,\ b$, and consider $B_\varepsilon(a),\ B_\varepsilon(b)$, where $\varepsilon=\frac{d(a,b)}{2}$ or $\varepsilon=\frac{d(a,b)}{3}$. </li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.6.35</strong>:</p>
+<ul>
+<li>$\mathbb{Q}$ is not connected in $\mathbb{R}$<ul>
+<li>Consider $U= (−∞,\sqrt{2} )$ and $V=(\sqrt{2}, ∞)$ or directly $\mathbb{Q}=(−∞,\sqrt{2} )\cup(\sqrt{2}, ∞)$.</li>
+</ul>
+</li>
+<li>A subset $A$ of $\mathbb{R}$ in the usual metric is connected iff $A$ is an interval.<ul>
+<li>Proof<ul>
+<li>We first prove that any interval $I$ is connected in $\mathbb{R}$. <ul>
+<li>Suppose $ I = O \cup U$ and $O$ and $U$ are nonempty and disjoint open subsets of $I$.</li>
+<li>Let $a\in O$ and $b\in U$ and  $a &lt; b $. </li>
+<li>Let $c=\sup{t\in O:t&lt;b}$, note that $a\leq c\leq b$ so we have $c\in I$.</li>
+<li>If $c\in O$, then $c\notin U$ and $c \neq b$, so $c&lt;b$.</li>
+<li>Since $c$ is the least upper bound, then for any $\varepsilon &gt; 0$ we have $b \in B_\varepsilon(c) $, then there exists an $\varepsilon&gt;0$ such that $B_\frac{\varepsilon}{2}(b)\in B_\varepsilon(c)\subseteq O$. Contradiction!</li>
+</ul>
+</li>
+<li>We then prove that any connected set in $\mathbb{R}$ is an interval.<ul>
+<li>Suppose $I$ is a nonempty connected set in $\mathbb{R}$ but not an interval.</li>
+<li>Then there exist two points $a$ and $b$ in $I$ such that $(a,b)\setminus I\neq\emptyset$. </li>
+<li>Let $c\in (a,b)\setminus I$, $O= I \cap (-\infty,c)$ and $U= I \cap (c, \infty)$.</li>
+<li>Then $O$ and $U$ are nonempty and disjoint open subsets of $I$ such that $O \cup U = I$. Contradiction!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.6.35</strong>:</p>
+<ul>
+<li><p>A convex subset of $\mathbb{R}^n$ with the usual metric is a connected set.</p>
+<ul>
+<li><p>Proof:</p>
+<ul>
+<li><p>Assume that a convex set $A⊂\mathbb{R}^n$ is disconnected. Then for some open sets $O,U$, we have $O∪U=A$. </p>
+<ul>
+<li>Consider some $o∈O$ and $u∈U$. Define $L$ as the line segment connecting $u$ and $v$. Thus, $u∈O∩L≠∅$ and $v∈U∩L≠∅$. </li>
+</ul>
+</li>
+<li><p>Since $A$ is convex, $L⊂A$. Then $(O∩L)∩(V∩L)⊂O∩U=∅$, so $(O∩L)∩(U∩L)=∅$. </p>
+<ul>
+<li>Furthermore, $(O∪U)∩L=A∩L=L$, so $(O∩L)∪(U∩L)=L$. </li>
+</ul>
+</li>
+<li><p>As a metric subspace $L$ is open, since $O,\ U$ are both open, so $O∩L, U∩L$ are  nonempty disjoint open sets. Thus, $L$ is disconnected. </p>
+</li>
+</ul>
+</li>
+<li><p>Or assume that a convex set $A⊂\mathbb{R}^n$ is disconnected. Then for some open sets $U,V$, we have, $U∩A≠∅$ and $V∩A≠∅$, $(U∩A)∩(V∩A)=∅$, and $(U∩A)∪(V∩A)=A$. </p>
+<ul>
+<li>Consider some $u∈(U∩A)$ and $v∈(V∩A)$. Define $L$ as the line segment connecting $u$ and $v$. Thus, $u∈U∩L≠∅$ and $v∈V∩L≠∅$. <ul>
+<li>Since $A$ is convex, $L⊂A$. Then $(U∩L)∩(V∩L)⊂(U∩A)∩(V∩A)=∅$, so $(U∩L)∩(V∩L)=∅$. </li>
+</ul>
+</li>
+<li>Furthermore, $((U∩A)∪(V∩A))∩L=A∩L=L$, so $((U∩A)∩L)∪((V∩A)∩L)=(U∩L)∪(V∩L)=L$. Thus, $L$ is disconnected. </li>
+</ul>
+</li>
+<li><p>Choose $f:\mathbb{R}→\mathbb{R}^n$ defined as $f(t)=(1−t)u+tv$ (where $u$ and $v$ are the previously chosen points in $\mathbb{R}^n$). </p>
+<ul>
+<li><p>Let $\varepsilon&gt;0$ and let $a∈\mathbb{R}$. Choose $δ=\frac{\varepsilon}{||v−u||}$ which is greater than 0. Then if $|t−a|&lt;δ$, we have </p>
+</li>
+<li><p>$$<br>  \begin{aligned}<br>||f(t)−f(a)||&amp;=||(1−t)u+tv−(1−a)u−av||\&amp;=||(a−t)u+(t−a)v||\&amp;=||(t−a)v−(t−a)u||\&amp;=|t−a|⋅||v−u||\&amp;&lt;δ||v−u||\&amp;=\frac{\varepsilon}{||v−u||}||v−u||\&amp;=\varepsilon<br>  \end{aligned}<br>$$</p>
+<ul>
+<li><p>Thus, $f$ is continuous at $a$. </p>
+</li>
+<li><p>Since $a$ was arbitrary, $f$ is continuous. </p>
+</li>
+<li><p>Since $[0,1]$ is an interval, it is connected. Thus, since $f$ is continuous and $f([0,1])=L$, $L$ is connected. Contradiction. </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.6.41</strong>:</p>
+<ul>
+<li>Connected components are closed.<ul>
+<li>Proof:<ul>
+<li>Suppose $A$ is connected, $\overline{A}$ is a disconnected, then $\overline{A}$ can be written as two disjoint nonempty sets $O$ and $U$ that are open in $\overline{A}$ .<ul>
+<li>Suppose $O\cap A\neq \emptyset$ and $A\nsubseteq O$, then $A$ can be written as two disjoint nonempty sets $O\cap A$ and $U\cap A$ which are open in $A$, contradiction!</li>
+<li>Thus $O\cap A=\emptyset$ or $A\subseteq O$.</li>
+<li>Since $O\cap U= \emptyset$ and $O\cup U=A\cup A’$.</li>
+<li>Hence if $O\cap A=\emptyset$, we have $A\subseteq U$, if $A\subseteq O$, we have $U\cap A=\emptyset$, we only need to show one of these cases is impossible.</li>
+<li>Suppose $U\cap A=\emptyset$ and $A\subseteq O$, then $U\subseteq A’$, take any $a_0\in U\subseteq A’$, then $a_0$ is an accumulation point of $A$. </li>
+<li>Since $U$ is open, we have for some $r&gt;0$, $B_r(a_0)\subseteq U\subseteq A’$</li>
+<li>Since $A\subseteq O$, $O\cap U=\emptyset$, so $U\cap A=\emptyset $</li>
+<li>$a_0\notin A$, then for some $r&gt;0$, ${B_r(a_0)\setminus a_0}\subseteq U\subseteq A’$ and ${B_r(a_0)\setminus a_0}\cap A=\emptyset $ contradicts with the definition of accumulation points.</li>
+<li>Thus $\overline{A}$ is connected.</li>
+<li>Since $A$ and $\overline{A}$ are both the connected subsets containing $x_0$, their union is $\overline{A}$ which is closed.</li>
+</ul>
+</li>
+<li>Or directly the connected component is itself a metric subspace, which is closed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Separability</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Topology-of-Metric-Spaces/">
+        <span>Topology of Metric Spaces</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Connectedness"><span class="toc-number">1.</span> <span class="toc-text">Connectedness</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.3.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

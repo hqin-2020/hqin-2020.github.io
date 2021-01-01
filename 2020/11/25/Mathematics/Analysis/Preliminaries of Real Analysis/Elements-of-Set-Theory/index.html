@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Elements of Set Theory | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/">Elements of Set Theory</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-1-Preliminaries-of-Real-Analysis/">1.1.1 Preliminaries of Real Analysis</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Elements of Set Theory&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Elements of Set Theory&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/&title=Elements of Set Theory" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Elements of Set Theory&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/&text=Elements of Set Theory" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Elements-of-Set-Theory"><a href="#Elements-of-Set-Theory" class="headerlink" title="Elements of Set Theory"></a>Elements of Set Theory</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Subset, Proper Subset</strong>:</p>
+<ul>
+<li><p>If every member of $A$ is also a member of $B$, then $A$ is a <strong>subset</strong> of $B$ and write $A⊆B$. </p>
+<ul>
+<li>$ A=B$ holds iff both $A⊆B$ and $B⊆A$ hold. </li>
+</ul>
+</li>
+<li><p>If $A⊆B$ but $A\neq B$, then $A$ is  a <strong>proper subset</strong> of $B$, and write $A ⊂ B$。</p>
+</li>
+</ul>
+<p><strong>Finite, Cardinality, Singleton, Infite</strong>: </p>
+<ul>
+<li>For any set $S$ that contains finitely many elements (in which case we say $S$ is <strong>finite</strong>), we denote by $|S|$ the total number of elements that $ S$ contains, and refer to this number as the <strong>cardinality</strong> of $S$. <ul>
+<li>$S$ is a <strong>singleton</strong> if $|S| = 1$. </li>
+</ul>
+</li>
+<li>If $S$ contains infinitely many elements (in which case we say $S$ is <strong>infinite</strong>), then we write $|S| = ∞$.</li>
+</ul>
+<p><strong>Empty Set</strong>:</p>
+<ul>
+<li><p>The set that contains no elements is defined as an <strong>empty set</strong>, that is,<br>$$<br>∅ := {x : x \neq x},<br>$$</p>
+<ul>
+<li>We have $∅ ⊆ S$ for any set $S$, it implies that $∅$ is unique.</li>
+<li>If $S \neq ∅$, we say that $S$ is nonempty.</li>
+<li>${∅}$ is a nonempty set.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Power Set</strong>: </p>
+<ul>
+<li>We define the class of all subsets of a given set $S$ as</li>
+</ul>
+<p>$$<br>2^S :={T :T ⊆S},<br>$$</p>
+<ul>
+<li>which is called the <strong>power set</strong> of $S$. </li>
+</ul>
+<p><strong>Union, Intersection, Difference</strong>: </p>
+<ul>
+<li>Given any two sets $A$ and $B$, </li>
+<li>The <strong>union</strong> of $A$ and $B$, denoted as $A ∪ B$, is defined as the set ${x : x ∈ A\ \mbox{or} \ x ∈ B}$.</li>
+<li>The <strong>intersection</strong> of $A$ and $B$, denoted as $A ∩ B$, is defined as the set ${x : x ∈ A\ \mbox{and}\ x ∈ B}$. <ul>
+<li>If $A ∩ B = ∅$, we say that $A$ and $B$ are disjoint. </li>
+<li>If $A ⊆ B$, then $A∪B = B$ and $A∩B = A$. </li>
+<li>$∅ ∪ S = S$ and $∅ ∩ S = ∅$ for any set $S$.</li>
+</ul>
+</li>
+<li>The difference between $A$ and $B$, denoted as $A\setminus B$, is defined as the set ${ x : x ∈ A\ \mbox{and}\ x ∈/ B } $. </li>
+</ul>
+<p><strong>Class, Family, Member</strong>: </p>
+<ul>
+<li><p>“<strong>Class</strong>” or “<strong>family</strong>” refer to a nonempty collection of sets. </p>
+</li>
+<li><p>If $\mathcal{A}$ is a class, then $\mathcal{A} \neq ∅$ and any member $A ∈ \mathcal{A}$ is a set. </p>
+</li>
+<li><p>The union of all <strong>members</strong> of this class,  $\bigcup \mathcal{A}$, $\bigcup_{A∈\mathcal{A}}A$, is defined as the set ${x : x ∈ A\ \mbox{for some}\ A ∈ \mathcal{A}}$. </p>
+<ul>
+<li>To specify a class $\mathcal{A}$, we can designate a set $I$ as a set of indices</li>
+<li>If $I={k,k+1,\dots, K}$ for some integers $k$ and $K$ with $k&lt;K$, then we often write $\bigcup^K A_i$, $\bigcup_{i=k}^KA_i$ for $\bigcup_{i\in I}A_i$.</li>
+<li>If $I={k,k+1,\dots,}$ for some integer $k$, then we may write $\bigcup^\infty A_i$, $\bigcup_{i=k}^\infty A_i$ for $\bigcup_{i\in I}A_i$</li>
+</ul>
+</li>
+<li><p>The intersection of all sets in $\mathcal{A}$,  $\bigcap \mathcal{A}$ , $\bigcap_{A∈\mathcal{A}}A$,  is defined as the set ${x : x ∈ A\ \mbox{for each}\ A ∈ \mathcal{A}}$. </p>
+</li>
+</ul>
+<p><strong><font color=0096FF>Ordered Pair</font></strong>: </p>
+<ul>
+<li>An <strong><font color=0096FF>ordered pair</font></strong> is an ordered list $(a,b)$ consisting of two objects $a$ and $ b$. </li>
+</ul>
+<p><strong><font color=0096FF>(Cartesian) Product</font></strong>:</p>
+<ul>
+<li>The <strong><font color=0096FF>(Cartesian) product</font></strong> of $n$ sets $A_1, …, A_n$, is then defined as</li>
+</ul>
+<p>$$<br>A_1 ×···×A_n :={(a_1,…,a_n):a_i∈A_i, i=1,…,n}.<br>$$</p>
+<p><strong><font color=0096FF>(Binary) Relation</font></strong>: </p>
+<ul>
+<li><p>Let $X$ and $Y$ be two nonempty sets. </p>
+</li>
+<li><p>A subset $R$ of $X × Y$ is called a <strong><font color=0096FF>(binary) relation</font></strong> from $X$ to $Y$. </p>
+</li>
+</ul>
+<p><strong>Reflexive, Transitive, Symmetric</strong>, <strong>Antisymmetric, Complete</strong>: </p>
+<ul>
+<li>A relation $R$ on a nonempty set $X$ is said to be <ul>
+<li><strong>reflexive</strong> if $xRx$ for each $x ∈ X$ </li>
+<li><strong>transitive</strong> if $xRy$ and $yRz$ imply $xRz$ for any $x,y,z ∈ X.$</li>
+<li><strong>symmetric</strong> if, for any $x, y ∈ X$, $xRy$ implies $yRx$,  </li>
+<li><strong>antisymmetric</strong> if, for any $x, y ∈ X$, $xRy$ and $yRx$ imply $x = y$. </li>
+<li><strong>complete</strong> if either $xRy$ or $yRx$ holds for each $x,y ∈ X$. </li>
+</ul>
+</li>
+</ul>
+<p><strong><font color=0096FF>Equivalence Relation, Equivalence Class</font></strong>: </p>
+<ul>
+<li><p>A relation $∼$ on a nonempty set $X$ is called an <strong><font color=0096FF>equivalence relation</font></strong> if it is reflexive, symmetric and transitive. </p>
+</li>
+<li><p>For any $x ∈ X$, the <strong>equivalence class</strong> of $x$ relative to $∼$ is defined as the set<br>$$<br>[x]_∼ :={y∈X:y∼x}.<br>$$</p>
+</li>
+<li><p>Let $X$ be a set. </p>
+</li>
+<li><p>An <strong>equivalence relation</strong> on $X$ is a relation $R$ on $X$ such that </p>
+<ol>
+<li>(Reflexive) For all $x ∈ X$, $x ∼ x$. </li>
+<li>(Symmetric) For $x,y∈X$, if $x∼y$ then $y∼x$. </li>
+<li>(Transitive) For $s,y,z∈X$, if $x∼y$ and $y∼z$, then $x∼z$. </li>
+</ol>
+</li>
+</ul>
+<p><strong><font color=0096FF>Preorder, Partial order, Linear order</font></strong>: </p>
+<ul>
+<li><p>A relation $\succsim$ on a nonempty set $X$ is called a **<font color=0096FF>preorder </font>**on $X$ if it is transitive and reflexive. </p>
+</li>
+<li><p>$\succsim$ is said to be a <strong><font color=0096FF>partial order</font></strong> on $X$ if it is an antisymmetric preorder on $X$. </p>
+</li>
+<li><p>$\succsim$ is called a <strong><font color=0096FF>linear order</font></strong> on $X$ if it is a partial order on $X$ which is complete.</p>
+</li>
+<li><p>By a <strong>preordered set</strong> we mean a list $(X, \succsim)$ where $X$ is a nonempty set and $\succsim$ is a preorder on $X$. </p>
+</li>
+<li><p>If $\succsim$ is a partial order on $X$, then  $(X, \succsim)$ is called a <strong>poset</strong> (short for partially ordered set)</p>
+</li>
+<li><p>If $\succsim$ is a linear order on $X$, then $(X, \succsim)$ is called either a chain or a <strong>loset</strong> (short for linearly ordered set).</p>
+</li>
+</ul>
+<p><strong><font color=0096FF>Function / Map</font></strong>: </p>
+<ul>
+<li><p>By a <strong><font color=0096FF>function / map</font></strong> $f$ that maps $X$ into $Y$, denoted as $f:X→Y$, we mean a relation $f∈X×Y$ such that</p>
+<ol>
+<li>For every $x∈X$, there exists a $y∈Y$ such that $xfy$,</li>
+<li>For every $y,z∈Y$ with $xfy$ and $xfz$, we have $y=z$.</li>
+</ol>
+</li>
+<li><p>$X$ is the <strong>domain</strong> of $f$ and $Y$ the <strong>codomain</strong> of $f$. </p>
+</li>
+<li><p>The <strong>range</strong> of $f$ is<br>$$<br>f(X):={y∈Y :xfy\ \mbox{for some}\ x∈X}.<br>$$</p>
+</li>
+<li><p>The set of all functions that map $X$ into $Y$ is denoted by $Y^X$ or $f : X → Y$ .</p>
+</li>
+<li><p>When $ f(x) = y$, we refer to $y$ as the <strong>image</strong> or <strong>value</strong> of $x$ under $f$. </p>
+</li>
+</ul>
+<p><strong>Composition</strong>: </p>
+<ul>
+<li><p>Given functions $f : X → Z$ and $g : Z → Y$, </p>
+</li>
+<li><p>The <strong>composition</strong> of $f$ and $g$ is the function $g◦f : X → Y$, where $g◦f(x) := g(f(x))$. </p>
+</li>
+<li><p>$(g ◦ f )(x)$ is usually written as $g ◦ f (x$).</p>
+</li>
+</ul>
+<p><strong>Surjection, Injection, Bijection</strong>: </p>
+<ul>
+<li>If its range equals its codomain, that is, if $f(X) = Y$, then one says that $f$ maps $X$ onto $Y$, and refers to it as a <strong>surjection</strong>. </li>
+<li>If $f$ maps distinct points in its domain to distinct points in its codomain, that is, if $x\neq y$ implies $f(x) \neq f(y)$ for all $x,y ∈ X$, then we say that $f$ is an <strong>injection</strong>.</li>
+<li>If $f$ is both injective and surjective, then it is called a <strong>bijection</strong>.</li>
+</ul>
+<p><strong>Self-map, Identity Function</strong>: </p>
+<ul>
+<li>A function whose domain and codomain are identical, that is, a function in $X^X$, is called a <strong>self-map</strong> on $X$. </li>
+<li>The <strong>identity function</strong> is a self-map on $X$, denoted as $\mbox{id}_X$, and defined as $\mbox{id}_X (x) := x$ for all $x ∈ X$. </li>
+</ul>
+<blockquote>
+<p>$\mbox{id}_X$ is a bijection.</p>
+</blockquote>
+<p><strong><font color=0096FF>Binary Operation</font></strong>: </p>
+<ul>
+<li>Let $X$ be any nonempty set. </li>
+<li>We refer to a function of the form $• : X ×X → X$ as a <strong><font color=0096FF>binary operation</font></strong> on $X$, and write $x•y$ instead of $•(x,y)$ for any $x, y ∈ X$.</li>
+</ul>
+<p><strong><font color=005493>Field</font></strong>: </p>
+<ul>
+<li><p>Let $X$ be any nonempty set, let $+$ and $·$ be two binary operations on $X$. </p>
+</li>
+<li><p>The list $(X, +, ·)$ is called a <strong><font color=005493>field</font></strong> if the following properties are satisfied:</p>
+<ol>
+<li>(Closure) $x+y\in X$ and $xy\in X$ for all $x,y∈X$;</li>
+<li>(Commutativity) $x+y=y+x$ and $xy=yx$ for all $x,y∈X$;</li>
+<li>(Associativity) $(x+y)+z = x+(y+z)$ and $(xy)z = x(yz)$ for all $x,y,z ∈ X$;</li>
+<li>(Existence of Identity Elements) There exist elements $0$ and $1$ in $X$ such that $0 + x = x = x + 0$ and $1x = x = x1$ for all $x ∈ X$;</li>
+<li>(Existence of Inverse Elements) <ul>
+<li>(the additive inverse of $x$) For each $x ∈ X$, there exists an element $−x$ in $X$ such that $x+−x = 0 = −x+x$, and </li>
+<li>(the multiplicative inverse of $x$) For each $x ∈ X\backslash{0}$, there exists an element $x^{−1}$ in $X$ such that $xx^{−1} = 1 = x^{−1}x$.</li>
+</ul>
+</li>
+<li>(Distributivity) $x(y + z) = xy + xz$ for all $x, y, z ∈ X$;</li>
+<li>(Cancellation) If $xz=yz$ and $z\neq0$ then $x=y$ for all $x,y,z ∈ X$;</li>
+</ol>
+</li>
+<li><p>A field without the multiplicative inverse of $x$ and cancellation rule for the multiplication is <strong>a commutative ring with 1</strong>.</p>
+</li>
+</ul>
+<p><strong><font color=005493>Ordered Field</font></strong>:</p>
+<ul>
+<li>The list $(X,+,·,≥)$ is called an <strong><font color=005493>ordered field</font></strong> if $(X,+,·)$ is a field, and if $≥$ is a partial order on $X$ such that<ol start="3">
+<li>(Addition) If $x,y,z\in X$, and $x\leq y$, then $x+z\leq y+z$</li>
+<li>(Multiplication by nonnegative elements) If $x,y,z\in X$, and $x\leq y,\ 0\leq z$ then $xz\leq yz$</li>
+</ol>
+</li>
+<li>The list $(X,+,·,&lt;)$ is called an **<font color=005493>ordered field</font>** if $(X,+,·)$ is a field, and if $&lt;$ is a relation on $X$ such that<ol>
+<li>(Trichotomy) If $x,y\in X$, then $x&lt;y,\ x=y$ or $x&gt;y$</li>
+<li>(Transitivity) If $x,y\in X$, and $x&lt;y,\ y&lt;z$, then $x&lt;z$</li>
+<li>(Addition) If $x,y,z\in X$, and $x&lt;y$, then $x+z&lt;y+z$</li>
+<li>(Multiplication by postive elements) If $x,y,z\in X$, and $x&lt;y,\ 0&lt;z$ then $xz&lt;yz$</li>
+</ol>
+</li>
+<li>We adopt the following notation:</li>
+</ul>
+<p>$$<br>X_+ :={x∈X :x≥0}\ \mbox{and} \ X_{++} :={x∈X :x&gt;0},<br>$$</p>
+<p>$$<br>X_− :={x∈X :x≤0}\ \mbox{and} \ X_{−−} :={x∈X :x&lt;0}.<br>$$</p>
+<p><strong>Absolute Value, The Triangle Inequality</strong>: </p>
+<ul>
+<li>Let $(X, +, ·, ≥)$ be an ordered field. </li>
+<li>The function $|·| : X → X$ defined by</li>
+</ul>
+<p>$$<br>|x|:=\left\{\begin{matrix}x,if\ x\geq0\\-x,\ if\ x &lt;0\end{matrix}\right.<br>$$</p>
+<ul>
+<li>is called the <strong>absolute value</strong> function. </li>
+<li>The following is called the <strong>triangle inequality</strong>:</li>
+</ul>
+<p>$$<br>|x+y|≤|x|+|y|\ \ \  for\ all\ x,y∈X.<br>$$</p>
+<ul>
+<li>It is valid within any ordered field.</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 2</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two nonempty sets. A function $f ∈ Y^X$ is invertible if, and only if, it is a bijection.</li>
+</ul>
+<p><strong>Proposition 3</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two nonempty sets. A function $f ∈ Y^X$ is invertible if, and only if, there exists a function $g∈X^Y$ such that $g◦f=\mbox{id}_X$ and $f◦g=\mbox{id}_Y$.</li>
+</ul>
+<p><strong>Proposition 6</strong>: </p>
+<ul>
+<li>(The Archimedean Property) For any $(a, b) ∈ \mathbb{R}_{++} × \mathbb{R}$, there exists an $m ∈\mathbb{N}$ such that $b &lt; ma$.</li>
+<li>For any $a, b ∈ \mathbb{R}$ such that $a &lt; b$, there exists a $q ∈\mathbb{Q}$ such that $a &lt; q &lt; b$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Countability/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Countability</span>
+      </a>
+    
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/11/25/Mathematics/Analysis/Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Elements-of-Set-Theory"><span class="toc-number">1.</span> <span class="toc-text">Elements of Set Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

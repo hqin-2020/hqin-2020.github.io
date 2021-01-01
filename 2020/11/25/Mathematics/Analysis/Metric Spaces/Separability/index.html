@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Separability | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/">Separability</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-2-Metric-Spaces/">1.1.2 Metric Spaces</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Separability&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Separability&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/&title=Separability" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Separability&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/&text=Separability" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Separability"><a href="#Separability" class="headerlink" title="Separability"></a>Separability</h1><p><strong><font color=941751>Separability</font></strong>, identifies those metric spaces that have relatively “few” open sets.</p>
+<p>Intuitively speaking, one may think of a separable metric space as a space which is “not very large.” After all, in such a space, there is a countable set which is “almost” equal to the entire space.</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=F27200>Dense</font>, <font color=941751>Separable</font></strong>: </p>
+<ul>
+<li>Let $X$ be a metric space and $Y ⊆ X$.  </li>
+<li>If $cl_X(Y) = X$, then $Y$ is said to be <strong><font color=F27200>dense</font></strong> in $X$  .</li>
+<li>$X$ is said to be <font color=941751><strong>separable</strong></font> if it contains <u>a countable dense set</u>.</li>
+</ul>
+<blockquote>
+<p>A set $Y ⊆ X$ is dense in a metric space $X$ iff, any point in $X$ can be approached by means of a sequence that is contained entirely in $Y$. </p>
+<p>So, $X$ is a separable metric space iff, it contains a countable set $Y$ such that $x ∈ X$ iff there exists a $(y_m) ∈ Y^∞$ with $y_m → x$</p>
+<p>This is also equivelant to say $Y\subseteq X$ and $X$ contains all the accumulation points of $Y$.</p>
+</blockquote>
+<blockquote>
+<p>In any metric space $X$, $X$ is dense in $X$.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Example 6</strong>: </p>
+<ul>
+<li>Any metric subspace of a separable metric space is separable.</li>
+</ul>
+<p><strong>Theorem 3.6.29</strong>: </p>
+<ul>
+<li>If $(X, d)$ is a compact metric space, then $X$ is separable.<ul>
+<li>Proof: </li>
+<li>For each $n ∈ \mathbb{N}$, consider the collection of open balls $\mathcal{O}={B_{\frac{1}{n}}(x) | x ∈ X}$. This is an open covering of $X$, and hence, there is a finite subcovering $\mathcal{U}$. </li>
+<li>Set $X_n={x\in X:B_{\frac{1}{n}}(x)\in \mathcal{U}}$, and define $S=\cup_{n\in\mathbb{N}}X_n$, then we claim that $S$ is dense in $X$.</li>
+<li>Since $\overline{S}\subseteq X$, we need to prove $X\subseteq \overline{S}$.</li>
+<li>Take any $x\in X,\ x\notin S$, there is $y\in S$ such that $x\in B_r(y)$. </li>
+<li>Prove that $x$ is the accumulation point of $S$ by showing that $y\in {B_r(y)\setminus {y}}\cap S$.</li>
+</ul>
+</li>
+</ul>
+<p><strong>The Weierstrass Approximation Theorem</strong>: </p>
+<ul>
+<li>The set of all polynomials defined on $[a, b]$ is dense in $\mathbf{C}[a, b]$. That is,<br>$$<br>cl_{\mathbf{C}[a,b]}(\mathbf{P}[a, b]) = \mathbf{C}[a, b].<br>$$</li>
+</ul>
+<p><strong>Proposition 3</strong>: </p>
+<ul>
+<li>Let $X$ be metric space. If $X$ is separable, then there exists a countable class $\mathcal{O}$ of open subsets $X$ such that</li>
+</ul>
+<p>$$<br>U= {O∈\mathcal{O}:O⊆U}<br>$$</p>
+<ul>
+<li>for any open subset $U$ of $X$</li>
+</ul>
+<blockquote>
+<p>One major reason for why separable metric spaces areseful is that in such spaces all open sets can be described in terms of a countable set of open sets.</p>
+<p>Keep in mind that many interesting properties of a metric space are defined through the notion of an open set. </p>
+<p>For instance, if we know all the open subsets of a metric space, then we know all the closed and/or connected sets in this space.  </p>
+<p>Similarly, if we know all the open subsets of a metric space, then we know which sequences in this space are convergent and which ones are not. </p>
+<p>Consequently, a lot can be learned about the general structure of a metric space by studying the class of all open subsets of this space. But the significance of this observation would be limited, if, in a sense, we had “too many” open sets lying around. </p>
+<p>In the case of a separable metric space this is not the case, for such a space has only a countable number of open sets “that matter” in the sense that all other open subsets of this space can be described using only these (countably many) open sets. </p>
+<p>This is the gist of Proposition 3.</p>
+</blockquote>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Exercise 3.6.26, Example 6</strong>: </p>
+<ul>
+<li>The only dense subset of $X$ is $X$ itself iff, $X$ is a discrete metric space. </li>
+<li>A discrete space is separable iff it is countable.</li>
+</ul>
+<p><strong>Example 3.6.25, Example 6</strong>:</p>
+<ul>
+<li>$\mathbb{R}^{n,p}$ is separable for any $1 ≤ p ≤ ∞$.<ul>
+<li>$\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ in the usual metric.</li>
+<li>The “dyadic numbers,” that is, the set $D = {\frac{a}{2^n}∈\mathbb{Q}|a,n ∈ \mathbb{Z}}$, are also dense in $\mathbb{R}$ in the usual metric.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example 6</strong>: </p>
+<ul>
+<li>$\ell_p$ is separable for any $1≤p&lt;∞$.</li>
+</ul>
+<p><strong>Example 6</strong>: </p>
+<ul>
+<li>$\mathbf{C}[a, b]$ is separable for any $−∞ &lt; a ≤ b &lt; ∞$.<ul>
+<li>A corollary of the Weierstrass Approximation Theorem</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Compactness/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Compactness</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Connectedness/">
+        <span>Connectedness</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/11/25/Mathematics/Analysis/Metric%20Spaces/Separability/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Separability"><span class="toc-number">1.</span> <span class="toc-text">Separability</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.3.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
