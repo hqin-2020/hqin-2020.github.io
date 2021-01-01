@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Convex Sets - hqin</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hqin"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hqin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="DefinitionsConvex Set:   For any $0 &amp;lt; λ &amp;lt; 1$, a subset $S$ of a linear space $X$ is said to be $λ$-convex if  $$λx+(1−λ)y∈S\ \ \ \mbox{for any}\ \ \ x,y∈S$$  or equivalently, if$$λS+(1−λ)S&amp;#x3D;S$$"><meta property="og:type" content="blog"><meta property="og:title" content="Convex Sets"><meta property="og:url" content="https://hqin-2020.github.io/2020/10/26/Mathematics/Analysis/5%20Convexity/Convex-Sets/"><meta property="og:site_name" content="hqin"><meta property="og:description" content="DefinitionsConvex Set:   For any $0 &amp;lt; λ &amp;lt; 1$, a subset $S$ of a linear space $X$ is said to be $λ$-convex if  $$λx+(1−λ)y∈S\ \ \ \mbox{for any}\ \ \ x,y∈S$$  or equivalently, if$$λS+(1−λ)S&amp;#x3D;S$$"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://hqin-2020.github.io/img/og_image.png"><meta property="article:published_time" content="2020-10-26T10:51:53.000Z"><meta property="article:modified_time" content="2021-01-01T15:46:32.074Z"><meta property="article:author" content="hqin"><meta property="article:tag" content="Real Analysis"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hqin-2020.github.io/2020/10/26/Mathematics/Analysis/5%20Convexity/Convex-Sets/"},"headline":"hqin","image":["https://hqin-2020.github.io/img/og_image.png"],"datePublished":"2020-10-26T10:51:53.000Z","dateModified":"2021-01-01T15:46:32.074Z","author":{"@type":"Person","name":"hqin"},"description":"DefinitionsConvex Set:   For any $0 &lt; λ &lt; 1$, a subset $S$ of a linear space $X$ is said to be $λ$-convex if  $$λx+(1−λ)y∈S\\ \\ \\ \\mbox{for any}\\ \\ \\ x,y∈S$$  or equivalently, if$$λS+(1−λ)S&#x3D;S$$"}</script><link rel="canonical" href="https://hqin-2020.github.io/2020/10/26/Mathematics/Analysis/5%20Convexity/Convex-Sets/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">hqin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-10-26T10:51:53.000Z" title="10/26/2020, 6:51:53 PM">2020-10-26</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Convexity/">1.1.E Convexity</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Convex Sets</h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=531B93>Convex Set</font></strong>: </p>
+<ul>
+<li>For any $0 &lt; λ &lt; 1$, a subset $S$ of a linear space $X$ is said to be <strong>$λ$-convex</strong> if</li>
+</ul>
+<p>$$<br>λx+(1−λ)y∈S\ \ \ \mbox{for any}\ \ \ x,y∈S<br>$$</p>
+<ul>
+<li><p>or equivalently, if<br>$$<br>λS+(1−λ)S=S<br>$$</p>
+</li>
+<li><p>If $S$ is $λ$-convex for all $0 &lt; λ &lt; 1$, that is, if<br>$$<br>λS+(1−λ)S= S\ \ \ \mbox{for all} \ \ \ \ 0≤λ≤1,<br>$$</p>
+</li>
+<li><p>then it is said to be a <strong><font color=531B93>convex set</font></strong>.</p>
+</li>
+</ul>
+<blockquote>
+<p>For any two distinct vectors $x$ and $y$ in the linear space $X$, we think of the set ${λx+(1−λ)y ∈ X : λ ∈ \mathbb{R} }$ as the line through $x$ and $y$. </p>
+<p>The set ${λx+(1−λ)y ∈ X :0 ≤ λ ≤ 1}$ corresponds to the line segment between $x$ and $y$.</p>
+<p>A subset $S$ of $X$ is is convex iff it contains the entire line segment between any two of its elements.</p>
+</blockquote>
+<blockquote>
+<p>The affine hull of a convex set can in general be expressed much more easily than that of a nonconvex set. Indeed, for any convex subset $S$ of a linear space, we simply have<br>$$<br>aff (S) = {λx + (1 − λ)y : λ ∈ \mathbb{R} \mbox{ and } x, y ∈ S}.<br>$$</p>
+</blockquote>
+<p><strong><font color=941751>Convex Hull</font></strong>: </p>
+<ul>
+<li><p>Let $S$ be any set in a linear space $X$, and let $\mathcal{S}$ be the class of all convex subsets of $X$ that contain $S$.</p>
+</li>
+<li><p>We have $  \mathcal{S}\neq∅$ — after all, $X∈\mathcal{S}$. </p>
+</li>
+<li><p>$\bigcap \mathcal {S}$ is a convex set in $X$ which contains $S$. </p>
+</li>
+<li><p>This set is the smallest (that is, $⊇$-minimum) subset of $X$ that contains $S$ — it is called the <strong><font color=941751>convex hull</font></strong> of $S$, and denoted by $co(S)$. </p>
+<ul>
+<li>The closed convex hull is the intersection of all closed convex set containing $S$</li>
+</ul>
+</li>
+<li><p>It is worth noting that the definition of $co(S)$ uses vectors that lie outside $S$ (because the members of $S$ may well contain such vectors). For this reason, this definition can be viewed as an external one. </p>
+<ul>
+<li>We may also characterize $co(S)$ internally, that is, by using only the vectors in $S$. </li>
+<li>$co(S)$ is  the set of all convex combinations of finitely many members of $S$. That is,</li>
+</ul>
+<p>$$<br>co(S)=\left\{\sum^m_{i=1}\lambda_ix^i:m\in\mathbb{N},\ x^1,\dots,x^m\in S\ \mbox{and}\ (\lambda_1,\cdots,\lambda_m)\in[0,1]^m \mbox{ and } \sum^m_{i=1}\lambda_i=1 \right\}<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>$S = co(S)$ iff $ S$ is convex.</p>
+<p>Moreover, for any $x, y ∈ X$, we see that $co({x, y})$ — which is denoted simply as $co{x,y}$ henceforth — is nothing but the line segment between $x$ and $y$, and we have<br>$$<br>co(S) = \bigcup{co(T ) : T ∈ \mathcal{P}(S)},<br>$$<br>where $\mathcal{P}(S)$ is the class of all nonempty finite subsets of $S$.</p>
+</blockquote>
+<p><strong>Concave Function, Convex Function</strong>: </p>
+<ul>
+<li><p>Let $X$ be a linear space and $T$ a nonempty convex subset of $X$. </p>
+</li>
+<li><p>A real map $φ$ on $T$ is called <strong>concave</strong> if</p>
+</li>
+</ul>
+<p>$$<br>φ(λx+(1−λ)y)≥λφ(x)+(1−λ)φ(y)\ \ \ \ \mbox{for all}\ \ \ \ x,y∈T\ \ \ \mbox{and} \ \ \ \ 0≤λ≤1,<br>$$</p>
+<ul>
+<li>while it is called <strong>convex</strong> if $−φ$ is concave. </li>
+</ul>
+<blockquote>
+<p>If both $φ$ and $−φ$ are concave, then $φ$ is an affine map</p>
+</blockquote>
+<p><strong><font color=F27200>Cone</font>, <font color=F27200>Convex Cone</font></strong>: </p>
+<ul>
+<li><p>A nonempty subset $C$ of a linear space $X$ is said to be a **<font color=F27200>cone </font>**if it is closed under nonnegative scalar multiplication, that is, $λC ⊆ C$ for all $λ ≥ 0$, i.e.<br>$$<br>λx∈C\ \ \ \mbox{for any}\ \ \ x∈C\ \ \ \mbox{and}\ \ \ λ≥0.<br>$$</p>
+</li>
+<li><p>If $C$ is, in addition, closed under addition, that is, $C + C ⊆ C$, i.e.<br>$$<br>x+y∈C\ \ \ \ \mbox{for any}\ \ \ \ \ x,y∈C,<br>$$</p>
+</li>
+<li><p>then it is called a <strong><font color=F27200>convex cone</font></strong>. </p>
+<ul>
+<li>We say that a cone $C$ in $X$ is pointed if $C ∩ −C ={\mathbf{0} }$, generating if $\mbox{span}(C) = X$, and nontrivial if $C \neq {\mathbf{0}}$.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Geometrically speaking, a cone is a set that contains all rays that start from the origin and pass through another member of the set. In turn, a convex cone is none other than a cone which is also convex set. </p>
+<p>In a manner of speaking, the concept of convex cone lies in between that of a convex set and that of a linear subspace.</p>
+<p>Any linear subspace $C$ of a linear space $X$ is a convex cone. </p>
+<p>The smallest (i.e. $⊇$-minimum) convex cone in a linear space $X$ is the trivial linear subspace ${\mathbf{0}}$ while the largest (i.e. $⊇$-maximum) convex cone is $X$ itself. Moreover, if $C$ is a convex cone in this space, so is $−C$.</p>
+<p>If $X$ and $Y$ are two linear spaces, and $L∈\mathcal{L}(X,Y)$, then ${x∈X:L(x)≥\mathbf{0}}$ is a (pointed) convex cone in $X$. All of these cones are infinite dimensional and generating.</p>
+</blockquote>
+<p><strong><font color=941751>Conical Hull</font></strong>: </p>
+<ul>
+<li><p>Let $S$ be any nonempty set in a linear space $X$. </p>
+</li>
+<li><p>It is easily checked that $S$ is a convex cone in $X$ iff $\sum_{x∈T} λ(x)x ∈ S$ for any nonempty finite subset $T$ of $S$ and $λ ∈ \mathbb{R}^T_+$. </p>
+</li>
+<li><p>It follows that the smallest convex cone that contains $S$ — the **<font color=941751>conical hull </font>**of $S$ — exists and equals the set of all positive linear combinations of finitely many members of $S$.  </p>
+</li>
+<li><p>Denoting this convex cone by $cone(S)$, therefore, we may write</p>
+</li>
+</ul>
+<p>$$<br>cone(S)=\left\{\sum_{x\in T}λ(x)x:T ∈\mathcal{P}(S)\ \ \mbox{and}\ \ \ λ∈\mathbb{R}^T_+\right\}<br>$$</p>
+<ul>
+<li>where, as usual, $\mathcal{P}(S)$ stands for the class of all nonempty finite subsets of $S$. </li>
+</ul>
+<blockquote>
+<p>By convention, we let $cone(∅) = {\mathbf{0} }$</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Examples</strong>:</p>
+<ul>
+<li>Note that $\mathbb{Q} $ is a midpoint convex subset of $\mathbb{R} $ which is not convex. </li>
+<li>Indeed, a nonempty subset of $\mathbb{R}$ is convex iff it is an interval. </li>
+<li>In any linear space $X$, all singleton sets, line segments and lines, along with $∅$, are convex sets. </li>
+<li>Any linear subspace, affine manifold, hyperplane or half space in $X$ is also convex. </li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li>Both ${f∈\mathbf{C}^1[0,1]:f≥0}$ and $C:={f∈\mathbf{C}^1[0,1]:f’ ≥0}$ are convex cones in $\mathbf{C}^1[0, 1]$. The former one is pointed, but the latter is not — all constant functions belong to $C ∩ −C$.</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li>For any $n ∈ \mathbb{N} $, $cone(\mathbb{R}^n_{++}) = \mathbb{R}^n_{++}∪ {\mathbf{0}}$ and $cone({\mathbf{e}^1, …, \mathbf{e}^n}) = \mathbb{R}^n_+$, where ${\mathbf{e}^1, …, \mathbf{e}^n}$ is the standard basis for $\mathbb{R}^n$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Convex Sets</p><p><a href="https://hqin-2020.github.io/2020/10/26/Mathematics/Analysis/5 Convexity/Convex-Sets/">https://hqin-2020.github.io/2020/10/26/Mathematics/Analysis/5 Convexity/Convex-Sets/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>hqin</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-10-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-01-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Real-Analysis/">Real Analysis</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/11/25/Mathematics/Analysis/6%20Metric%20Linear%20Spaces/Elements-of-Metric-Linear-Spaces/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Elements of Metric Linear Spaces</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/10/26/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Algebra/"><span class="level-item">Linear Algebra</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="hqin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hqin</p><p class="is-size-6 is-block">A Student in Economics</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/">1.2.B Linear Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:00.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/">1.2.A Abstract Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:50:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:49:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:48:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/">1.1.N A Primer on Probability Limit Theorems</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://ygnmax.github.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Guangnan Yang</span></span><span class="level-right"><span class="level-item tag">ygnmax.github.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Abstract-Algebra/"><span class="tag">Abstract Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Measure-Theoretic-Probability/"><span class="tag">Measure Theoretic Probability</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Real-Analysis/"><span class="tag">Real Analysis</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/1-Mathematics/"><span class="level-start"><span class="level-item">1 Mathematics</span></span><span class="level-end"><span class="level-item tag">46</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/"><span class="level-start"><span class="level-item">1.1 Analysis</span></span><span class="level-end"><span class="level-item tag">44</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/"><span class="level-start"><span class="level-item">1.1.A Preliminaries of Real Analysis</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces/"><span class="level-start"><span class="level-item">1.1.B Metric Spaces</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/"><span class="level-start"><span class="level-item">1.1.C Continuity</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-D-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.D Linear Spaces</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Convexity/"><span class="level-start"><span class="level-item">1.1.E Convexity</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-F-Metric-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.F Metric Linear Spaces</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Normed-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.G Normed Linear Spaces</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Probability-via-Measure-Theory/"><span class="level-start"><span class="level-item">1.1.H Probability via Measure Theory</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/"><span class="level-start"><span class="level-item">1.1.I Random Variables</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/"><span class="level-start"><span class="level-item">1.1.J Expectation via the Lebesgue Integral</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-K-Expectation-via-the-Stieltjes-Integral/"><span class="level-start"><span class="level-item">1.1.K Expectation via the Stieltjes Integral</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-L-Weak-Convergence/"><span class="level-start"><span class="level-item">1.1.L Weak Convergence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-M-Stochastic-Independence/"><span class="level-start"><span class="level-item">1.1.M Stochastic Independence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/"><span class="level-start"><span class="level-item">1.1.N A Primer on Probability Limit Theorems</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/"><span class="level-start"><span class="level-item">1.1.O Stochastic Dependence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/"><span class="level-start"><span class="level-item">1.2 Algebra</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/"><span class="level-start"><span class="level-item">1.2.A Abstract Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/"><span class="level-start"><span class="level-item">1.2.B Linear Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">hqin</a><p class="is-size-7"><span>&copy; 2020 - 2021 hqin</span>  </p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

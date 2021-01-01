@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Completeness - hqin</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hqin"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hqin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="DefinitionsComplete:   A metric space $X$ is said to be complete if every Cauchy sequence in $X$ converges to a point in $X$.   Completeness is a stronger condition than closedness in a metric subspac"><meta property="og:type" content="blog"><meta property="og:title" content="Completeness"><meta property="og:url" content="https://hqin-2020.github.io/2020/09/18/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/"><meta property="og:site_name" content="hqin"><meta property="og:description" content="DefinitionsComplete:   A metric space $X$ is said to be complete if every Cauchy sequence in $X$ converges to a point in $X$.   Completeness is a stronger condition than closedness in a metric subspac"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://hqin-2020.github.io/img/og_image.png"><meta property="article:published_time" content="2020-09-18T09:44:05.000Z"><meta property="article:modified_time" content="2021-01-01T15:45:19.608Z"><meta property="article:author" content="hqin"><meta property="article:tag" content="Real Analysis"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hqin-2020.github.io/2020/09/18/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/"},"headline":"hqin","image":["https://hqin-2020.github.io/img/og_image.png"],"datePublished":"2020-09-18T09:44:05.000Z","dateModified":"2021-01-01T15:45:19.608Z","author":{"@type":"Person","name":"hqin"},"description":"DefinitionsComplete:   A metric space $X$ is said to be complete if every Cauchy sequence in $X$ converges to a point in $X$.   Completeness is a stronger condition than closedness in a metric subspac"}</script><link rel="canonical" href="https://hqin-2020.github.io/2020/09/18/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">hqin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-09-18T09:44:05.000Z" title="9/18/2020, 5:44:05 PM">2020-09-18</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces/">1.1.B Metric Spaces</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Completeness</h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=941751>Complete</font></strong>: </p>
+<ul>
+<li>A metric space $X$ is said to be <strong><font color=941751>complete</font></strong> if <u>every Cauchy sequence</u> in $X$ converges to <u>a point in $X$.</u></li>
+</ul>
+<blockquote>
+<p>Completeness is a stronger condition than closedness in a metric subspace.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 6</strong>: </p>
+<ul>
+<li>Let $(x^m)$ be a sequence in a metric space $X$.<ol>
+<li>If $(x^m)$ is convergent, then it is Cauchy.</li>
+<li>If $(x^m)$ is Cauchy, then ${x_1,x_2,…}$ is bounded, but $(x_m)$ need not converge in $X$.</li>
+<li>If $(x^m)$ is Cauchy and has a subsequence that converges in $X$, then it converges in $X$ as well.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Proposition 7</strong>: </p>
+<ul>
+<li>Let $X$ be a metric space, and $Y$ a metric subspace of $X$. <ul>
+<li>If $Y$ is complete, then it is closed in $X$.</li>
+<li>If $Y$ is closed in $X$ and $X$ is complete, then $Y$ is complete.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Corollary 1</strong>: </p>
+<ul>
+<li>A metric subspace of a complete metric space $X$ is complete iff, it is closed in $X$.</li>
+</ul>
+<p>**Theorem 1.1.6, Theorem 1.1.8 **: (The Least Upper Bound Property in $\mathbb{R}$, The Completeness Axiom)</p>
+<ul>
+<li>Every nonempty subset in $\mathbb{R}$ that is bounded above has a least upper bound.</li>
+</ul>
+<blockquote>
+<p>This can be viewed as a definition or an axiom.</p>
+</blockquote>
+<p><strong>Lemma 1.6.13</strong>: </p>
+<ul>
+<li>Every sequence in $\mathbb{R}$ has a monotonic subsequence.</li>
+</ul>
+<blockquote>
+<p>Due to the infinitiness of sequences.</p>
+</blockquote>
+<p><strong>Lemma 1.6.14</strong>: (Monotone Convergence Theorem in $\mathbb{R}$)</p>
+<ul>
+<li>Every bounded monotonic sequence in $\mathbb{R}$ converges to an element in $\mathbb{R}$.</li>
+</ul>
+<p><strong>The Cantor-Fréchet Intersection Theorem</strong>: </p>
+<ul>
+<li>A metric space $X$ is complete iff, for any sequence $(S_m)$ of nonempty closed subsets of $X$ with</li>
+</ul>
+<p>$$<br>S_1 ⊇S_2 ⊇··· \mbox{and}\ \mbox{diam}(S_m)→0,<br>$$</p>
+<ul>
+<li>we have $\cap^∞S_i \neq∅$ (so that $|\cap^∞S_i|=1$).</li>
+</ul>
+<p><strong>Lemma 1.6.15, Theorem 1.6.31:</strong> (Bolzano–Weierstrass Theorem in $\mathbb{R}$)</p>
+<ul>
+<li>Every bounded sequence in $\mathbb{R}$ has a convergent subsequence.</li>
+<li>Let $S$ be a bounded, infinite subset of $\mathbb{R}$. Then $S$ has an accumulation point in $\mathbb{R}$.</li>
+</ul>
+<blockquote>
+<p>Above two statements are equivalent, due to the definition of accumulation point.</p>
+<p>Note that only infinite sets have accumulation points. Finite sets can only consist of isolated points.</p>
+</blockquote>
+<p><strong>Lemma 3.4.12, Theorem 3.4.14</strong>: (Bolzano–Weierstrass Theorem in $\mathbb{R}^n$)</p>
+<ul>
+<li><p>Every bounded sequence in $\mathbb{R}^n$ with the usual metric has a convergent subsequence.</p>
+</li>
+<li><p>Let $S$ be a bounded, infinite subset of $\mathbb{R}^n$. Then $S$ has an accumulation point in $\mathbb{R}^n$.</p>
+</li>
+</ul>
+<blockquote>
+<p>Above two statements are equivalent, due to the definition of accumulation point.</p>
+<p>Note that only infinite sets have accumulation points. Finite sets can only consist of isolated points.</p>
+</blockquote>
+<p><strong>Theorem 1.6.24</strong>: (Cauchy Criterion in $\mathbb{R}$)</p>
+<p>A sequence in $\mathbb{R}$ is convergent iff it is Cauchy.</p>
+<p><strong>Theorem 3</strong>: </p>
+<ul>
+<li>A metric space is compact iff, it is complete and totally bounded.</li>
+</ul>
+<blockquote>
+<p>A closed subset of a complete metric space is compact iff it is totally bounded.</p>
+<p>A subset $S$ of a metric space $X$ is totally bounded iff every sequence in $S$ has a Cauchy subsequence.</p>
+</blockquote>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example</strong>:</p>
+<ul>
+<li><p>$(0,1]$ is not complete as a metric subspace of $\mathbb{R} $, but would be complete with the discrete metric.</p>
+</li>
+<li><p>$\mathbb{Q} $ is an incomplete metric space as a metric subspace of $\mathbb{R} $. </p>
+</li>
+<li><p>$\mathbb{R} $ is complete but not compact. </p>
+<ul>
+<li>In fact, even a complete and bounded metric space need not be compact, the gap between completeness and compactness disappears if we strengthen the boundedness hypothesis here to total boundedness.</li>
+</ul>
+</li>
+<li><p>$\mathbb{R}^{n,p},\ \ell^p$ is complete.</p>
+</li>
+<li><p>$\mathbf{B}(T)$ is complete for any nonempty set $T$.</p>
+</li>
+<li><p>$\mathbf{C}[0, 1]$ is a closed subset of $\mathbf{B}[0, 1]$, so it is complete.</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Completeness</p><p><a href="https://hqin-2020.github.io/2020/09/18/Mathematics/Analysis/2 Metric Spaces/Completeness/">https://hqin-2020.github.io/2020/09/18/Mathematics/Analysis/2 Metric Spaces/Completeness/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>hqin</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-09-18</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-01-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Real-Analysis/">Real Analysis</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/09/18/Mathematics/Analysis/2%20Metric%20Spaces/The-Contraction-Mapping-Theorem/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">The Contraction Mapping Theorem</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/09/18/Mathematics/Analysis/2%20Metric%20Spaces/Compactness/"><span class="level-item">Compactness</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="hqin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hqin</p><p class="is-size-6 is-block">A Student in Economics</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/">1.2.B Linear Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:00.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/">1.2.A Abstract Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:50:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:49:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:48:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/">1.1.N A Primer on Probability Limit Theorems</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://ygnmax.github.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Guangnan Yang</span></span><span class="level-right"><span class="level-item tag">ygnmax.github.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Abstract-Algebra/"><span class="tag">Abstract Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Measure-Theoretic-Probability/"><span class="tag">Measure Theoretic Probability</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Real-Analysis/"><span class="tag">Real Analysis</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/1-Mathematics/"><span class="level-start"><span class="level-item">1 Mathematics</span></span><span class="level-end"><span class="level-item tag">46</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/"><span class="level-start"><span class="level-item">1.1 Analysis</span></span><span class="level-end"><span class="level-item tag">44</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/"><span class="level-start"><span class="level-item">1.1.A Preliminaries of Real Analysis</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces/"><span class="level-start"><span class="level-item">1.1.B Metric Spaces</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/"><span class="level-start"><span class="level-item">1.1.C Continuity</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-D-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.D Linear Spaces</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Convexity/"><span class="level-start"><span class="level-item">1.1.E Convexity</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-F-Metric-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.F Metric Linear Spaces</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Normed-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.G Normed Linear Spaces</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Probability-via-Measure-Theory/"><span class="level-start"><span class="level-item">1.1.H Probability via Measure Theory</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/"><span class="level-start"><span class="level-item">1.1.I Random Variables</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/"><span class="level-start"><span class="level-item">1.1.J Expectation via the Lebesgue Integral</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-K-Expectation-via-the-Stieltjes-Integral/"><span class="level-start"><span class="level-item">1.1.K Expectation via the Stieltjes Integral</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-L-Weak-Convergence/"><span class="level-start"><span class="level-item">1.1.L Weak Convergence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-M-Stochastic-Independence/"><span class="level-start"><span class="level-item">1.1.M Stochastic Independence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/"><span class="level-start"><span class="level-item">1.1.N A Primer on Probability Limit Theorems</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/"><span class="level-start"><span class="level-item">1.1.O Stochastic Dependence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/"><span class="level-start"><span class="level-item">1.2 Algebra</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/"><span class="level-start"><span class="level-item">1.2.A Abstract Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/"><span class="level-start"><span class="level-item">1.2.B Linear Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">hqin</a><p class="is-size-7"><span>&copy; 2020 - 2021 hqin</span>  </p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

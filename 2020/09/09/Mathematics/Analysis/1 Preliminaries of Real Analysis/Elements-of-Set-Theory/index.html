@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Elements of Set Theory - hqin</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hqin"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hqin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="DefinitionsSubset, Proper Subset:  If every member of $A$ is also a member of $B$, then $A$ is a subset of $B$ and write $A⊆B$.   $ A&amp;#x3D;B$ holds iff both $A⊆B$ and $B⊆A$ hold.    If $A⊆B$ but $A\neq B$,"><meta property="og:type" content="blog"><meta property="og:title" content="Elements of Set Theory"><meta property="og:url" content="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/"><meta property="og:site_name" content="hqin"><meta property="og:description" content="DefinitionsSubset, Proper Subset:  If every member of $A$ is also a member of $B$, then $A$ is a subset of $B$ and write $A⊆B$.   $ A&amp;#x3D;B$ holds iff both $A⊆B$ and $B⊆A$ hold.    If $A⊆B$ but $A\neq B$,"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://hqin-2020.github.io/img/og_image.png"><meta property="article:published_time" content="2020-09-09T09:41:52.000Z"><meta property="article:modified_time" content="2021-01-01T15:44:11.269Z"><meta property="article:author" content="hqin"><meta property="article:tag" content="Real Analysis"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/"},"headline":"hqin","image":["https://hqin-2020.github.io/img/og_image.png"],"datePublished":"2020-09-09T09:41:52.000Z","dateModified":"2021-01-01T15:44:11.269Z","author":{"@type":"Person","name":"hqin"},"description":"DefinitionsSubset, Proper Subset:  If every member of $A$ is also a member of $B$, then $A$ is a subset of $B$ and write $A⊆B$.   $ A&#x3D;B$ holds iff both $A⊆B$ and $B⊆A$ hold.    If $A⊆B$ but $A\\neq B$,"}</script><link rel="canonical" href="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">hqin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-09-09T09:41:52.000Z" title="9/9/2020, 5:41:52 PM">2020-09-09</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/">1.1.A Preliminaries of Real Analysis</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Elements of Set Theory</h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Subset, Proper Subset</strong>:</p>
+<ul>
+<li><p>If every member of $A$ is also a member of $B$, then $A$ is a <strong>subset</strong> of $B$ and write $A⊆B$. </p>
+<ul>
+<li>$ A=B$ holds iff both $A⊆B$ and $B⊆A$ hold. </li>
+</ul>
+</li>
+<li><p>If $A⊆B$ but $A\neq B$, then $A$ is  a <strong>proper subset</strong> of $B$, and write $A ⊂ B$。</p>
+</li>
+</ul>
+<p><strong>Finite, Cardinality, Singleton, Infite</strong>: </p>
+<ul>
+<li>For any set $S$ that contains finitely many elements (in which case we say $S$ is <strong>finite</strong>), we denote by $|S|$ the total number of elements that $ S$ contains, and refer to this number as the <strong>cardinality</strong> of $S$. <ul>
+<li>$S$ is a <strong>singleton</strong> if $|S| = 1$. </li>
+</ul>
+</li>
+<li>If $S$ contains infinitely many elements (in which case we say $S$ is <strong>infinite</strong>), then we write $|S| = ∞$.</li>
+</ul>
+<p><strong>Empty Set</strong>:</p>
+<ul>
+<li><p>The set that contains no elements is defined as an <strong>empty set</strong>, that is,<br>$$<br>∅ := {x : x \neq x},<br>$$</p>
+<ul>
+<li>We have $∅ ⊆ S$ for any set $S$, it implies that $∅$ is unique.</li>
+<li>If $S \neq ∅$, we say that $S$ is nonempty.</li>
+<li>${∅}$ is a nonempty set.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Power Set</strong>: </p>
+<ul>
+<li>We define the class of all subsets of a given set $S$ as</li>
+</ul>
+<p>$$<br>2^S :={T :T ⊆S},<br>$$</p>
+<ul>
+<li>which is called the <strong>power set</strong> of $S$. </li>
+</ul>
+<p><strong>Union, Intersection, Difference</strong>: </p>
+<ul>
+<li>Given any two sets $A$ and $B$, </li>
+<li>The <strong>union</strong> of $A$ and $B$, denoted as $A ∪ B$, is defined as the set ${x : x ∈ A\ \mbox{or} \ x ∈ B}$.</li>
+<li>The <strong>intersection</strong> of $A$ and $B$, denoted as $A ∩ B$, is defined as the set ${x : x ∈ A\ \mbox{and}\ x ∈ B}$. <ul>
+<li>If $A ∩ B = ∅$, we say that $A$ and $B$ are disjoint. </li>
+<li>If $A ⊆ B$, then $A∪B = B$ and $A∩B = A$. </li>
+<li>$∅ ∪ S = S$ and $∅ ∩ S = ∅$ for any set $S$.</li>
+</ul>
+</li>
+<li>The difference between $A$ and $B$, denoted as $A\setminus B$, is defined as the set ${ x : x ∈ A\ \mbox{and}\ x ∈/ B } $. </li>
+</ul>
+<p><strong>Class, Family, Member</strong>: </p>
+<ul>
+<li><p>“<strong>Class</strong>” or “<strong>family</strong>” refer to a nonempty collection of sets. </p>
+</li>
+<li><p>If $\mathcal{A}$ is a class, then $\mathcal{A} \neq ∅$ and any member $A ∈ \mathcal{A}$ is a set. </p>
+</li>
+<li><p>The union of all <strong>members</strong> of this class,  $\bigcup \mathcal{A}$, $\bigcup_{A∈\mathcal{A}}A$, is defined as the set ${x : x ∈ A\ \mbox{for some}\ A ∈ \mathcal{A}}$. </p>
+<ul>
+<li>To specify a class $\mathcal{A}$, we can designate a set $I$ as a set of indices</li>
+<li>If $I={k,k+1,\dots, K}$ for some integers $k$ and $K$ with $k&lt;K$, then we often write $\bigcup^K A_i$, $\bigcup_{i=k}^KA_i$ for $\bigcup_{i\in I}A_i$.</li>
+<li>If $I={k,k+1,\dots,}$ for some integer $k$, then we may write $\bigcup^\infty A_i$, $\bigcup_{i=k}^\infty A_i$ for $\bigcup_{i\in I}A_i$</li>
+</ul>
+</li>
+<li><p>The intersection of all sets in $\mathcal{A}$,  $\bigcap \mathcal{A}$ , $\bigcap_{A∈\mathcal{A}}A$,  is defined as the set ${x : x ∈ A\ \mbox{for each}\ A ∈ \mathcal{A}}$. </p>
+</li>
+</ul>
+<p><strong><font color=0096FF>Ordered Pair</font></strong>: </p>
+<ul>
+<li>An **<font color=0096FF>ordered pair </font>**is an ordered list $(a,b)$ consisting of two objects $a$ and $ b$. </li>
+</ul>
+<p><strong><font color=0096FF>(Cartesian) Product</font></strong>:</p>
+<ul>
+<li>The <strong><font color=0096FF>(Cartesian) product</font></strong> of $n$ sets $A_1, …, A_n$, is then defined as</li>
+</ul>
+<p>$$<br>A_1 ×···×A_n :={(a_1,…,a_n):a_i∈A_i, i=1,…,n}.<br>$$</p>
+<p><strong><font color=0096FF>(Binary) Relation</font></strong>: </p>
+<ul>
+<li><p>Let $X$ and $Y$ be two nonempty sets. </p>
+</li>
+<li><p>A subset $R$ of $X × Y$ is called a <strong><font color=0096FF>(binary) relation</font></strong> from $X$ to $Y$. </p>
+</li>
+</ul>
+<p><strong>Reflexive, Transitive, Symmetric</strong>, <strong>Antisymmetric, Complete</strong>: </p>
+<ul>
+<li>A relation $R$ on a nonempty set $X$ is said to be <ul>
+<li><strong>reflexive</strong> if $xRx$ for each $x ∈ X$ </li>
+<li>**transitive **if $xRy$ and $yRz$ imply $xRz$ for any $x,y,z ∈ X.$</li>
+<li>**symmetric **if, for any $x, y ∈ X$, $xRy$ implies $yRx$,  </li>
+<li><strong>antisymmetric</strong> if, for any $x, y ∈ X$, $xRy$ and $yRx$ imply $x = y$. </li>
+<li><strong>complete</strong> if either $xRy$ or $yRx$ holds for each $x,y ∈ X$. </li>
+</ul>
+</li>
+</ul>
+<p><strong><font color=0096FF>Equivalence Relation, Equivalence Class</font></strong>: </p>
+<ul>
+<li><p>A relation $∼$ on a nonempty set $X$ is called an <strong><font color=0096FF>equivalence relation</font></strong> if it is reflexive, symmetric and transitive. </p>
+</li>
+<li><p>For any $x ∈ X$, the <strong>equivalence class</strong> of $x$ relative to $∼$ is defined as the set<br>$$<br>[x]_∼ :={y∈X:y∼x}.<br>$$</p>
+</li>
+<li><p>Let $X$ be a set. </p>
+</li>
+<li><p>An <strong>equivalence relation</strong> on $X$ is a relation $R$ on $X$ such that </p>
+<ol>
+<li>(Reflexive) For all $x ∈ X$, $x ∼ x$. </li>
+<li>(Symmetric) For $x,y∈X$, if $x∼y$ then $y∼x$. </li>
+<li>(Transitive) For $s,y,z∈X$, if $x∼y$ and $y∼z$, then $x∼z$. </li>
+</ol>
+</li>
+</ul>
+<p><strong><font color=0096FF>Preorder, Partial order, Linear order</font></strong>: </p>
+<ul>
+<li><p>A relation $\succsim$ on a nonempty set $X$ is called a **<font color=0096FF>preorder </font>**on $X$ if it is transitive and reflexive. </p>
+</li>
+<li><p>$\succsim$ is said to be a **<font color=0096FF>partial order </font>**on $X$ if it is an antisymmetric preorder on $X$. </p>
+</li>
+<li><p>$\succsim$ is called a **<font color=0096FF>linear order </font>**on $X$ if it is a partial order on $X$ which is complete.</p>
+</li>
+<li><p>By a <strong>preordered set</strong> we mean a list $(X, \succsim)$ where $X$ is a nonempty set and $\succsim$ is a preorder on $X$. </p>
+</li>
+<li><p>If $\succsim$ is a partial order on $X$, then  $(X, \succsim)$ is called a <strong>poset</strong> (short for partially ordered set)</p>
+</li>
+<li><p>If $\succsim$ is a linear order on $X$, then $(X, \succsim)$ is called either a chain or a <strong>loset</strong> (short for linearly ordered set).</p>
+</li>
+</ul>
+<p><strong><font color=0096FF>Function / Map</font></strong>: </p>
+<ul>
+<li><p>By a <strong><font color=0096FF>function / map</font></strong> $f$ that maps $X$ into $Y$, denoted as $f:X→Y$, we mean a relation $f∈X×Y$ such that</p>
+<ol>
+<li>For every $x∈X$, there exists a $y∈Y$ such that $xfy$,</li>
+<li>For every $y,z∈Y$ with $xfy$ and $xfz$, we have $y=z$.</li>
+</ol>
+</li>
+<li><p>$X$ is the <strong>domain</strong> of $f$ and $Y$ the <strong>codomain</strong> of $f$. </p>
+</li>
+<li><p>The <strong>range</strong> of $f$ is<br>$$<br>f(X):={y∈Y :xfy\ \mbox{for some}\ x∈X}.<br>$$</p>
+</li>
+<li><p>The set of all functions that map $X$ into $Y$ is denoted by $Y^X$ or $f : X → Y$ .</p>
+</li>
+<li><p>When $ f(x) = y$, we refer to $y$ as the <strong>image</strong> or <strong>value</strong> of $x$ under $f$. </p>
+</li>
+</ul>
+<p><strong>Composition</strong>: </p>
+<ul>
+<li><p>Given functions $f : X → Z$ and $g : Z → Y$, </p>
+</li>
+<li><p>The <strong>composition</strong> of $f$ and $g$ is the function $g◦f : X → Y$, where $g◦f(x) := g(f(x))$. </p>
+</li>
+<li><p>$(g ◦ f )(x)$ is usually written as $g ◦ f (x$).</p>
+</li>
+</ul>
+<p><strong>Surjection, Injection, Bijection</strong>: </p>
+<ul>
+<li>If its range equals its codomain, that is, if $f(X) = Y$, then one says that $f$ maps $X$ onto $Y$, and refers to it as a <strong>surjection</strong>. </li>
+<li>If $f$ maps distinct points in its domain to distinct points in its codomain, that is, if $x\neq y$ implies $f(x) \neq f(y)$ for all $x,y ∈ X$, then we say that $f$ is an <strong>injection</strong>.</li>
+<li>If $f$ is both injective and surjective, then it is called a <strong>bijection</strong>.</li>
+</ul>
+<p><strong>Self-map, Identity Function</strong>: </p>
+<ul>
+<li>A function whose domain and codomain are identical, that is, a function in $X^X$, is called a <strong>self-map</strong> on $X$. </li>
+<li>The <strong>identity function</strong> is a self-map on $X$, denoted as $\mbox{id}_X$, and defined as $\mbox{id}_X (x) := x$ for all $x ∈ X$. </li>
+</ul>
+<blockquote>
+<p>$\mbox{id}_X$ is a bijection.</p>
+</blockquote>
+<p><strong><font color=0096FF>Binary Operation</font></strong>: </p>
+<ul>
+<li>Let $X$ be any nonempty set. </li>
+<li>We refer to a function of the form $• : X ×X → X$ as a <strong><font color=0096FF>binary operation</font></strong> on $X$, and write $x•y$ instead of $•(x,y)$ for any $x, y ∈ X$.</li>
+</ul>
+<p><strong><font color=005493>Field</font></strong>: </p>
+<ul>
+<li><p>Let $X$ be any nonempty set, let $+$ and $·$ be two binary operations on $X$. </p>
+</li>
+<li><p>The list $(X, +, ·)$ is called a <strong><font color=005493>field</font></strong> if the following properties are satisfied:</p>
+<ol>
+<li>(Closure) $x+y\in X$ and $xy\in X$ for all $x,y∈X$;</li>
+<li>(Commutativity) $x+y=y+x$ and $xy=yx$ for all $x,y∈X$;</li>
+<li>(Associativity) $(x+y)+z = x+(y+z)$ and $(xy)z = x(yz)$ for all $x,y,z ∈ X$;</li>
+<li>(Existence of Identity Elements) There exist elements $0$ and $1$ in $X$ such that $0 + x = x = x + 0$ and $1x = x = x1$ for all $x ∈ X$;</li>
+<li>(Existence of Inverse Elements) <ul>
+<li>(the additive inverse of $x$) For each $x ∈ X$, there exists an element $−x$ in $X$ such that $x+−x = 0 = −x+x$, and </li>
+<li>(the multiplicative inverse of $x$) For each $x ∈ X\backslash{0}$, there exists an element $x^{−1}$ in $X$ such that $xx^{−1} = 1 = x^{−1}x$.</li>
+</ul>
+</li>
+<li>(Distributivity) $x(y + z) = xy + xz$ for all $x, y, z ∈ X$;</li>
+<li>(Cancellation) If $xz=yz$ and $z\neq0$ then $x=y$ for all $x,y,z ∈ X$;</li>
+</ol>
+</li>
+<li><p>A field without the multiplicative inverse of $x$ and cancellation rule for the multiplication is <strong>a commutative ring with 1</strong>.</p>
+</li>
+</ul>
+<p><strong><font color=005493>Ordered Field</font></strong>:</p>
+<ul>
+<li>The list $(X,+,·,≥)$ is called an <strong><font color=005493>ordered field</font></strong> if $(X,+,·)$ is a field, and if $≥$ is a partial order on $X$ such that<ol start="3">
+<li>(Addition) If $x,y,z\in X$, and $x\leq y$, then $x+z\leq y+z$</li>
+<li>(Multiplication by nonnegative elements) If $x,y,z\in X$, and $x\leq y,\ 0\leq z$ then $xz\leq yz$</li>
+</ol>
+</li>
+<li>The list $(X,+,·,&lt;)$ is called an **<font color=005493>ordered field</font>** if $(X,+,·)$ is a field, and if $&lt;$ is a relation on $X$ such that<ol>
+<li>(Trichotomy) If $x,y\in X$, then $x&lt;y,\ x=y$ or $x&gt;y$</li>
+<li>(Transitivity) If $x,y\in X$, and $x&lt;y,\ y&lt;z$, then $x&lt;z$</li>
+<li>(Addition) If $x,y,z\in X$, and $x&lt;y$, then $x+z&lt;y+z$</li>
+<li>(Multiplication by postive elements) If $x,y,z\in X$, and $x&lt;y,\ 0&lt;z$ then $xz&lt;yz$</li>
+</ol>
+</li>
+<li>We adopt the following notation:</li>
+</ul>
+<p>$$<br>X_+ :={x∈X :x≥0}\ and\ X_{++} :={x∈X :x&gt;0},<br>$$</p>
+<p>$$<br>X_− :={x∈X :x≤0}\ and\ X_{−−} :={x∈X :x&lt;0}.<br>$$</p>
+<p><strong>Absolute Value, The Triangle Inequality</strong>: </p>
+<ul>
+<li>Let $(X, +, ·, ≥)$ be an ordered field. </li>
+<li>The function $|·| : X → X$ defined by</li>
+</ul>
+<p>$$<br>|x|:=\left{\begin{matrix}x,&amp;if\ x\geq0\-x,\ &amp;if\ x &lt;0\end{matrix}\right.<br>$$</p>
+<ul>
+<li>is called the <strong>absolute value</strong> function. </li>
+<li>The following is called the <strong>triangle inequality</strong>:</li>
+</ul>
+<p>$$<br>|x+y|≤|x|+|y|\ \ \  for\ all\ x,y∈X.<br>$$</p>
+<ul>
+<li>It is valid within any ordered field.</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 2</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two nonempty sets. A function $f ∈ Y^X$ is invertible if, and only if, it is a bijection.</li>
+</ul>
+<p><strong>Proposition 3</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two nonempty sets. A function $f ∈ Y^X$ is invertible if, and only if, there exists a function $g∈X^Y$ such that $g◦f=\mbox{id}_X$ and $f◦g=\mbox{id}_Y$.</li>
+</ul>
+<p><strong>Proposition 6</strong>: </p>
+<ul>
+<li>(The Archimedean Property) For any $(a, b) ∈ \mathbb{R}_{++} × \mathbb{R}$, there exists an $m ∈\mathbb{N}$ such that $b &lt; ma$.</li>
+<li>For any $a, b ∈ \mathbb{R}$ such that $a &lt; b$, there exists a $q ∈\mathbb{Q}$ such that $a &lt; q &lt; b$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R^n}$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Elements of Set Theory</p><p><a href="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1 Preliminaries of Real Analysis/Elements-of-Set-Theory/">https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1 Preliminaries of Real Analysis/Elements-of-Set-Theory/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>hqin</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-09-09</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-01-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Real-Analysis/">Real Analysis</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Countability</span></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="hqin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hqin</p><p class="is-size-6 is-block">A Student in Economics</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/">1.2.B Linear Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:00.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/">1.2.A Abstract Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:50:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:49:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:48:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/">1.1.N A Primer on Probability Limit Theorems</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://ygnmax.github.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Guangnan Yang</span></span><span class="level-right"><span class="level-item tag">ygnmax.github.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Abstract-Algebra/"><span class="tag">Abstract Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Measure-Theoretic-Probability/"><span class="tag">Measure Theoretic Probability</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Real-Analysis/"><span class="tag">Real Analysis</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/1-Mathematics/"><span class="level-start"><span class="level-item">1 Mathematics</span></span><span class="level-end"><span class="level-item tag">46</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/"><span class="level-start"><span class="level-item">1.1 Analysis</span></span><span class="level-end"><span class="level-item tag">44</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/"><span class="level-start"><span class="level-item">1.1.A Preliminaries of Real Analysis</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces/"><span class="level-start"><span class="level-item">1.1.B Metric Spaces</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/"><span class="level-start"><span class="level-item">1.1.C Continuity</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-D-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.D Linear Spaces</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Convexity/"><span class="level-start"><span class="level-item">1.1.E Convexity</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-F-Metric-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.F Metric Linear Spaces</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Normed-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.G Normed Linear Spaces</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Probability-via-Measure-Theory/"><span class="level-start"><span class="level-item">1.1.H Probability via Measure Theory</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/"><span class="level-start"><span class="level-item">1.1.I Random Variables</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/"><span class="level-start"><span class="level-item">1.1.J Expectation via the Lebesgue Integral</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-K-Expectation-via-the-Stieltjes-Integral/"><span class="level-start"><span class="level-item">1.1.K Expectation via the Stieltjes Integral</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-L-Weak-Convergence/"><span class="level-start"><span class="level-item">1.1.L Weak Convergence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-M-Stochastic-Independence/"><span class="level-start"><span class="level-item">1.1.M Stochastic Independence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/"><span class="level-start"><span class="level-item">1.1.N A Primer on Probability Limit Theorems</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/"><span class="level-start"><span class="level-item">1.1.O Stochastic Dependence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/"><span class="level-start"><span class="level-item">1.2 Algebra</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/"><span class="level-start"><span class="level-item">1.2.A Abstract Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/"><span class="level-start"><span class="level-item">1.2.B Linear Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">hqin</a><p class="is-size-7"><span>&copy; 2020 - 2021 hqin</span>  </p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

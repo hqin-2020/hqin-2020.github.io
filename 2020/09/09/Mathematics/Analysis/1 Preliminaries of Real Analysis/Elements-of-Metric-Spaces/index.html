@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Elements of Metric Spaces - hqin</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hqin"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hqin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="A function $f$ on $\mathbb{R}$ is continuous at a given point $a ∈ \mathbb{R}$ iff the image of a point which is close to $a$ is itself close to $f(a)$.   The “geometric” way of thinking about continu"><meta property="og:type" content="blog"><meta property="og:title" content="Elements of Metric Spaces"><meta property="og:url" content="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/"><meta property="og:site_name" content="hqin"><meta property="og:description" content="A function $f$ on $\mathbb{R}$ is continuous at a given point $a ∈ \mathbb{R}$ iff the image of a point which is close to $a$ is itself close to $f(a)$.   The “geometric” way of thinking about continu"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://hqin-2020.github.io/img/og_image.png"><meta property="article:published_time" content="2020-09-09T09:42:20.000Z"><meta property="article:modified_time" content="2021-01-01T15:44:17.843Z"><meta property="article:author" content="hqin"><meta property="article:tag" content="Real Analysis"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/"},"headline":"hqin","image":["https://hqin-2020.github.io/img/og_image.png"],"datePublished":"2020-09-09T09:42:20.000Z","dateModified":"2021-01-01T15:44:17.843Z","author":{"@type":"Person","name":"hqin"},"description":"A function $f$ on $\\mathbb{R}$ is continuous at a given point $a ∈ \\mathbb{R}$ iff the image of a point which is close to $a$ is itself close to $f(a)$.   The “geometric” way of thinking about continu"}</script><link rel="canonical" href="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">hqin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-09-09T09:42:20.000Z" title="9/9/2020, 5:42:20 PM">2020-09-09</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/">1.1.A Preliminaries of Real Analysis</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Elements of Metric Spaces</h1><div class="content"><p>A function $f$ on $\mathbb{R}$ is continuous at a given point $a ∈ \mathbb{R}$ iff the image of a point which is close to $a$ is itself close to $f(a)$. </p>
+<ul>
+<li>The “geometric” way of thinking about continuity depends intrinsically on the “distance” between two points. </li>
+<li>For the continuity of functions defined on more complicated sets, the meaning of the term “close” is not transparent.</li>
+<li>Therefore, need the conception of distance between two elements of an arbitrary set</li>
+</ul>
+<p>By way of abstraction, the notion of distance function is built only on three properties. </p>
+<ul>
+<li>These properties are strong enough to introduce to an arbitrary nonempty set a geometry rich enough to build a satisfactory theory of continuous functions.</li>
+</ul>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=F27200>Metric</font></strong>: </p>
+<ul>
+<li>Let $X$ be any nonempty set. Let $X$ be any nonempty set. </li>
+<li>A function $d : X × X → \mathbb{R}_+$ that satisfies the following properties is called a <strong>distance function</strong> or a <strong><font color=F27200>metric</font></strong> on $X$: </li>
+<li>For any $x, y, z ∈ X$, <ol>
+<li>(Positive Definite) $d(x,y)=0$ iff $x=y$, </li>
+<li>(Symmetry) $d(x, y)=d(y, x)$,</li>
+<li>(Triangle Inequality) $d(x, y) ≤ d(x, z) + d(z, y)$.</li>
+</ol>
+</li>
+</ul>
+<p><strong><font color=941100>Metric Space</font></strong>: </p>
+<ul>
+<li>If $d$ is a distance function on $X$, we say that $(X, d)$ is a <strong><font color=941100>metric space</font></strong>, and refer to the elements of $X$ as points in $(X, d)$. </li>
+</ul>
+<p><strong>Metric Subspace</strong>: </p>
+<ul>
+<li>If $(X,d)$ is a metric space and $∅\neq Y ⊂X$.</li>
+<li>$(Y, d|_{Y ×Y} )$, or simply $Y$, is a <strong>metric subspace</strong> of $X$</li>
+<li>$d$ is called <strong>the inherited metric</strong>.</li>
+</ul>
+<p><strong><font color=F27200>Sequence</font></strong>: </p>
+<ul>
+<li>A <strong><font color=F27200>sequence</font></strong> in a nonempty set $X$ is a function $f : \mathbb{N }→ X$, </li>
+<li>This function is represented as $(x_1,x_2,…)$ where $x_i := f(i)$ for each $i ∈ \mathbb{N}$. </li>
+<li>The set of all sequences in $X$ is $X^{\mathbb{N}}$ or $X^∞$. </li>
+</ul>
+<p><strong>Subsequence</strong>: </p>
+<ul>
+<li>A <strong>subsequence</strong> of a sequence $f ∈ X^\mathbb{N}$ is a function of the form $f ◦σ$ where $σ :\mathbb{N} → \mathbb{N}$ is strictly increasing </li>
+<li>That is, $σ(k) &lt; σ(l)$ for any $k,l ∈ N$ with $k &lt; l$. </li>
+<li>This function is represented as the array $(x_{m_1},x_{m_2},…)$ with  $m_k = σ(k)$ and $x_{m_k} = f(m_k)$ for each $k = 1,2,….$ </li>
+</ul>
+<p><strong>Increasing, Decreasing, Monotonic</strong>: </p>
+<ul>
+<li>A real sequence $(x_m)$ is said to be <strong>increasing</strong> if $x_m ≤ x_{m+1}$ for each $m ∈\mathbb{N}$, and <strong>strictly increasing</strong> if $x_m &lt; x_{m+1}$ for each $m ∈\mathbb{N}$. </li>
+<li>It is said to be (<strong>strictly</strong>) <strong>decreasing</strong> if $(−x_m)$ is (strictly) increasing. </li>
+<li>A real sequence which is either increasing or decreasing is referred to as a <strong>monotonic</strong> sequence. </li>
+</ul>
+<p><strong><font color=FF2600>Convergent Sequence</font></strong>:</p>
+<ul>
+<li><p>A sequence $(a_n)_{n\in\mathbb{N}}$ of points is a <strong><font color=FF2600>convergent sequence</font></strong> in a metric spaces $X$ if, <u>given any</u> real number $\varepsilon &gt; 0$, there exists an integer $N_\varepsilon\in\mathbb{N}$ such that if $n \geq N_\varepsilon$, then $d(a_n, L) &lt; \varepsilon$.</p>
+</li>
+<li><p>$L$ is called the <strong>sequitial limit</strong>.</p>
+</li>
+</ul>
+<p><strong><font color=FF2600>Cauchy Sequence</font></strong>:</p>
+<ul>
+<li>A sequence $(a_n)_{n\in\mathbb{N}}$ of real numbers is a <strong><font color=FF2600>Cauchy sequence</font></strong> in a metric spaces $X$ if, <u>given any</u> real number $\varepsilon &gt; 0$, there exists an integer $N_\varepsilon\in\mathbb{N}$ such that if $n, m \geq N_\varepsilon$, then $d(a_n, a_m) &lt; \varepsilon$.</li>
+</ul>
+<blockquote>
+<p>Intuitively speaking, by a Cauchy sequence we mean a sequence the terms of which eventually get arbitrarily close to one another. </p>
+</blockquote>
+<p><strong>Subsequential Limit</strong>: </p>
+<ul>
+<li>Given any $(x_m) ∈ \mathbb{R}^∞$, we say that $x ∈ \overline{\mathbb{R}} $ is a <strong>subsequential limit</strong> of $(x_m)$ if there exists a subsequence $(x_{m_k} )$ with $x_{m_k} → x$ as $k → ∞$ </li>
+<li>That is, if, for any $ε&gt;0$, there exists a $K∈\mathbb{N} $ such that $ |x_m −x|&lt;ε$ for all $k≥K$.</li>
+</ul>
+<p><strong>Limit Supremum, Limit Infimum</strong>:</p>
+<ul>
+<li>Let $(a_k)_{k∈\mathbb{N}}$ be a bounded sequence of real numbers. </li>
+<li>For each $n ∈ \mathbb{N}$, define $b_n = \sup{a_k | k ≥ n}$, and $c_n = \inf{a_k | k ≥ n}$. </li>
+<li>We define the <strong>limit supremum</strong> of the sequence $(a_k)<em>{k∈\mathbb{N}}$ to be $\lim</em>{n→∞} b_n$, and we denote this by $\lim \sup_{k→∞} a_k$. </li>
+<li>We define the <strong>limit infimum</strong> of $(a_k)<em>{k∈\mathbb{N}}$ similarly: $\lim \inf</em>{k→∞} a_k = \lim_{n→∞} c_n$.</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Young’s Inequality</strong>:</p>
+<ul>
+<li><p>Suppose $a,b\geq 0$ in $\mathbb{R}$. </p>
+</li>
+<li><p>Suppose $p,q\in \mathbb{R}$ with $p,q&gt;1$ such that $\frac{1}{p}+\frac{1}{q} = 1$. Then<br>$$<br>ab\leq\frac{a^p}{p}+\frac{b^q}{q}<br>$$</p>
+</li>
+</ul>
+<p><strong>Theorem 3.2.7</strong>: (Hölder’s Inequality)</p>
+<ul>
+<li><p>Suppose $x = (x_1,x_2,…,x_n) ∈ \mathbb{R}^n$ and $y = (y_1,y_2,…,y_n) ∈ \mathbb{R}^n$</p>
+</li>
+<li><p>Suppose $p,q\in \mathbb{R}$ with $p,q&gt;1$ such that $\frac{1}{p}+\frac{1}{q} = 1$. Then<br>$$<br>\sum^n_{k=1}|x_k-y_k|\leq(\sum^n_{k=1}|x_k|^p)^\frac{1}{p}(\sum^n_{k=1}|y_k|^q)^\frac{1}{q}<br>$$</p>
+</li>
+</ul>
+<p><strong>Minkowski’s Inequality 1</strong>:</p>
+<ul>
+<li>For any $n ∈ \mathbb{R} $, $a_i,b_i ∈\mathbb{R}, i = 1,…,n$, and any $1 ≤ p &lt;∞$,</li>
+</ul>
+<p>$$<br>  \left(\sum^n_{i=1}|a_i +b_i|^p \right)^{\frac1{p}}\leq\left(\sum^n_{i=1}|a_i |^p \right)^{\frac1{p}}+\left(\sum^n_{i=1}|b_i|^p \right)^{\frac1{p}}<br>$$</p>
+<p><strong>Minkowski’s Inequality 2</strong>:</p>
+<ul>
+<li>For any $(x_m),(y_m) ∈ \mathbb{R}^\infty $, and $1\leq p&lt;\infty $,</li>
+</ul>
+<p>$$<br>\left(\sum^n_{i=1}|x_i +y_i|^p \right)^{\frac1{p}}\leq\left(\sum^n_{i=1}|x_i |^p \right)^{\frac1{p}}+\left(\sum^n_{i=1}|y_i|^p \right)^{\frac1{p}}<br>$$</p>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Discrete Metric Space</strong>:</p>
+<ul>
+<li><p>Let $X$ be any nonempty set and, for $x_1,x_2 ∈ X$, define<br>$$<br>d(x_1,x_2)=\left{\begin{matrix}0&amp;if\ x_1=x_2\ 1&amp; if\ x_1\neq x_2\end{matrix}\right.<br>$$</p>
+</li>
+<li><p>This is called the discrete metric, the pair $(X,d)$ is referred to as a discrete metric space. </p>
+</li>
+</ul>
+<blockquote>
+<p>It is designed to disabuse people of the notion that every metric looks like the usual metric on $\mathbb{R}^n$. </p>
+<p>The discrete metric is very handy for producing counterexamples.</p>
+</blockquote>
+<p>$(\mathbb{R}^n, d_p) =\mathbb{R}^{n,p}=\ell^p_n(\mathbb{R})$</p>
+<ul>
+<li><p>For each $1≤p≤∞$, where $d_p :\mathbb{R}^n×\mathbb{R}^n →\mathbb{R}<em>+$ is defined by<br>$$<br>d_p(x, y) := |x-y|_p=\left(\sum^n</em>{i=1}|x_i − y_i|^p \right)^{\frac1{p}}\ \ \ \ \mbox{for}\ \  1 ≤ p &lt; ∞,<br>$$</p>
+</li>
+<li><p>and</p>
+</li>
+</ul>
+<p>$$<br>d_p(x,y):=\max{|x_i −y_i|:i=1,…,n}\ \ \ \  \mbox{for}\ \ p=∞.<br>$$</p>
+<blockquote>
+<p>$(\mathbb{R}^n, d_p)$ is not a metric space for $p &lt; 1$.</p>
+</blockquote>
+<p>$(\ell^p, d_p)$:</p>
+<ul>
+<li><p>For any $1 ≤ p &lt; ∞$, we define<br>$$<br>\ell^p :={(x_m)∈\mathbb{R}^∞ : \sum^∞_{i=1} |x_i|^p &lt;∞}.<br>$$</p>
+</li>
+<li><p>and $d_p : \ell^p × \ell^p → \mathbb{R} _+$ is defined by<br>$$<br>d_p ((x_m) , (y_m)) := \left(\sum^\infty_{i=1}|x_i − y_i|^p\right)^\frac1{p} .<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>Any $\ell^p$ space is smaller than the set of all real sequences $\mathbb{R}^∞$ since the members of such a space are real sequences that are either bounded or that satisfy some form of a summability condition (that ensures that $d_p$ is real-valued). </p>
+<p>Indeed, no $d_p$ defines a distance function on the entire $\mathbb{R}^∞$.</p>
+</blockquote>
+<p>$(\ell^\infty, d_\infty)$: </p>
+<ul>
+<li><p>$\ell^∞$ is the set of all bounded real sequences,<br>$$<br>\ell^∞ :={(x_m)∈\mathbb{R}^∞ :\sup{|x_m|:m∈\mathbb{N}}&lt;∞}.<br>$$</p>
+</li>
+<li><p>and $d_∞ : \ell^∞ ×\ell^∞ → \mathbb{R} _+$ is defined by</p>
+</li>
+</ul>
+<p>$$<br>d_∞ ((x_m) , (y_m)) := |x_m − y_m|_∞=\sup{|x_m − y_m| : m ∈ \mathbb{N}}.<br>$$</p>
+<ul>
+<li>This metric is called the sup-metric on the set of all bounded real sequences.</li>
+</ul>
+<p>$(\mathbf{B}(T), d_\infty)$: </p>
+<ul>
+<li><p>Let $T$ be any nonempty set. </p>
+</li>
+<li><p>$\mathbf{B}(T)$ is the set of all bounded real functions defined on $T$,<br>$$<br>\mathbf{B}(T):={f ∈\mathbb{R}^T :\sup{|f(x)|:x∈T}&lt;∞}.<br>$$</p>
+</li>
+<li><p>and $d_∞ : \mathbf{B}(T) ×\mathbf{B}(T ) → \mathbb{R}_+$ is defined by<br>$$<br>d_∞ (f, g) := |f − g|_∞=\sup{|f (x) − g(x)| : x ∈ T }.<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>An $n$-vector or a sequence can always be thought of as special functions</p>
+<p>$\mathbf{B}({1, …, n})$ coincides with $\mathbb{R}^{n,∞}$ (for any $n ∈ \mathbb{N}$) </p>
+<p>$\mathbf{B}(\mathbb{N})$ coincides with $\ell^∞$.</p>
+</blockquote>
+<blockquote>
+<p>Every continuous function on $[a, b]$ is bounded, and hence $\mathbf{C}[a, b] ⊆\mathbf{B}[a, b]$. </p>
+<p>Consequently, we can consider $\mathbf{C}[a, b]$ as a metric subspace of $\mathbf{B}[a, b]$. </p>
+</blockquote>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><p>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</p>
+</li>
+<li><p>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</p>
+</li>
+<li><p>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R^n}$ 1;</p>
+</li>
+<li><p>Terence Tao, 2006, “Analysis”; </p>
+</li>
+<li><p>周民强，2008，“实变函数论”；</p>
+</li>
+<li><p>周民强，2007，“实变函数解题指南”；</p>
+</li>
+<li><p>周民强，2010，“数学分析习题演练”；</p>
+</li>
+<li><p>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</p>
+</li>
+<li><p>张筑生，1990，”数学分析新讲“；</p>
+</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Elements of Metric Spaces</p><p><a href="https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1 Preliminaries of Real Analysis/Elements-of-Metric-Spaces/">https://hqin-2020.github.io/2020/09/09/Mathematics/Analysis/1 Preliminaries of Real Analysis/Elements-of-Metric-Spaces/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>hqin</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-09-09</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-01-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Real-Analysis/">Real Analysis</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Real-Numbers/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Constructing Real Numbers</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/09/09/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/"><span class="level-item">Countability</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="hqin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hqin</p><p class="is-size-6 is-block">A Student in Economics</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/">1.2.B Linear Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:52:00.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/">1.2.A Abstract Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:50:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:49:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/">1.1.O Stochastic Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:48:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/">1.1.N A Primer on Probability Limit Theorems</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://ygnmax.github.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Guangnan Yang</span></span><span class="level-right"><span class="level-item tag">ygnmax.github.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Abstract-Algebra/"><span class="tag">Abstract Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Measure-Theoretic-Probability/"><span class="tag">Measure Theoretic Probability</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Real-Analysis/"><span class="tag">Real Analysis</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/1-Mathematics/"><span class="level-start"><span class="level-item">1 Mathematics</span></span><span class="level-end"><span class="level-item tag">46</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/"><span class="level-start"><span class="level-item">1.1 Analysis</span></span><span class="level-end"><span class="level-item tag">44</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/"><span class="level-start"><span class="level-item">1.1.A Preliminaries of Real Analysis</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces/"><span class="level-start"><span class="level-item">1.1.B Metric Spaces</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/"><span class="level-start"><span class="level-item">1.1.C Continuity</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-D-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.D Linear Spaces</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Convexity/"><span class="level-start"><span class="level-item">1.1.E Convexity</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-F-Metric-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.F Metric Linear Spaces</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Normed-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.G Normed Linear Spaces</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Probability-via-Measure-Theory/"><span class="level-start"><span class="level-item">1.1.H Probability via Measure Theory</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/"><span class="level-start"><span class="level-item">1.1.I Random Variables</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/"><span class="level-start"><span class="level-item">1.1.J Expectation via the Lebesgue Integral</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-K-Expectation-via-the-Stieltjes-Integral/"><span class="level-start"><span class="level-item">1.1.K Expectation via the Stieltjes Integral</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-L-Weak-Convergence/"><span class="level-start"><span class="level-item">1.1.L Weak Convergence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-M-Stochastic-Independence/"><span class="level-start"><span class="level-item">1.1.M Stochastic Independence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-N-A-Primer-on-Probability-Limit-Theorems/"><span class="level-start"><span class="level-item">1.1.N A Primer on Probability Limit Theorems</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-O-Stochastic-Dependence/"><span class="level-start"><span class="level-item">1.1.O Stochastic Dependence</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/"><span class="level-start"><span class="level-item">1.2 Algebra</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/"><span class="level-start"><span class="level-item">1.2.A Abstract Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/"><span class="level-start"><span class="level-item">1.2.B Linear Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">hqin</a><p class="is-size-7"><span>&copy; 2020 - 2021 hqin</span>  </p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
