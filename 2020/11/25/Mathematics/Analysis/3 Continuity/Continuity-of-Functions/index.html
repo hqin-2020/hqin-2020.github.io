@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Continuity of Functions | hqin</title>
+    
+    
+        <meta name="keywords" content="Continuity of Functions" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Continuity of FunctionsIf $(X, d_X )$ and $(Y, d_Y )$ are two metric spaces, and $f ∈ Y^X$ is any function, then, for any $x ∈ X$, the statement “the images of points nearby $x$ under $f$ are close to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Continuity of Functions">
+<meta property="og:url" content="https://hqin-2020.github.io/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/index.html">
+<meta property="og:site_name" content="hqin">
+<meta property="og:description" content="Continuity of FunctionsIf $(X, d_X )$ and $(Y, d_Y )$ are two metric spaces, and $f ∈ Y^X$ is any function, then, for any $x ∈ X$, the statement “the images of points nearby $x$ under $f$ are close to">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-25T09:44:39.000Z">
+<meta property="article:modified_time" content="2021-01-01T10:05:21.582Z">
+<meta property="article:author" content="hqin">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">hqin</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1 Mathematics
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1 Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.A Preliminaries of Real Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/">Elements of Set Theory</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/">Countability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/">Elements of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Real-Numbers/">Constructing Real Numbers</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Complex-Numbers/">Constructing Complex Numbers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.B Metric Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Topology-of-Metric-Spaces/">Topology of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Connectedness/">Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Separability/">Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Compactness/">Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/">Completeness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Contraction-Mapping-Theorem/">The Contraction Mapping Theorem</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Completion-of-Metric-Spaces/">The Completion of Metric Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1.C Continuity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/">Continuity of Functions</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/">Continuity and Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Separability/">Continuity and Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Compactness/">Continuity and Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/The-Space-of-Functions/">The Space of Functions</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.D Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Elements-of-Linear-Spaces/">Elements of Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/">Linear Operators and Functionals</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Algebra/">Linear Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.E Convexity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/5%20Convexity/Convex-Sets/">Convex Sets</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.F Metric Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/6%20Metric%20Linear%20Spaces/Elements-of-Metric-Linear-Spaces/">Elements of Metric Linear Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.G Normed Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Elements-of-Normed-Linear-Spaces/">Elements of Normed Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Banach-Spaces/">Banach Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.H Probability via Measure Theory
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Measurable-Spaces/">Measurable Spaces</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Elements-of-Probability-Theory/">Elements of Probability Theory</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">Constructing Probability Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.I Random Variables
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">The Distribution of a Random Variable</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.J Expectation via the Lebesgue Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/">The Expectation Functional of Simple Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/">The Expectation Functional of Arbitrary Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/">Elementary Probability Inequalities</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Spaces-of-Integrable-Random-Variables/">Spaces of Integrable Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.K Expectation via the Stieltjes Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/">The Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Expectation-as-a-Stieltjes-Integral/">Expectation as a Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Integration-By-Parts/">Integration By Parts</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.L Weak Convergence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Weak-Convergence/">Weak Convergence</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Convergence-of-Random-Variables/">Convergence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.M Stochastic Independence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/">Independence of Collection of Events</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/">Independence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.N A Primer on Probability Limit Theorems
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Preliminaries-of-Probability-Limit-Theorems/">Preliminaries of Probability Limit Theorems</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.O Stochastic Dependence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2 Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.A Abstract Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.B Linear Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Mathematics/Analysis/3 Continuity/Continuity-of-Functions" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/1-Mathematics/">1 Mathematics</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Continuity/">1.1.C Continuity</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/">
+            <time datetime="2020-11-25T09:44:39.000Z" itemprop="datePublished">2020-11-25</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/Mathematics/Analysis/3 Continuity/Continuity-of-Functions.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/Mathematics/Analysis/3 Continuity/Continuity-of-Functions.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/Mathematics/Analysis/3 Continuity/Continuity-of-Functions.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Continuity of Functions
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="Continuity-of-Functions"><a href="#Continuity-of-Functions" class="headerlink" title="Continuity of Functions"></a>Continuity of Functions</h1><p>If $(X, d_X )$ and $(Y, d_Y )$ are two metric spaces, and $f ∈ Y^X$ is any function, then, for any $x ∈ X$, the statement “the images of points nearby $x$ under $f$ are close to $f(x)$” can be formalized as follows: </p>
+<p>However small an $ε &gt; 0$ one picks, if $y$ is a point in $X$ which is sufficiently close to $x$ (closer than some $δ &gt; 0$), then the distance between $f(x)$ and $f(y)$ is bound to be smaller than $ε$. </p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong><font color=531B93> Countinuous</font></strong>:</p>
+<ul>
+<li><p>Let $(X, d)$ and $(X’, d’)$ be metric spaces. </p>
+</li>
+<li><p>A function $f:X\to X’$ is <strong><font color=531B93>continuous</font></strong> <u>at the point</u> $x_0\in X$ if, for all $\varepsilon&gt;0$, there exists a $\delta&gt;0$ such that if $x \in X $ with $d(x,x_0) &lt;\delta$, then $d’(f(x),f(x_0))&lt;\varepsilon$.</p>
+</li>
+<li><p>A function $f:X\to X’$ is <strong><font color=531B93>continuous</font></strong> at the point $x_0\in X$ if, <u>given any sequence</u> $(x_n)_{n\in\mathbb{N}}$ in $X$, if $(x_n)_{n\in\mathbb{N}}$ converges to $x_0$, then $\lim_{n\to\infty}f(x_n)=f(x_0)$.</p>
+</li>
+<li><p>$f$ is <strong><font color=531B93>continuous</font></strong> <u>at $x$</u> if, for any $ε &gt; 0$, there exists a $δ &gt; 0$ such that<br>$$<br>f(N_{δ,X}(x)) ⊆ N_{ε,X’} (f(x)).<br>$$</p>
+</li>
+<li><p>For any nonempty $S ⊆ X$, we say that $f $ is <strong><font color=531B93>continuous</font></strong> on $S$, if it is continuous at every $x ∈ S$. </p>
+</li>
+</ul>
+<blockquote>
+<p>Above three definitions are equivalent</p>
+</blockquote>
+<blockquote>
+<p>The continuity of a function that maps a metric space to another depends intrinsically on the involved metrics, because the continuity of a function is conditional on the distance functions used to metrize the domain and codomain of the function.</p>
+</blockquote>
+<p><strong>Uniformly Continuous</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two metric spaces. </li>
+<li>A function $f ∈ Y^X$ is <strong>uniformly continuous</strong> if, for all $ε &gt; 0$, there exists a $δ &gt; 0$ such that if $x,y ∈ X$ with $d(x,y)&lt;\delta$, then $d’(f(x),f(y))&lt;\varepsilon$.</li>
+<li>A function $f ∈ Y^X$ is <strong>uniformly continuous</strong> if, for all $ε &gt; 0$, there exists a $δ &gt; 0$ such that $f(N_{δ,X}(x)) ⊆ N_{ε,Y} (f(x))$ <u>for all</u> $x ∈ X$.</li>
+</ul>
+<blockquote>
+<p>The notion of continuity is an inherently local one.</p>
+<p>Uniform continuity says something about the behavior of $f$ on its entire domain, not only in certain neighborhoods of the points in its domain. </p>
+</blockquote>
+<blockquote>
+<p>Obviously, a uniformly continuous function is continuous. On the other hand, a continuous function need not be uniformly continuous. </p>
+</blockquote>
+<p><strong>Homeomorphism</strong>: </p>
+<ul>
+<li>If $f ∈ Y^X$ is a bijection, and both $f$ and $f^{−1}$ are continuous, then it is called a **homeomorphism **between $X$ and $Y$.</li>
+</ul>
+<blockquote>
+<p>If there exists such a bijection, then we say that $X$ and $Y$ are homeomorphic </p>
+</blockquote>
+<blockquote>
+<p>Two homeomorphic spaces are indistinguishable from each other insofar as their neighborhood structures are concerned. </p>
+<p>If $X$ and $ Y $ are homeomorphic, then corresponding to each open set $O$ in $X$, there is an open set $f(O)$ in $Y $, and conversely, corresponding to each open set $U$ in $Y$, there exists an open set $f^{−1}(U)$ in $X$. </p>
+<p>Therefore, loosely speaking, $Y$ possesses any property that $X$ possesses so long as this property is defined in terms of open sets. </p>
+<p>Such a property is called a topological property.</p>
+</blockquote>
+<blockquote>
+<p>Formally, a property for metric spaces is referred to as a topological property if it is invariant under any homeomorphism, that is, whenever this property is true for $X$, it must also be true for any other metric space that is homeomorphic to $X$.</p>
+<p>Connectedness is a topological property. The same goes for separability and compactness as well.</p>
+<p>Neither completeness nor boundedness are preserved by a homeomorphism — these are not topological properties.</p>
+<p>Thus, there are important senses in which two homeomorphic metric spaces may be of different character.</p>
+</blockquote>
+<p><strong>Isometry</strong>: </p>
+<ul>
+<li>$f ∈ Y^X$ is an <strong><font color=941100>isometry</font></strong> if $f$ is a homeomorphism that preserves the distance between any two points, that is, if<br>$$<br>d_Y (f(x),f(y)) = d(x,y)\ \ \ \mbox{for all} \ \ \ \ x,y ∈ X,<br>$$</li>
+</ul>
+<blockquote>
+<p>Then we may conclude that the spaces $(X, d)$ and $(Y, d_Y )$ are indistinguishable as metric spaces — one is merely a relabelling of the other. </p>
+<p>In this case, $X$ and $Y$ are said to be isometric.</p>
+</blockquote>
+<p><strong>Hölder Continuous</strong></p>
+<ul>
+<li>For any $α &gt; 0$, a function $f ∈ Y^X$ is said to be $α$-Hölder continuous, if there exists a $K &gt; 0$ such that</li>
+</ul>
+<p>$$<br>d_Y (f(x),f(y)) ≤ Kd(x,y)^α \ \ \ \ \ \mbox{for all}\ \ \ \  x,y ∈ X.<br>$$</p>
+<ul>
+<li>It is called **Hölder continuous **if it is $α$-Hölder continuous for some $α &gt; 0$.</li>
+</ul>
+<p><strong>Lipschitz Continuous, Lipschitz Constant</strong></p>
+<ul>
+<li><p><strong>Lipschitz continuous</strong> is $\alpha$-Hölder continuous with $\alpha=1$, that is, if there exists a $K &gt; 0$ such that<br>$$<br>d_Y (f(x),f(y)) ≤ Kd(x,y)\ \ \ \ \ \mbox{for all}\ \ \ \  x,y ∈ X.<br>$$</p>
+</li>
+<li><p>The smallest such $K$ is called the Lipschitz constant of $f$. </p>
+</li>
+</ul>
+<p><strong>Contraction, Nonexpansive</strong>:</p>
+<ul>
+<li><p><strong>Contraction</strong> (or a contractive map) is Lipschitz Continuous with $0 &lt; K &lt; 1$ , that is, if there exists a $0&lt;K&lt;1$ such that<br>$$<br>d_Y (f(x),f(y)) ≤ Kd(x,y)\ \ \ \ \ \ \mbox{for all}\ \ \ \ x,y ∈ X,<br>$$</p>
+</li>
+<li><p>and <strong>nonexpansive</strong>if<br>$$<br>d_Y (f(x),f(y)) ≤ d(x,y)\ \ \ \ \  \mbox{for all}\ \ \ \  x,y ∈ X.<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>The latter two definitions generalize the corresponding contraction which applied only to self-maps.</p>
+</blockquote>
+<blockquote>
+<p>For a self-map$f$ on $\mathbb{R}$, $f$ is Lipschitz continuous if its derivative is bounded, </p>
+<p>It is nonexpansive if $\sup{|f’(t)| : t ∈ \mathbb{R} } ≤ 1$</p>
+<p>It is a contraction if $\sup{|f’(t)| : t ∈ \mathbb{R} } ≤ K &lt; 1$ for some real number $K$.<br>$$<br>\begin{aligned}<br>\mbox{contraction}&amp;\Rightarrow\mbox{nonexpansiveness}<br>\Rightarrow\mbox{Lipschitz continuity}<br>\Rightarrow\mbox{Hölder continuity}<br>\Rightarrow\mbox{uniform continuity}<br>\Rightarrow\mbox{continuity}<br>\end{aligned}<br>$$</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Theorem 3.5.5, Proposition 1</strong>: </p>
+<ul>
+<li>For any metric spaces $X$ and $Y$ , and $ f ∈ Y^X$ , the following statements are equivalent:<ol>
+<li>$f$ is continuous;</li>
+<li>For every open subset $O$ of $Y$, the set $f^{−1}(O)$ is open in $X$;</li>
+<li>For every closed subset $S$ of $Y$, the set $f^{−1}(S)$ is closed in $X$;</li>
+<li>For any $x∈X$ and $(x_m )∈X ,x^m→x$ implies $f(x^m )→f(x)$.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Corollary 3.5.6</strong>: </p>
+<ul>
+<li>Suppose that $(X,d),\ (X’,d’),$ and $(X’’,d’’)$ are metric spaces, and $f : X → X’$ and $g:X’→X’’$ are continuous. Then $g◦f:X→X’’$ is continuous.</li>
+</ul>
+<p><strong>Theorem 3.5.16</strong>: </p>
+<ul>
+<li>Suppose $1 ≤ p &lt; q ≤ ∞$. Then the identity map $I(x) = x$ from $\ell^p_n(\mathbb{R})$ to $\ell^q_n(\mathbb{R})$ is a homeomorphism.</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example</strong>: </p>
+<ul>
+<li>Given two metric spaces $X$ and $Y$, if $f ∈ Y^X$ is continuous and $S$ is a metric subspace of $X$, then $f|_S$ is a continuous function.</li>
+</ul>
+<p><strong>Example 1</strong>:</p>
+<ul>
+<li>The identity function $id_X$ on a metric space $X$ is continuous</li>
+<li> A constant function on any metric space is continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Any function defined on a discrete space is continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Any polynomial function on $\mathbb{R}$ with the usual metric is continuous.</li>
+<li>For every $n ∈ \mathbb{N}$, any concave or convex function defined on an open subset of $\mathbb{R}^n$ is continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>The function $\varphi : \ell^∞ → \mathbb{R}_+$ defined by $\varphi((x_m)) := \sup{|x_m| : m ∈ \mathbb{N}}$ is continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>The function $L ∈ \mathbb{R}^{\mathbf{C}[0,1]}$ defined by $L(f):=\int^1_0f(t)dt$ is continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>The continuous function $f : \mathbb{R}_{++} →\mathbb{R}_{++} $ defined by $f(x) := \frac{1}{x}$ is continuous but not uniform continuous.</li>
+<li>For the continuous function $f : \mathbb{R} →\mathbb{R} $. If $f’(x)$ exists, and it is bounded, then $f(x)$ is uniform continuous.</li>
+<li>$f(x) = \sin(x)$ is uniformly continuous on $\mathbb{R}$.</li>
+<li>A polynomial function $p(x)$ on $\mathbb{R}$ is uniformly continuous iff $\deg(p(x)) &lt; 2$.</li>
+<li>Any linear map from $\mathbb{R}^n$ to $\mathbb{R}^m$ is uniformly continuous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>$[0,1)$ is homeomorphic to $\mathbb{R}_+$. $x \mapsto \frac{x}{1-x}$ is a homeomorphism between $[0, 1)$ and $\mathbb{R}^+$.</li>
+<li>$\mathbb{R} $ and $(\mathbb{R}, d’)$ are homeomorphic, where $d’(x, y) :=\frac{|x−y|}{1+|x-y|} $. The identity map is a homeomorphism.</li>
+<li> $\mathbb{R}^{n,p}$ and $\mathbb{R}^{n,q}$ are homeomorphic for any $n ∈ \mathbb{N} $ and $1 ≤ p, q ≤ ∞$.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>$\overline{\mathbb{R}}$ and $[−1, 1]$ are isometric </li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>$f(x)=\frac{1}{2}(x+\frac{2}{x})$, $x\in[1,\infty)$ is a contraction. <ul>
+<li>Consider its derivative, which is always less than 1.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.7.3</strong>:</p>
+<ul>
+<li>Let $f : \mathbb{R} → \mathbb{R}$ be a polynomial function. $f$ is a contraction if $0&lt;|a_1|&lt;1$.<ul>
+<li>Consider the derivative, which is always less than 1 if $0&lt;|a_1|&lt;1$.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise 3.7.2, Exercise 3.7.9</strong>:</p>
+<ul>
+<li>A contraction mapping is continuous.<ul>
+<li>Proof:</li>
+<li>Let $X$ be a metric space and $f$ a map from $X$ to $X$ and  $d(f(x),f(y)) ≤ αd(x,y)$, $x,y\in X$, $0 &lt; α &lt; 1$.</li>
+<li>For any $\varepsilon&gt;0$, for any $x_0,x\in X$, let $\delta=\frac{\varepsilon}{\alpha}$, if $d(x_0,x)&lt;\delta$, then $d(f(x_0),f(x))\leq\alpha d(x_0,x)&lt;\alpha\frac{\varepsilon}{\alpha}=\varepsilon$.</li>
+<li>Thus any contraction mapping is continuous.</li>
+</ul>
+</li>
+<li>A Lipschitz continuious function is continuous.<ul>
+<li>Proof:</li>
+<li>Let $X$ be a metric space and $f$ a map from $X$ to $X$ and  $d(f(x),f(y)) ≤ Cd(x,y)$, $x,y\in X$.</li>
+<li>For any $\varepsilon&gt;0$, for any $x_0,x\in X$, let $\delta=\frac{\varepsilon}{C}$, if $d(x_0,x)&lt;\delta$, then $d(f(x_0),f(x))\leq C d(x_0,x)&lt;C\frac{\varepsilon}{C}=\varepsilon$.</li>
+<li>Thus any Lipschitz continuous function is continuous.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, 2005, “Real Analysis with Economic Applications”;</li>
+<li>John Boller and Paul J. Sally, Jr., “A Textbook for Advanced Calculus”;</li>
+<li>Lecture notes and discussions at Piazza, Math 20300 51, Autumn 2020, Analysis in $\mathbb{R}^n$ 1;</li>
+<li>Terence Tao, 2006, “Analysis”; </li>
+<li>周民强，2008，“实变函数论”；</li>
+<li>周民强，2007，“实变函数解题指南”；</li>
+<li>周民强，2010，“数学分析习题演练”；</li>
+<li>夏道行，吴卓人，严绍宗，舒五昌，2010，“实变函数论与泛函分析“；</li>
+<li>张筑生，1990，”数学分析新讲“；</li>
+</ol>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Continuity and Connectedness
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Contraction-Mapping-Theorem/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">The Contraction Mapping Theorem</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            hqin &copy; 2021 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

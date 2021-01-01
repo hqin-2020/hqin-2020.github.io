@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>The Expectation Functional of Arbitrary Random Variables | hqin</title>
+    
+    
+        <meta name="keywords" content="The Expectation Functional of Arbitrary Random Variables" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="The Expectation Functional of Arbitrary Random VariablesDefinitionsExpectation of Arbitrary Random Variables:  Let $x$ be an $\overline{\mathbb{R}}$-valued random variable on a probability space $(X,\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Expectation Functional of Arbitrary Random Variables">
+<meta property="og:url" content="https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/index.html">
+<meta property="og:site_name" content="hqin">
+<meta property="og:description" content="The Expectation Functional of Arbitrary Random VariablesDefinitionsExpectation of Arbitrary Random Variables:  Let $x$ be an $\overline{\mathbb{R}}$-valued random variable on a probability space $(X,\">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-15T13:53:59.000Z">
+<meta property="article:modified_time" content="2021-01-01T10:07:39.410Z">
+<meta property="article:author" content="hqin">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">hqin</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1 Mathematics
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1 Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.A Preliminaries of Real Analysis
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Set-Theory/">Elements of Set Theory</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Countability/">Countability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Elements-of-Metric-Spaces/">Elements of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Real-Numbers/">Constructing Real Numbers</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/1%20Preliminaries%20of%20Real%20Analysis/Constructing-Complex-Numbers/">Constructing Complex Numbers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.B Metric Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Topology-of-Metric-Spaces/">Topology of Metric Spaces</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Connectedness/">Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Separability/">Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Compactness/">Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/Completeness/">Completeness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Contraction-Mapping-Theorem/">The Contraction Mapping Theorem</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/2%20Metric%20Spaces/The-Completion-of-Metric-Spaces/">The Completion of Metric Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.C Continuity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-of-Functions/">Continuity of Functions</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Connectedness/">Continuity and Connectedness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Separability/">Continuity and Separability</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/Continuity-and-Compactness/">Continuity and Compactness</a></li>  <li class="file"><a href="/2020/11/25/Mathematics/Analysis/3%20Continuity/The-Space-of-Functions/">The Space of Functions</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.D Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Elements-of-Linear-Spaces/">Elements of Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Operators-and-Functionals/">Linear Operators and Functionals</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/4%20Linear%20Spaces/Linear-Algebra/">Linear Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.E Convexity
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/5%20Convexity/Convex-Sets/">Convex Sets</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.F Metric Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/6%20Metric%20Linear%20Spaces/Elements-of-Metric-Linear-Spaces/">Elements of Metric Linear Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.G Normed Linear Spaces
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Elements-of-Normed-Linear-Spaces/">Elements of Normed Linear Spaces</a></li>  <li class="file"><a href="/2020/12/06/Mathematics/Analysis/7%20Normed%20Linear%20Spaces/Banach-Spaces/">Banach Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.H Probability via Measure Theory
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Measurable-Spaces/">Measurable Spaces</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Elements-of-Probability-Theory/">Elements of Probability Theory</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">Constructing Probability Spaces</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.I Random Variables
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">The Distribution of a Random Variable</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            1.1.J Expectation via the Lebesgue Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/">The Expectation Functional of Simple Random Variables</a></li>  <li class="file active"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/">The Expectation Functional of Arbitrary Random Variables</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/">Elementary Probability Inequalities</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Spaces-of-Integrable-Random-Variables/">Spaces of Integrable Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.K Expectation via the Stieltjes Integral
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/">The Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Expectation-as-a-Stieltjes-Integral/">Expectation as a Stieltjes Integral</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Integration-By-Parts/">Integration By Parts</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.L Weak Convergence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Weak-Convergence/">Weak Convergence</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Convergence-of-Random-Variables/">Convergence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.M Stochastic Independence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/">Independence of Collection of Events</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/">Independence of Random Variables</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.N A Primer on Probability Limit Theorems
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Preliminaries-of-Probability-Limit-Theorems/">Preliminaries of Probability Limit Theorems</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.1.O Stochastic Dependence
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></li>  <li class="file"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2 Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.A Abstract Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            1.2.B Linear Algebra
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/12/15/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Mathematics/Analysis/10 Expectation via the Lebesgue Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/1-Mathematics/">1 Mathematics</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/">1.1.J Expectation via the Lebesgue Integral</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/">
+            <time datetime="2020-12-15T13:53:59.000Z" itemprop="datePublished">2020-12-15</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/Mathematics/Analysis/10 Expectation via the Lebesgue Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/Mathematics/Analysis/10 Expectation via the Lebesgue Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/Mathematics/Analysis/10 Expectation via the Lebesgue Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            The Expectation Functional of Arbitrary Random Variables
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="The-Expectation-Functional-of-Arbitrary-Random-Variables"><a href="#The-Expectation-Functional-of-Arbitrary-Random-Variables" class="headerlink" title="The Expectation Functional of Arbitrary Random Variables"></a>The Expectation Functional of Arbitrary Random Variables</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Expectation of Arbitrary Random Variables</strong>:</p>
+<ul>
+<li>Let $x$ be an $\overline{\mathbb{R}}$-valued random variable on a probability space $(X,\Sigma, \mathbf{p})$. </li>
+<li>Note that $x^+ := \max{x, 0}$ and $x^- := \max{-x,0}$ are $[0, \infty]$-valued random variables on $(X,\Sigma,\mathbf{p})$ with $x = x^++  x^-$ </li>
+<li>Define the <strong>expectation</strong> of $x$ as the (extended real) number $\mathbb{E}(x) := \mathbb{E}(x^+) -\mathbb{E}(x^-)$, provided that $\mathbb{E}(x^+)$ and $\mathbb{E}(x^-)$ are not both infinite.<ul>
+<li>If $\mathbb{E} (x^+) = \infty = \mathbb{E}(x^-)$, we say that the expectation of $x$ does not exist.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>This definition generalizes the one we gave for the expectation of $[0,\infty]$-valued random variables.</p>
+</blockquote>
+<blockquote>
+<p>In real analysis, $\mathbb{E}(x)$ is called the Lebesgue integral of $x$ (with respect to $\mathbf{p}$), and is denoted by $\int_Xxd\mathbf{p}$.</p>
+</blockquote>
+<p><strong>Variance of Arbitrary Random Variables</strong>:</p>
+<ul>
+<li><p>In turn, the <strong>variance</strong> of an arbitrary random variable $x$ on $(X,\Sigma,\mathbf{p})$ is the number<br>$$<br>\mathbb{V}(x) := \mathbb{E}((x - \mathbb{E}(x))^2)<br>$$</p>
+</li>
+<li><p>where $(x-\mathbb{E}(x))^2$ is the arbitrary random variable $\omega\mapsto (x(\omega) -\mathbb{E}(x))^2$ on $(X,\Sigma, \mathbf{p})$.</p>
+</li>
+</ul>
+<blockquote>
+<p>However, it is often more convenient to use the alternate formula<br>$$<br>\mathbb{V}(x) := \mathbb{E}(x^2) - \mathbb{E}(x)^2<br>$$</p>
+</blockquote>
+<p><strong>Integrable</strong>:</p>
+<ul>
+<li>$x$ is <strong>integrable</strong> (with respect to $\mathbf{p}$) if $\mathbb{E}(|x|)=\mathbb{E}(x^+)+\mathbb{E}(x^-)&lt;\infty$ .</li>
+</ul>
+<blockquote>
+<p>$\mathbb{E}(x)$ exists iff $\min{\mathbb{E}(x^+), \mathbb{E}(x^-)} &lt; \infty$, iff either $\mathbb{E}(x^+)$ or $\mathbb{E}(x^-)$ is finite</p>
+<p>$x$ is integrable iff $\max{\mathbb{E}(x^+), \mathbb{E}(x^-)} &lt; \infty$, iff both $\mathbb{E}(x^+)$ and $\mathbb{E}(x^-)$ is finite</p>
+<p>$x$ is integrable iff $\mathbb{E}(x)$ exists and it is finite.</p>
+</blockquote>
+<blockquote>
+<p>Integrability of a random variable means simply that the expectation of this random variable is a real number.</p>
+</blockquote>
+<p><strong>Lebesgue Integration of Aribitrary Maps</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\mu)$ be a measure space. </p>
+</li>
+<li><p>$f : X\to \overline{\mathbb{R}}$ a -measurable map. The <strong>Lebesgue integral of $f$ (with respect to $\mu$</strong>) is defined as the (extended real) number<br>$$<br>\int_Xfdu:=\int_Xf^+d\mu-\int_Xf^-d\mu<br>$$</p>
+</li>
+<li><p>provided that the right-hand side of this expression is not of the $\infty-\infty$ form. </p>
+<ul>
+<li>If the latter condition is not met, we say that the Lebesgue integral of $f$ (with respect to $\mu$) does not exist.</li>
+</ul>
+</li>
+<li><p>For any $S\in\Sigma$, we also define<br>$$<br>\int_Sfd\mu:=\int_X\mathbf{1}_Sd\mu,<br>$$</p>
+</li>
+<li><p>provided that the right-hand side of this expression exists. </p>
+</li>
+</ul>
+<p><strong>Integrable</strong>:</p>
+<ul>
+<li>$f$ is <strong>integrable</strong> (with respect to $\mu$) if $\int_X |f|d\mu &lt; \infty$.</li>
+</ul>
+<p><strong>Uniform Integrable</strong>:</p>
+<ul>
+<li><p>A collection $\mathcal{X}$ of random variables on a probability space $(X,\Sigma,\mathbf{p})$ is said to be <strong>uniformly integrable</strong> (with respect to $\mathbf{p}$) if<br>$$<br>\lim_{ a\to\infty}\sup\left{ \int_{ { \vert x\vert&gt;a} }\vert x\vert d\mathbf{p}:x\in\mathcal{X} \right }=0<br>$$</p>
+</li>
+<li><p>that is, for every $\varepsilon &gt; 0$, there is a real number $a &gt; 0$ such that<br>$$<br>\int_{ {|x|&gt;a } }|x|d\mathbf{p}&lt;\varepsilon \ \ \ \ \ \mbox{ for each }x\in\mathcal{X}<br>$$</p>
+</li>
+<li><p>In turn, a sequence $(x_m)$ of random variables on $(X,\Sigma,\mathbf{p})$ is called uniformly integrable if ${x_1, x_2,\dots}$ is <strong>uniformly integrable</strong></p>
+</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 2.1</strong>: </p>
+<p>For any $\mathbb{R}$-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$ such that $\mathbb{E}(x)$ exists, we have $|\mathbb{E}(x)| \leq \mathbb{E}(|x|)$</p>
+<p><strong>Proposition 2.2</strong>:</p>
+<ul>
+<li>Let $x$ and $y$ be $\overline{\mathbb{R}}$-valued random variables on a probability space $(X,\Sigma,\mathbf{p})$.</li>
+<li>For any real number $a$, we have $\mathbb{E}(ax) = a\mathbb{E}(x)$, provided that $\mathbb{E}(x)$ exists.</li>
+<li>Furthermore, $\mathbb{E}(x + y) = \mathbb{E}(x) + \mathbb{E}(y)$, provided that $x + y\in \overline{\mathbb{R}}^X$, $\mathbb{E}(x)$ exists, and $y$ is integrable.</li>
+</ul>
+<blockquote>
+<p>The set of all integrable random variables on a probability space $(X,\Sigma,\mathbf{p})$ is denoted by $\mathcal{L}^1(X,\Sigma,\mathbf{p})$, that is,<br>$$<br>\mathcal{L}^1(X,\Sigma,\mathbf{p}):=\left{x\in\mathcal{L}^0(X,\Sigma,\mathbf{p}):\int_X|x|d\mathbf{p}\right}<br>$$<br>$\mathcal{L}^1(X,\Sigma,\mathbf{p})$ is a linear subspace of $\mathcal{L}^0(X,\Sigma)$.</p>
+<p>The map $\mathbb{E}$ acts as a linear functional on this linear space.</p>
+</blockquote>
+<p><strong>Proposition 2.3</strong>:</p>
+<ul>
+<li><p>Let $x$ and $y$ be $\overline{\mathbb{R}}$-valued random variables on a probability space $(X,\Sigma,\mathbf{p})$.</p>
+</li>
+<li><p>If both $\mathbb{E}(x)$ and $\mathbb{E}(y)$ exist, then<br>$$<br>x\geq_{a.s.}y\ \ \ \ \mbox{ implies }\ \ \ \ \mathbb{E}(x) \geq \mathbb{E}(y)<br>$$</p>
+</li>
+</ul>
+<p><strong>Corollary 2.4</strong>:</p>
+<ul>
+<li><p>Let $x$ and $y$ be $\overline{\mathbb{R}}$-valued random variables on a probability space $(X,\Sigma,\mathbf{p})$.</p>
+</li>
+<li><p>If both $\mathbb{E}(x)$ and $\mathbb{E}(y)$ exist, then<br>$$<br>x=_{a.s.}y\ \ \ \ \mbox{ implies }\ \ \ \ \mathbb{E}(x) = \mathbb{E}(y)<br>$$</p>
+</li>
+</ul>
+<p><strong>The Monotone Convergence Theorem 2</strong>:</p>
+<ul>
+<li>Let $x, x_1,x_2,\dots$ be $\overline{\mathbb{R}}$-valued random variables on a probability space $(X,\Sigma, \mathbf{p})$. Then,<br>$$<br>\mathbb{E}(x_1)&gt;-\infty,\ \ \ x_m \uparrow_{a.s.} x\ \ \ \ \ \mbox{ implies }\ \ \ \ \ \ \mathbb{E}(x_m)\uparrow \mathbb{E}(x)<br>$$</li>
+</ul>
+<p><strong>The Change of Variables Formula</strong>:</p>
+<ul>
+<li><p>Let $Y$ be a metric space, $x$ a $Y$-valued random variable on a probability space $(X,\Sigma,\mathbf{p})$, and $\varphi$ an $\overline{\mathbb{R}}$-valued random variable on $(Y,\mathcal{B}(Y ),\mathbf{p}_x)$. </p>
+</li>
+<li><p>If either $\mathbb{E}_{\mathbf{p}_x} (\varphi)$ or $\mathbb{E}_\mathbf{p}(\varphi\circ x)$ exists, then<br>$$<br>\int_Y\varphi d\mathbf{p}_x=\int_X(\varphi\circ x)d\mathbf{p}<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>The Change of Variables Formula remains valid in the context of any measure space. </p>
+</blockquote>
+<blockquote>
+<p>Note that when $Y = \mathbb{R} $, the distribution function induced by $\mathbf {p}_x $is the distribution function of $x$, and denoted by $F_x$.</p>
+<p>And the distribution induced by $F_x$ is the Lebesgue-Stieltjes probability measure actually, that is $\mathbf{p}_x=\ell_x$</p>
+</blockquote>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example 2.5</strong>:</p>
+<ul>
+<li><p>Let $x$ be a nonnegative random variable on a probability space $\mathbb(X,\Sigma,\mathbf{p})$ such that $x(X)$ is countable.</p>
+</li>
+<li><p>The Change of Variables Formula says that the expectation of $x$ equals the Lebesgue integral of the identity function on $x(X)$ with respect to the probability measure $\mathbf{p}_x$.</p>
+</li>
+<li><p>Therefore,<br>$$<br>\mathbb{E}(x)=\sum_{a\in x(X)}a\mathbf{p}{x=a}<br>$$</p>
+</li>
+</ul>
+<p><strong>Example 2.6, Geometric distribution</strong>:</p>
+<ul>
+<li><p>Take any $p\in (0,1)$ and let $x$ be an $\mathbb{N}$-valued random variable on a probability space $(X,\Sigma, \mathbf{p})$ such that $\mathbf{p}{x = i} = p(1-p)^{i-1}$ for each $i\in\mathbb{N}$. </p>
+</li>
+<li><p>Such a random variable is said to have a <strong>geometric distribution</strong> with parameter $p$.<br>$$<br>\mathbb{E}(x)=p+2p(1-p)+3p(1-p)^2 +\cdots=\frac{p}{1-p}\sum^\infty_{i=1}i(1-p)^i=\frac{p}{1-p}\frac{1-p}{1-(1-p)^2}=\frac{1}p<br>$$</p>
+</li>
+</ul>
+<p><strong>Example 2.7, Poisson distribution</strong>:</p>
+<ul>
+<li><p>Given a positive real number  $\lambda&gt; 0$, a $\mathbb{Z}_+$-valued random variable $x$ on a probability space $(X,\Sigma, \mathbf{p})$ such that<br>$$<br>\mathbf{p}{x=i}=\frac{e^{-\lambda}\lambda^i}{i!},\ \ \ i=0,1,\dots<br>$$</p>
+</li>
+<li><p>is said to have a Poisson distribution with parameter $\lambda$.</p>
+</li>
+<li><p>Since $e^\lambda=1+\lambda+\frac{\lambda^2}{2}+\frac{\lambda^3}{3!}+\cdots$</p>
+</li>
+<li><p>We have $\mathbb{E}(x)=\lambda$, $\mathbb{E}(x^2)=\lambda+\lambda^2$ and $\mathbb{V}(x)=\lambda$.</p>
+</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li><p>Consider the experiment of throwing a single die, that is, the probability space $(X, 2^X,\mathbf{p})$ where $X := [6]$ and $\mathbf{p}(S) := \frac{|S|}{6} $ for all $S\in 2^X$.</p>
+</li>
+<li><p>Consider the random variable $x\in[2]^X$ which is defined as<br>$$<br>x(\omega):=\left{\begin{matrix}1,&amp;\mbox{ if }\omega\mbox{ is even}\2, &amp;\mbox{ if }\omega\mbox{ is odd}\end{matrix}\right.<br>$$</p>
+</li>
+<li><p>In addition, define $\varphi : [2] \to \mathbb{R}$ by $\varphi(t) := t^2$, and observe that $\varphi$ is a ${1,4}$-valued random variable on $([2], 2^{[2]},\mathbf{p}_x)$.</p>
+</li>
+<li><p>Clearly, we have $\mathbb{E}_{\mathbf{p}_x} (\varphi) = (1) \frac{1}{2} + (4) \frac{1}{2} = \frac{5}{2}$.</p>
+</li>
+<li><p>On the other hand, $\varphi\circ x$ is a ${1,4}$-valued random variable on $(X,2^X,\mathbf{p})$ that takes value $1$ if the outcome of the experiment is even and $4$ if the outcome is odd. </p>
+</li>
+<li><p>Thus, we have $\mathbb{E}_{\mathbf{p}} (\varphi\circ x) = (1) \frac{1}{2} + (4) \frac{1}{2} = \frac{5}{2}$.</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Elementary-Probability-Inequalities/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Elementary Probability Inequalities
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">The Expectation Functional of Simple Random Variables</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            hqin &copy; 2021 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
