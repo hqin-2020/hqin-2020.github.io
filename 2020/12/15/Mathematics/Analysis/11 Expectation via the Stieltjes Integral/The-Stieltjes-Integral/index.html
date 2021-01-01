@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            The Stieltjes Integral | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/">The Stieltjes Integral</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-K-Expectation-via-the-Stieltjes-Integral/">1.1.K Expectation via the Stieltjes Integral</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=The Stieltjes Integral&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=The Stieltjes Integral&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/&title=The Stieltjes Integral" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=The Stieltjes Integral&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/&text=The Stieltjes Integral" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="The-Stieltjes-Integral"><a href="#The-Stieltjes-Integral" class="headerlink" title="The Stieltjes Integral"></a>The Stieltjes Integral</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Dissection, Subinterval, Division Point, Mesh</strong>: </p>
+<ul>
+<li><p>For two arbitrarily fixed real numbers $a$ and $b$ with $a &lt; b$, for any positive integer $m$ and real numbers $a_0,\cdots,a_m$ with $a=a_0 &lt;\cdots &lt;a_m =b$, we refer to the collection<br>$$<br>{[a_0,a_1], [a_1, a_2],\cdots,  [a_{m-1},a_m]}<br>$$</p>
+</li>
+<li><p>as a <strong>dissection</strong> of $[a,b]$, and denote it by either $\mathbf{a}$ or $[a_0,\cdots,a_m]$. </p>
+</li>
+<li><p>Any one of the intervals $[a_{i-1},a_i] $ is called a <strong>subinterval</strong> of $\mathbf{a}$, while any one of $a_i$s is called a <strong>division point</strong> of $\mathbf{a}$. </p>
+</li>
+<li><p>The maximum value of the lengths of its subintervals is called the <strong>mesh</strong> of $\mathbf{a}$-this value is denoted by $\mbox{mesh}(\mathbf{a})$.</p>
+</li>
+<li><p>The collection of all dissections of $[a, b]$ is denoted as $\mathcal{D}[a, b]$.</p>
+</li>
+</ul>
+<p><strong>Finer than</strong>:</p>
+<ul>
+<li>For any dissections $\mathbf{a} = [a_0,\cdots,a_m]$ and $\mathbf{b} = [b_0,\cdots, b_k]$ of $[a, b]$, we write</li>
+</ul>
+<p>$$<br>\mathbf{a}\Cup\mathbf{b}<br>$$</p>
+<ul>
+<li>for the dissection $[c_0,\cdots, c_l]$ in $\mathcal{D}[a, b]$ where ${c_0,\cdots, c_l} = {a_0,\cdots, a_m}\cup{b_0,\cdots, b_k}$. </li>
+<li>Moreover, we say that $\mathbf{b}$ is <strong>finer than</strong> $\mathbf{a}$ if ${a_0,\cdots, a_m} \subseteq {b_0,\cdots, b_k}$. </li>
+<li>Evidently, $\mathbf{a}\Cup \mathbf{b} = \mathbf{b}$ iff $\mathbf{b}$ is finer than $\mathbf{a}$. </li>
+<li>We also have $\mbox{mesh}(\mathbf{b})\leq \mbox{mesh}(\mathbf{a})$ if $\mathbf{b}$ is finer than $\mathbf{a}$, but not conversely.</li>
+</ul>
+<p><strong>Darboux Sum</strong>: </p>
+<ul>
+<li>Take any bounded real functions $\varphi$ and $F$ on $[a, b]$ with $F$ being increasing. </li>
+<li>For any dissection $\mathbf{a} = [a_0,\cdots, a_m]$ of $[a, b]$, we define</li>
+</ul>
+<p>$$<br>\check{\varphi}<em>{\mathbf{a}}(i):=\sup{\varphi(t):a</em>{i-1}\leq t\leq a_i}<br>$$</p>
+<ul>
+<li><p>and<br>$$<br>\hat{\varphi}<em>{\mathbf{a}}(i):=\inf{\varphi(t):a</em>{i-1}\leq t\leq a_i}<br>$$</p>
+</li>
+<li><p>for each $i\in [m]$. (Since $\varphi$ is bounded, every one of these numbers is real.) </p>
+</li>
+<li><p>By a <strong>Darboux sum</strong> of $\varphi$ with respect to $F$ and $\mathbf{a}$, we mean a number like<br>$$<br>\sum_{i\in[m]}\alpha_i(F(a_i)-F(a_{i-1}))<br>$$</p>
+</li>
+<li><p>where $\hat{\varphi}_{\mathbf{a}} (i)\leq \alpha_i\leq \check{\varphi}_{\mathbf{a}}(i)$ for each $i$.</p>
+</li>
+<li><p>In particular, the <strong>$\mathbf{a}$-upper Darboux sum</strong> of $\varphi$ with respect to $F$ is defined as the number<br>$$<br>\mathbf{S}<em>{F,\mathbf{a}}(\varphi):=\sum</em>{i\in[m]}\check{\varphi}_{\mathbf{a}}(i)(F(a_i)-F(a_{i-1}))<br>$$</p>
+</li>
+<li><p>and the <strong>$\mathbf{a}$-lower Darboux sum</strong> of $\varphi$ with respect to $F$ is defined dually as<br>$$<br>\mathbf{s}<em>{F,\mathbf{a}}(\varphi):=\sum</em>{i\in[m]}\hat{\varphi}_{\mathbf{a}}(i)(F(a_i)-F(a_{i-1}))<br>$$</p>
+</li>
+<li><p>Clearly, $\mathbf{S}<em>{F,\mathbf{a}}(\varphi)$ decreases, and $\mathbf{s}</em>{F,\mathbf{a}}(\varphi)$ increases, as a becomes finer. </p>
+</li>
+<li><p>Evidently, we always have $\mathbf{S}<em>{F,\mathbf{a}}(\varphi)\geq\mathbf{s}</em>{F,\mathbf{a}}(\varphi) $. </p>
+</li>
+<li><p>Furthermore, and this is important, we have<br>$$<br>\inf{\mathbf{S}<em>{F,\mathbf{a}}(\varphi):\mathbf{a}\in\mathcal{D}[a,b]}\geq\sup{\mathbf{s}</em>{F,\mathbf{a}}(\varphi):\mathbf{a}\in\mathcal{D}[a,b]}<br>$$</p>
+</li>
+<li><p>The number on the left-hand side of this inequality is called the <strong>upper Stieltjes integral of $\varphi$ with respect to</strong> $F$, and is denoted by $\mathcal{S}_F (\varphi)$. </p>
+</li>
+<li><p>Similarly, the number on the right-hand side is called the <strong>lower Stieltjes integrals of $\varphi$ with respect to $F$</strong>, and is denoted by $\mathbf{s}_F (\varphi)$. </p>
+</li>
+<li><p>Thus, our inequality reads:<br>$$<br>\mathcal{S}_F (\varphi)\geq\mathbf{s}_F (\varphi)<br>$$</p>
+</li>
+</ul>
+<p><strong>Stiltjes Integrals, Stieltjes Integrable, $F$-integrable</strong>: </p>
+<ul>
+<li>Let $\varphi,F\in \mathbf{B}[a, b]$ and assume that $F$ is increasing. </li>
+<li>Suppose that there exists a real number $\theta $ such that, for any $\varepsilon &gt; 0$, there exists a dissection $\mathbf{a}$ of $[a, b]$ with</li>
+</ul>
+<p>$$<br>|\mathbf{S}<em>{F,\mathbf{a}}(\varphi)-\theta|&lt;\varepsilon\mbox{ and }|\mathbf{s}</em>{F,\mathbf{a}}(\varphi)-\theta|&lt; \varepsilon<br>$$</p>
+<ul>
+<li><p>Then this number $\theta$ is unique, and  it is denoted by<br>$$<br>\int^b_a\varphi dF\mbox{ or }\int^b_a\varphi(t)dF(t)<br>$$</p>
+</li>
+<li><p>When it exists, we refer to this number as the <strong>Stieltjes integral of $\varphi$ with respect to $F$,</strong> and in that case, we say that $\varphi$ is <strong>Stieltjes integrable with respect to $F$</strong>, or simply, <strong>$F$-integrable</strong>. </p>
+</li>
+<li><p>If , $\varphi$ is $F$-integrable, we also define<br>$$<br>\int^a_b\varphi dF=-\int^b_a\varphi dF<br>$$</p>
+</li>
+<li><p>Finally, where $a\leq c\leq  d\leq  b$, we say that $\varphi$ is $F$-integrable on $[c,d]$, if $\varphi|<em>{[c,d]}$ is $F|</em>{[c,d]}$-integrable.</p>
+</li>
+<li><p>$\varphi$ is $F$-integrable iff the upper and lower Stieltjes integrals of $\varphi$ with respect to $F$ are equal, that is,<br>$$<br>\inf{\mathbf{S}<em>{F,\mathbf{a}}(\varphi) :\mathbf{a}\in\mathcal{D}[a, b]} = \sup{\mathbf{s}</em>{F,\mathbf{a}}(\varphi) : \mathbf{a} \in \mathcal{D}[a, b]}<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>The following statements are equivalent:</p>
+<ul>
+<li><p>$\varphi$ is $F$-integrable,</p>
+</li>
+<li><p>$\mathbf{S}_F(\varphi) = \mathbf{s}_F(\varphi)$,</p>
+</li>
+<li><p>For every $\varepsilon &gt; 0$, there is a dissection $\mathbf{a}\in \mathcal{D}[a, b]$ such that<br>$$<br>\mathbf{S}<em>{F,\mathbf{a}}(\varphi) -\mathbf{s}</em>{F,\mathbf{a}}(\varphi)&lt;\varepsilon<br>$$</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Riemman Integrable, Riemann Intergral</strong>: </p>
+<ul>
+<li>The Riemann integral is a special case of the Stieltjes integral. </li>
+<li>Formally, we say that $\varphi\in \mathbb{R}^{[a,b]}$ is <strong>Riemann integrable</strong> if it is $\mbox{id}_{[a,b]}$-integrable, and for any such $\varphi$, we define the <strong>Riemann integral</strong> of $\varphi$, denoted by</li>
+</ul>
+<p>$$<br>\int^b_a\varphi(t)dt<br>$$</p>
+<ul>
+<li>as the Stieltjes integral of $\varphi$ with respect to the identity function on $[a, b]$.</li>
+</ul>
+<p><strong>Continuous almost everywhere</strong>: </p>
+<ul>
+<li>Let us agree to call a real map $\varphi$ on $[a,b]$ continuous almost everywhere on $[a, b]$ if</li>
+</ul>
+<p>$$<br>d(\varphi):={t\in[a,b]:\varphi\mbox{ is not continuous at }t}<br>$$</p>
+<ul>
+<li>is a “small” set in the following sense: For every $\varepsilon &gt; 0$ there is an open subset $O$ of $[a,b]$ such that $ d(\varphi)\subseteq O$ and $\ell(O) &lt;\varepsilon$.</li>
+</ul>
+<blockquote>
+<p>The totality of discontinuity points $\varphi$ fits within an open set of arbitrarily Lebesgue measure.</p>
+</blockquote>
+<p><strong>$F$-integrable, Improper Stieltjes Integral, Riemann Integrable</strong>: </p>
+<ul>
+<li><p>Let $\varphi$ and $F$ be any two self-maps on $\mathbb{R} $, and assume that $F$ is increasing. </p>
+</li>
+<li><p>Given any real numbers $a$ and $b$ with $a \leq b$, we say that $\varphi$ is <strong>$F$-integrable on $[a,b]$</strong>, if $\varphi$ is bounded on $[a,b]$ and $\int^b_a\varphi dF$ exists. (Note. If $\varphi$ is $F$-integrable on $[a,b]$, then $\int^b_a\varphi dF$ is a real number.) </p>
+</li>
+<li><p>In turn, we say that $\varphi$ is <strong>$F$-integrable on $[a,\infty)$</strong> if $\varphi$ is $F$-integrable on $[a,b]$ for each $b\geq a$, and $\lim_{b\to \infty}\int^b_a\varphi dF\in \overline{\mathbb{R} }$</p>
+</li>
+<li><p>In this case we define the <strong>(improper) Stieltjes integral</strong> of $\varphi$ with respect to $F$ on this unbounded interval as<br>$$<br>\int^\infty_a\varphi dF:=\lim_{c\to \infty}\int^c_a\varphi dF.<br>$$</p>
+</li>
+<li><p>The $F $-integrability of $\varphi$ on $(-\infty,a]$ and the extended real number $\int^a_{-\infty}\varphi dF$ is analogously defined. </p>
+</li>
+<li><p>Finally, we say that $\varphi$ is <strong>$F$-integrable</strong>, if there exists a real number a such that $\varphi$ is $F$-integrable on both $(-\infty,a]$ and $[a,\infty)$, and the expression $\int^a_\infty \varphi dF+\int^\infty_a\varphi dF$ is not of the indeterminate form $\infty-\infty$. </p>
+</li>
+<li><p>In this case, we define<br>$$<br>\int^\infty_{-\infty}\varphi dF:=\int^a_{-\infty}\varphi dF+\int^\infty_{a}\varphi dF,<br>$$</p>
+</li>
+<li><p>and note that this definition allows $\int^\infty_{-\infty}\varphi dF$ to equal $-\infty$ or $\infty$. </p>
+</li>
+<li><p>If $\varphi$ is $id_{\mathbb{R} }$-integrable, then we say that it is <strong>Riemann integrable</strong>.</p>
+</li>
+</ul>
+<blockquote>
+<p>The $F $-integrability of $\varphi$ implies that, on every compact interval, $\varphi$ is $F $-integrable. In particular, such a $\varphi$ is bounded on every compact interval. </p>
+<p>A self-map on $\mathbb{R} $ with this property is said to be locally bounded.</p>
+</blockquote>
+<p><strong>Continous Almost Everywhere</strong>: </p>
+<ul>
+<li>The notion of almost everywhere continuity is extended to self-maps on $\mathbb{R} $ in the obvious way. </li>
+<li>Put precisely, we say that $\varphi$ is <strong>continuous almost everywhere</strong> (or almost everywhere continuous) if, for every $\varepsilon &gt; 0$, there is an open subset $O$ of $\mathbb{R} $ such that $\ell(O) &lt; \varepsilon$ and every point of discontinuity of $\varphi$ is contained in $O$. </li>
+</ul>
+<blockquote>
+<p>Obviously, if $\varphi$ is continuous almost everywhere, then it is continuous almost everywhere on any compact interval.</p>
+</blockquote>
+<p><strong>Density, Density Function</strong>: </p>
+<ul>
+<li>We say that a distribution function $F$ has <strong>density</strong>, if there exists an almost everywhere continuous map $f : \mathbb{R}\to \mathbb{R}_+$ such that $f$ is locally bounded and</li>
+</ul>
+<p>$$<br>F(s)=\int^s_{-\infty}f(t)dt<br>$$</p>
+<ul>
+<li>for every real number $s$. </li>
+<li>In this case, we say that $f$ is a <strong>density function</strong> for $F$.</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Lemma 1.1</strong>: </p>
+<ul>
+<li>Let $\varphi,\ F\in \mathbf{B}[a,b]$ be such that $F$ is increasing. If $\varphi$ is $F$-integrable, then,</li>
+</ul>
+<p>$$<br>\int^b_a\varphi dF=\int^c_a\varphi dF+\int^b_c\varphi dF,\ \ \ \  a\leq c\leq b<br>$$</p>
+<ul>
+<li>The same conclusion also holds if $\varphi$ is $F $-integrable on both $[a, c]$ and $[c, b]$.</li>
+</ul>
+<blockquote>
+<p>The Stieltjes integral is additive with respect to the interval of integration. </p>
+</blockquote>
+<p><strong>Lemma 1.2</strong>: </p>
+<ul>
+<li>Assume $a &lt; b$, and take any $\varphi, F\in \mathbf{B}[a,b]$ with $F$ being increasing. </li>
+<li>If $F$ is continuous and $\varphi$ is $F $-integrable. Then, </li>
+</ul>
+<p>$$<br>\int^{\frac{b-1}{m}}_a\varphi dF\to\int^b_a\varphi dF\ \ \ and\  \ \ \ \int^b_{\frac{a+1}{m}}\varphi dF\to\int^b_a\varphi dF<br>$$</p>
+<blockquote>
+<p>When the integrator is a continuous function, altering the value of an integrable function at a single point does not alter the value of its integral</p>
+</blockquote>
+<p><strong>Lemma 1.3</strong>: </p>
+<ul>
+<li>Let $\varphi,\ F\in \mathbf{B}[a, b]$ be such that $F$ is increasing and $\varphi$ is $F $-integrable. </li>
+<li>If $\varphi\geq 0$ almost everywhere on $[a, b]$, then</li>
+</ul>
+<p>$$<br>\int^b_a\varphi dF\geq0<br>$$</p>
+<p><strong>Corollary 1.4</strong>: </p>
+<ul>
+<li>Let $\varphi, F \in \mathbf{B}[a, b]$ be such that $F$ is increasing and $\varphi$ is $F $-integrable. If $\varphi$ vanishes almost everywhere on $[a,b]$, then</li>
+</ul>
+<p>$$<br>\int^b_a\varphi  dF=0<br>$$</p>
+<p><strong>Lemma 1.5</strong>: </p>
+<ul>
+<li>Let $\varphi, F \in \mathbf{B}[a, b]$ be such that $F$ is increasing, and both $\varphi$ and $\phi$ are $F$-integrable. Then, for any real number $\alpha$, we have</li>
+</ul>
+<p>$$<br>\int^b_a(\alpha\varphi+\phi)dF=\alpha\int^b_a\varphi dF+\int^b_a\phi dF<br>$$</p>
+<blockquote>
+<p>The Stieltjes integral is linear with respect to its integrand. </p>
+</blockquote>
+<p><strong>Proposition 1.6</strong>: (Stieltjes) </p>
+<ul>
+<li>Take any $\varphi, F\in \mathbf{B}[a, b]$ with $F$ being increasing. </li>
+<li>If $\varphi$ is continuous, then it is $F$-integrable.</li>
+</ul>
+<p><strong>Proposition 1.7</strong>: </p>
+<ul>
+<li>Let $\varphi, F \in \mathbf{B}[a, b]$ and assume that $F$ is increasing and Lipschitz continuous. </li>
+<li>If $\varphi$ is continuous almost everywhere on $[a,b]$, then it is $F $-integrable.</li>
+</ul>
+<p><strong>The Lebesgue Criterion</strong>: </p>
+<ul>
+<li>If $\varphi \in \mathbf{B}[a,b]$ is continuous almost everywhere on $[a,b] $, then it is Riemann integrable.</li>
+</ul>
+<blockquote>
+<p>Riemann integrability = Continuity almost everywhere.</p>
+</blockquote>
+<p><strong>Corollary 1.8</strong>: </p>
+<ul>
+<li>Let $\varphi\in \mathbf{B}[a, b]$ be continuous almost everywhere on $[a, b]$. If $\varphi$ vanishes almost everywhere on $[a, b]$, then</li>
+</ul>
+<p>$$<br>\int^b_a\varphi(t)dt=0<br>$$</p>
+<p><strong>The Fundamental Theorem of Calculus 1</strong>: </p>
+<ul>
+<li>Let $f \in \mathbf{B}[a, b]$ be continuous almost everywhere and $F\in \mathbb{R}^{[a,b]}$ satisfy</li>
+</ul>
+<p>$$<br>F(s)=F(a)+\int^s_af(r)dr,\ \ \ \ a\leq s\leq b<br>$$</p>
+<ul>
+<li>Then, $F$ is Lipschitz continuous on $[a,b]$, and for every $s\in [a,b]$ at which $f$ is continuous, $F’(s)$ exists and equals $f(s)$.</li>
+</ul>
+<p><strong>The Fundamental Theorem of Calculus 2</strong>: </p>
+<ul>
+<li><p>Take any $F\in \mathbf{C}^1[a,b]$, and let $f \in \mathbf{B}[a,b]$ is a Riemann integrable function such that $F’ = f$ almost everywhere on $[a, b]$. </p>
+</li>
+<li><p>Then we have<br>$$<br>F(s)=F(a)+\int^s_af(r)dr,\ \ \ \ a\leq s\leq b<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>Roughly speaking, The Fundamental Theorem of Calculus says that we can think of dif ferentiation and Riemann integration as inverse operations.</p>
+</blockquote>
+<p><strong>Theorem 1.10</strong>: </p>
+<ul>
+<li>Let $\varphi\in \mathbf{B}[a, b]$ be continuous almost everywhere on $[a, b]$. </li>
+<li>Then, for any increasing $F\in \mathbf{C}^1[a,b]$, we have</li>
+</ul>
+<p>$$<br>\int^b_a\varphi dF=\int^b_a\varphi(t)F’(t)dt<br>$$</p>
+<p><strong>Corollary 1.11</strong>: </p>
+<ul>
+<li><p>Let $f,\varphi\in \mathbf{B}[a,b]$ be continuous almost everywhere on $[a,b]$ and assume $f \geq 0$. </p>
+</li>
+<li><p>Then, for any $F\in \mathbf{C}^1[a, b]$ such that<br>$$<br>F(s)=F(a)+\int^s_af(r)dr,\ \ \ \ a\leq s\leq b<br>$$</p>
+</li>
+<li><p>holds, we have</p>
+</li>
+</ul>
+<p>$$<br>\int^b_a\varphi dF=\int^b_a\varphi(t)f(t)dt<br>$$</p>
+<blockquote>
+<p>Theorem 1.10 and Corollary 1.11 help to reduce a Stieltjes Integral to a Riemann Integral, gaining computational power.</p>
+</blockquote>
+<p><strong>Proposition 1.12</strong>: </p>
+<ul>
+<li>Let $\varphi$ and $F$ be two self-maps on $\mathbb{R} $, and assume that $F$ is increasing and continuously differentiable. </li>
+<li>If $\varphi$ is nonnegative, locally bounded, and continuous almost everywhere, then it is $F $-integrable.</li>
+</ul>
+<p><strong>Theorem 1.13</strong>: </p>
+<ul>
+<li>Let $F\in \mathbf{C}^1(\mathbb{R} )$ be a distribution function, and $\varphi$ a locally bounded self-map on $\mathbb{R} $ that is continuous almost everywhere. </li>
+<li>If $f$ is a density function for $F $, then</li>
+</ul>
+<p>$$<br>\int^\infty_{-\infty}\varphi dF=\int^\infty_{-\infty}\varphi(t)f(t)dt<br>$$</p>
+<ul>
+<li>in the sense that if one side exists so does the other.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/Expectation-as-a-Stieltjes-Integral/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Expectation as a Stieltjes Integral</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/Spaces-of-Integrable-Random-Variables/">
+        <span>Spaces of Integrable Random Variables</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/11%20Expectation%20via%20the%20Stieltjes%20Integral/The-Stieltjes-Integral/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Stieltjes-Integral"><span class="toc-number">1.</span> <span class="toc-text">The Stieltjes Integral</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2020 - 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Random Variables | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">Random Variables</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/">1.1.I Random Variables</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Random Variables&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Random Variables&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/&title=Random Variables" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Random Variables&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/&text=Random Variables" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h1><p>One is often interested in a particular characteristic of the (uncertain) outcomes of an experiment. To deal with such situations we may want to transform the given probability space (that models the underlying experiment) into another probability space the sample space of which contains the set of all values of the characteristic that we are interested in. </p>
+<p>This is achieved by means of a measurable function, which is more commonly referred to as a random variable in probability theory. In the most general sense of the term, such a function maps one measurable space into another. </p>
+<p>However, most measurable functions that are encountered in practice map a measurable space into a metric space, leading to the notion of Borel measurability. </p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Measurable</strong>: </p>
+<ul>
+<li>Let $(X_1,\Sigma_1)$ and $(X_2,\Sigma_2)$ be two measurable spaces. </li>
+<li>We say that a function $f : X_1\rightarrow X _2$ is **$\Sigma_1\backslash\Sigma_2$-measurable** if $f^{-1}(S) \in \Sigma_1$ for every $S \in \Sigma_2 $.</li>
+</ul>
+<p><strong>Random Variable, $\Sigma$-Measurable Real Function, Borel Measurable</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma)$ be a measurable space and $Y$ a metric space. </p>
+</li>
+<li><p>A function $x : X\rightarrow Y$ is called a <strong>$Y$-valued random variable</strong> on $(X,\Sigma)$ if it is $\Sigma\backslash \mathcal{B}(Y)$-measurable, that is, if $x^{-1}(S)\in\Sigma$  for every $S\in \mathcal{B}(Y )$. </p>
+</li>
+<li><p>An $\mathbb{R} $-valued random variable is simply called a <strong>random variable</strong> on $(X,\Sigma)$.</p>
+<ul>
+<li>The set of all random variables on a measurable space $(X,\Sigma )$ is denoted by $\mathcal {L}^0(X,\Sigma)$. Moreover, we define<br>$$<br>L^0_+(X,\Sigma) := {x \in \mathcal{L}^0(X,\Sigma) : x\geq 0}.<br>$$</li>
+</ul>
+</li>
+<li><p>In real analysis what we call here a random variable on $(X,\Sigma )$ is called a <strong>$\Sigma$-measurable real function</strong> on $X$. </p>
+</li>
+<li><p>Furthermore, a ($Y$-valued) random variable on a Borel probability space is said to be <strong>Borel measurable</strong>. </p>
+</li>
+</ul>
+<blockquote>
+<p>Let $(X,\Sigma)$ be a measurable space and $Y$ a metric space. In principle, to verify that a map $x:X\to Y$ is a $Y$-valued random variable, we need to show that $x^{-1}(B)\in\Sigma$ for every Borel subset $B$ of $Y$ .</p>
+<p>Fortunately, there is a nice short-cut. If we can find a collection $\mathcal{A}$ of subsets of $Y$ that generates $\mathcal{B}(Y)$ and if we manage to verify that $x^{-1}(\mathcal{A})$  for every $A\in\mathcal{A}$ we may then conclude that $x$ is a $Y$-valued random variable.</p>
+<p>For instance, if<br>$$<br>x^{-1}(O)\in\Sigma\mbox{ for every open subset }O \mbox{ of }Y,<br>$$<br>or<br>$$<br>x^{-1}(C)\in\Sigma\mbox{ for every closed subset }C \mbox{ of }Y,<br>$$<br>then $x$ is sure to be a $Y$-valued random variable.</p>
+</blockquote>
+<blockquote>
+<p>The fact that the set of all intervals of the form $(-\infty,a]$, or of the form $(1,a)$, generates $\mathcal{B}(\mathbb{R})$ is used frequently, so it is probably a good idea to state it separately.</p>
+<p>Given any measurable space $(X,\Sigma)$ and a map $x : X \rightarrow \mathbb{R} $, we have<br>$$<br>x\in\mathcal{L}^0(X,\Sigma)\mbox{ iff }{\omega\in X:x(\omega)\leq a}\in\Sigma\  \mbox{ for every } a\in\mathbb{R}<br>$$</p>
+<p>and<br>$$<br>x\in\mathcal{L}^0(X,\Sigma)\mbox{ iff }{\omega\in X:x(\omega)&lt; a}\in\Sigma\  \mbox{ for every } a\in\mathbb{R}<br>$$</p>
+<p>In measure theory and probability, we simply write ${x \leq a}$ for the set ${ \omega\in X : x(\omega) \leq a}$. While it may take a bit getting used to at first, this type of shorthand notation simplifies complex expressions considerably. For instance, with this notational convention, they we have<br>$$<br>x\in \mathcal{L}^0(X,\Sigma)\mbox{ iff }{x\leq a}\in\Sigma\ \mbox{ for every } a\in\mathbb{R}<br>$$<br>In what follows, we will work with these sorts of expressions routinely. All you need to do is to remember that, given a probability (or measure) space $(X,\Sigma, \mathbf{p})$, the set<br>$$<br>{\mbox{a statement about random variables defined on this space}}<br>$$<br>equals, by convention,<br>$$<br>{\omega\in X :\mbox{ this statement is true}}<br>$$<br>For any $x,y \in \mathcal{L}^0(X )$, the event that the absolute value of the difference between $x$ and $y$ is strictly larger than $3$ is written as ${|x-y|&gt; 3} $ instead of the mouthful ${\omega\in X : |x(\omega) -y(\omega)| &gt; 3}$. </p>
+<p>In turn, the probability of this event is written simply as $\mathbf{p}{|x- y| &gt; 3}$:</p>
+</blockquote>
+<p><strong>Random $n$-vector, Random Real Sequence, Random Bounded Map, Random Element</strong>: </p>
+<ul>
+<li>An $\mathbb{R}^n$-valued random variable as a <strong>random $n$-vector</strong> if $n \geq 2$. </li>
+<li>Analogously, an $\mathbb{R}^{\infty}$-valued random variable may be called a <strong>random real sequence</strong></li>
+<li>A $\mathbf{B}[0,1]$-valued random variable is a <strong>random bounded map</strong> on $[0,1]$ and so on. </li>
+<li>More generally, a $Y$-valued random variable (for any metric space $Y$) is sometimes referred to as a <strong>random element</strong> of $Y$.</li>
+</ul>
+<p><strong>Simple</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space. A $Y$-valued random variable $x$ is called <strong>simple</strong> if it takes finitely many values, that is, when the range of $x$ is a finite set.</li>
+</ul>
+<p><strong>Postive Parts, Negative Parts</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set and $x$ an $\overline{\mathbb{R} }$-valued function on $X$: We define the positive and negative parts of $x$ as</li>
+</ul>
+<p>$$<br>x^+:= \max {x, 0}\mbox{ and }x^-:= \max {-x,0}<br>$$</p>
+<ul>
+<li><p>respectively. </p>
+</li>
+<li><p>Clearly, both $x^+$ and $x^-$ are $[0, \infty]$-valued functions on $X$, and we have<br>$$<br>x=x^+ -x^-<br>$$</p>
+</li>
+<li><p>The absolute value of $x$ is also decomposed into these two functions as follows:<br>$$<br>|x|=x^+ +x^-<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>It is plain that the positive and negative parts of an $\overline{\mathbb{R}}$-valued function inherits the measurability of that function. </p>
+<p>In other words, if $x$ is an $\overline{\mathbb{R}}$-valued random variable on a probability space $(X,\Sigma,\mathbf{p})$, then both $x^+$ and $x^-$ are $[0,\infty]$-valued random variables on $(X,\Sigma, \mathbf{p})$. </p>
+<p>Conversely, if $x^+$ and $x^-$ are $[0,\infty]$-valued random variables on $(X,\Sigma,\mathbf{p})$, then $x$ must itself be an $\overline{\mathbb{R}}$-valued random variable on $(X,\Sigma,\mathbf{p})$.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 1.1</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two metric spaces, and $x: X \rightarrow Y$ a map that is continuous at all but countably many points. Then, $x$ is a $Y $-valued random variable on $(X,\mathcal{B}(X))$.</li>
+</ul>
+<blockquote>
+<p>Continuity at everywhere but countably many points is suffcient for Borel measurability. The converse is false. Even a map that is discontinuous everywhere may be Borel measurable.</p>
+</blockquote>
+<p><strong>Proposition 1.2</strong>: </p>
+<ul>
+<li>Let $(X_i,\Sigma_ i)$ be a measurable space for each $i \in [3]$. </li>
+<li>If $f : X_1 \rightarrow X_2$ is a $\Sigma_1\backslash\Sigma_2$-measurable map and $g : X_2 \rightarrow X_3$ is a $\Sigma_2\backslash\Sigma_3$-measurable map, then $g \circ f$ is a $\Sigma_1\backslash\Sigma_3$-measurable map from $X_1$ into $X_3$.</li>
+</ul>
+<p><strong>Proposition 1.5</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space and $(x_m)$ a sequence of $Y $-valued random variables on a measurable space $(X,\Sigma )$ such that $x_m\rightarrow x $ for some function $x: X \rightarrow Y$ . Then, $x$ is a $Y $-valued random variable on $(X,\Sigma )$.</li>
+</ul>
+<blockquote>
+<p>If $(x_m)$ is a sequence of metric space-valued random variables on some measurable space, $\lim x_m$ is well-defined as a random variable on that space</p>
+<p>This is unlike what is the case with continuous functions.</p>
+</blockquote>
+<p><strong>Corollary 1.6</strong>: </p>
+<ul>
+<li>Let $(x_m)$ be an increasing sequence of $\overline{\mathbb{R} }$-valued random variables on a measurable space $(X,\Sigma )$. Then, $\lim x_m$ is an $\overline{\mathbb{R}}$-valued random variable on $(X,\Sigma )$.</li>
+</ul>
+<p><strong>Theorem 1.7</strong>: </p>
+<ul>
+<li>Let $Y$ be a compact metric space and $x$ a $Y $-valued random variable on a measurable space $(X,\Sigma)$. </li>
+<li>Then, there is a sequence $(x_m)$ of simple $Y$-valued random variables on $(X,\Sigma )$ such that $x_m\rightarrow x$ uniformly.</li>
+</ul>
+<blockquote>
+<p>For a random variable with compact range, we can approximate a given random variable on a measurable space by means of simple random variables on that space. </p>
+</blockquote>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example 1.1</strong>: </p>
+<ul>
+<li>If $X$ is a nonempty set and $Y$ a metric space, then any map from $X$ into $Y$ is a $Y$-valued random variable on $(X,2^X )$. </li>
+<li>In particular, $\mathbb{R}^X = \mathcal{L}^0(X, 2^X )$.</li>
+<li>If $X$ is finite, then any such function is a simple random variable on $(X,2^X )$. </li>
+</ul>
+<p><strong>Example 1.3</strong>:</p>
+<ul>
+<li>Let $X$ and $Y$ be two metric spaces. If $x : X\to Y$ is continuous, then $x$ is a $Y $-valued random variable on $(X,\mathcal{B}(X))$.</li>
+<li>Indeed, continuity of $x$ implies that the inverse image of every open set in $Y$ under $x$ is open in $X$. </li>
+<li>So this is enough to conclude that $x$ is a $Y$-valued random variable. </li>
+<li>In particular, $\mathbf{C}(X) \subseteq \mathcal{L}^0(X,\mathcal{B}(X))$</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>$x\in \mathcal{L}^0(X,\Sigma)$ implies $ax\in \mathcal{L}^0(X,\Sigma )$ for any real number $a$. </li>
+<li>$x + y \in \mathcal{L}^0(X,\Sigma )$ for any $x,y\in \mathcal{L}^0(X,\Sigma)$. </li>
+<li>Thus, $\mathcal{L}^0(X,\Sigma)$ is a linear space under the usual (pointwise) addition and scalar multiplication operations. <ul>
+<li>The set of all simple random variables on $(X,\Sigma) $ constitutes a linear subspace of this linear space, which is itself a linear $X$ subspace of $\mathbb{R}^X $ .  </li>
+<li>If $X$ is a metric space, then $\mathbf{C}(X)$ is also a linear subspace of $\mathcal{L}^0(X,\mathcal{B}(X))$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>The Distribution of a Random Variable</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">
+        <span>Constructing Probability Spaces</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Random-Variables"><span class="toc-number">1.</span> <span class="toc-text">Random Variables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.3.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2020 - 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

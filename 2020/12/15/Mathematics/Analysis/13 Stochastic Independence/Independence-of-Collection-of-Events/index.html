@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            Independence of Collection of Events | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/">Independence of Collection of Events</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-M-Stochastic-Independence/">1.1.M Stochastic Independence</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Independence of Collection of Events&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Independence of Collection of Events&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/&title=Independence of Collection of Events" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=Independence of Collection of Events&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/&text=Independence of Collection of Events" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Independence-of-Collection-of-Events"><a href="#Independence-of-Collection-of-Events" class="headerlink" title="Independence of Collection of Events"></a>Independence of Collection of Events</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Independence of Events</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\mathbf{p})$ be a probability space. </p>
+</li>
+<li><p>The events $A,B\in\Sigma$ are said to be <strong>(stochastically) independent</strong> if $\mathbf{p}(A \cap B) = \mathbf{p}(A)\mathbf{p}(B)$.</p>
+</li>
+<li><p>If $A = B$ here, we say that $A$ is independent of itself.</p>
+</li>
+<li><p>In turn, a nonempty collection $\mathcal{A}\subseteq \Sigma$ is called <strong>independent</strong> – we denote this by writing $\coprod \mathcal{A}$ – if<br>$$<br>\mathbf{p}(\bigcap \mathcal{S})=\prod_{A\in\mathcal{S}}\mathbf{p}(A)<br>$$</p>
+</li>
+<li><p>for every nonempty finite subset $\mathcal{S}$ of $\mathcal{A}$.</p>
+</li>
+</ul>
+<p><strong>Independence of Finitely Many Familites of Events</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\mathbf{p})$ be a probability space and $m$ an integrer with $m&gt;1$. </p>
+</li>
+<li><p>The nonempty collection $\mathcal{A}_1,\cdots,\mathcal{A}_m\subseteq \Sigma$ are said to be <strong>(stochastically) independent</strong> – we denote this by writing $\coprod [\mathcal{A}_1,\dots,\mathcal{A}_m]$ – if<br>$$<br>\coprod {A_1,\dots,A_m}\mbox{ for every }(A_1,\dotsm,A_m)\in\mathcal{A}_1\times\cdots\times\mathcal{A}_m<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>The definition of independence of events is a special case of that of independence of collections of events.</p>
+</blockquote>
+<p><strong>Independence of Infinitely Many Familites of Events</strong>:</p>
+<ul>
+<li>Let $(X,\Sigma,\mathbf{p})$ be a probability space, $I$ any (index) set with $|I|&gt;1$, and $\mathcal{A}_i$ a nonempty subset of $\Sigma$ for each $i\in I$. </li>
+<li>We say that $\mathcal{A}_i$s are <strong>independent</strong> – we denote this by writing $\coprod [\mathcal{A}<em>i, i\in I]$ – if  $\coprod [\mathcal{A}</em>{i_1},\dots,\mathcal{A}_{i_m}]$ for every integrer with $m&gt;1$ and every distinct $i_1,\dots,i_m\in I$.</li>
+<li>If $I=\mathbb{N}$ here, we write $\coprod[\mathcal{A}_1,\mathcal{A}_2,\dots]$ to denote $\coprod[\mathcal{A}_i:i\in I]$.</li>
+</ul>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 1.1</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma,\mathbf{p})$ be a probabilty space, and $m$ an integer with $m &gt; 1$.</p>
+</li>
+<li><p>If $\mathcal{A}<em>i\subseteq\Sigma$ contains $X$ for each $i\in[m]$, then $\coprod [\mathcal{A}_1,\dots,\mathcal{A}_m]$ iff<br>$$<br>\mathbf{p}\left(\bigcap</em>{i\in[m]}A_i\right)=\prod_{i\in[m]}\mathbf{p}(A_i)\mbox{ for every }(A_1,\dotsm,A_m)\in\mathcal{A}_1\times\cdots\times\mathcal{A}_m<br>$$</p>
+</li>
+</ul>
+<p><strong>Proposition 1.2</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma,\mathbf{p})$ be a probabilty space, and $m$ an integer with $m &gt; 1$.</p>
+</li>
+<li><p>If $\mathcal{A}_i\subseteq\Sigma$ contains $X$, and is closed under taking finite intersections, for each $i\in[m]$, then<br>$$<br>\coprod [\mathcal{A}_1,\dots,\mathcal{A}_m]\mbox{ implies }\coprod [\sigma(\mathcal{A}_1),\dots,\sigma(\mathcal{A}_m)]<br>$$</p>
+</li>
+</ul>
+<p><strong>Proposition 1.3</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma,\mathbf{p})$ be a probabilty space, $I$ any (index) set with $|I|&gt;1$, and $\mathcal{A}_i$ a nonempty subset of $\Sigma$ for each $i\in I$. </p>
+</li>
+<li><p>If $\mathcal{A}_i\subseteq\Sigma$ contains $X$, and is closed under taking finite intersections, for each $i\in[m]$, then<br>$$<br>\coprod[\mathcal{A}_i:i\in I]\mbox{ implies }\coprod[\sigma(\mathcal{A}_i):i\in I]<br>$$</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Random-Variables/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Independence of Random Variables</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/12%20Weak%20Convergence/Convergence-of-Random-Variables/">
+        <span>Convergence of Random Variables</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/13%20Stochastic%20Independence/Independence-of-Collection-of-Events/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Independence-of-Collection-of-Events"><span class="toc-number">1.</span> <span class="toc-text">Independence of Collection of Events</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2020 - 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

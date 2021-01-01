@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            The Expectation Functional of Simple Random Variables | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/">The Expectation Functional of Simple Random Variables</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-J-Expectation-via-the-Lebesgue-Integral/">1.1.J Expectation via the Lebesgue Integral</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=The Expectation Functional of Simple Random Variables&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=The Expectation Functional of Simple Random Variables&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/&title=The Expectation Functional of Simple Random Variables" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=The Expectation Functional of Simple Random Variables&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/&text=The Expectation Functional of Simple Random Variables" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="The-Expectation-Functional-of-Simple-Random-Variables"><a href="#The-Expectation-Functional-of-Simple-Random-Variables" class="headerlink" title="The Expectation Functional of Simple Random Variables"></a>The Expectation Functional of Simple Random Variables</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Expectation of Simple Random Variables</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma, \mathbf{p})$ be a probability space. </p>
+</li>
+<li><p>The set of all simple random variables on $(X,\Sigma, \mathbf{p})$ is a linear space relative to the pointwise defined addition and scalar multiplication operations.</p>
+</li>
+<li><p>By definition, for any simple random variable $x$ on $(X,\Sigma, \mathbf{p})$, we have $|x(X)| &lt; \infty$ and<br>$$<br>x=\sum_{a\in x(X)}a\mathbf{1}_{x=a}<br>$$</p>
+</li>
+<li><p>where $\mathbf{1}_{ {x=a} }$ stands for the indicator function of the event ${x = a}\in\Sigma$ on $X$.</p>
+</li>
+<li><p>We define the <strong>expectation</strong> of any such $x$ as the real number<br>$$<br>\mathbb{E}(x):=\sum_{a\in  x(X)}a\mathbf{p}{x=a}<br>$$</p>
+</li>
+<li><p>Thus, the expected value of $x$ is the weighted average of its values, where the weight of $a$ is $\mathbf{p}<em>x{a}$ for each $a\in x(X)$. That is, $\mathbf{E}(x) =\sum</em>{a\in x(X)}\mathbf{p}_x{a}$.</p>
+</li>
+</ul>
+<blockquote>
+<p>Linearity of $\mathbb{E}$:<br>$$<br>\mathbb{E}(x+y)=\mathbb{E}(x)+\mathbb{E}(y)<br>$$<br>Monotonicity of $\mathbb{E}$:<br>$$<br>\mathbb{E}(x) \geq \mathbb{E}(y)\mbox{ whenever }x\geq_{a.s.}y<br>$$</p>
+<p>$$<br>\mathbb{E}(x)= \mathbb{E}(y)\mbox{ whenever }x=_{a.s.}y<br>$$</p>
+</blockquote>
+<p><strong>Variance of Simple Random Variables</strong>:</p>
+<ul>
+<li><p>The <strong>variance</strong> of a simple random variable $x$ on $(X,\Sigma,\mathbf{p})$ is the number<br>$$<br>\mathbb{V}(x) := \mathbb{E}((x - \mathbb{E}(x))^2)<br>$$</p>
+</li>
+<li><p>where $(x-\mathbb{E}(x))^2$ is the simple random variable $\omega\mapsto (x(\omega) -\mathbb{E}(x))^2$ on $(X,\Sigma, \mathbf{p})$.</p>
+</li>
+</ul>
+<blockquote>
+<p>However, it is often more convenient to use the alternate formula<br>$$<br>\mathbb{V}(x) := \mathbb{E}(x^2) - \mathbb{E}(x)^2<br>$$</p>
+</blockquote>
+<p><strong>Expectation of Nonnegative Random Variables</strong></p>
+<ul>
+<li><p>Let $x$ be a $[0, \infty]$-valued random variable on a probability space $(X,\Sigma,\mathbf{p})$. </p>
+</li>
+<li><p>We define the <strong>expectation</strong> of $x$ as the (extended real) number<br>$$<br>\mathbb{E}(x) := \sup{\mathbb{E}(z) : z \in \mathfrak{L}(x)}<br>$$</p>
+</li>
+<li><p>where $\mathfrak{L}(x)$ stands for the set of all simple random variables $z$ such that $z\leq x$.</p>
+</li>
+<li><p>In turn, the <strong>variance</strong> of $x$ is defined as the (extended real) number<br>$$<br>\mathbb{V}(x) := \mathbb{E}((x - \mathbb{E}(x))^2),<br>$$</p>
+</li>
+<li><p>provided that $\mathbb{E}(x) &lt; \infty$. </p>
+</li>
+<li><p>where $(x-\mathbb{E}(x))^2$ is the simple random variable $\omega\mapsto (x(\omega) -\mathbb{E}(x))^2$ on $(X,\Sigma, \mathbf{p})$.</p>
+</li>
+</ul>
+<blockquote>
+<p>These definitions agree with those in the case of simple random variables on $(X,\Sigma, \mathbf{p})$. Moreover, they extend those definitions to the case of $[0,\infty]$-valued simple random variables.</p>
+</blockquote>
+<blockquote>
+<p>In words, the (extended real) number $\mathbb{E}(x)$ is defined as the supremum of the weighted averages of all those simple random variables that are “smaller than” $x$ everywhere. </p>
+<p>So, in this sense, the idea behind the definition of $\mathbb{E}(x)$ is reminiscent of that of the computation of the area under a given curve in $\mathbb{R}\times \mathbb{R}_+$ by approximating this area with the sum of the areas of the rectangles that lie under the curve and above the horizontal axis.</p>
+<p>Put this way, you should see that $\mathbb{E}(x)$ can be thought of as some sort of an integral of $x$ – it is called the <strong>Lebesgue integral</strong> of $x$ with respect to $\mathbf{p}$ –where the sets in the domain of $x$ (analogous to the bases of the rectangles under the curve) are “measured” according to the underlying probability measure.</p>
+</blockquote>
+<blockquote>
+<p>The commonly used notation for the Lebesgue integral of $x$ on $X$ with respect to $\mathbf{p}$ is $\int_Xxdp$, that is<br>$$<br>\int_X xd\mathbf{p}\ \mbox{ and }\ \mathbb{E}(x)<br>$$<br>denote the same (extended real) number. </p>
+</blockquote>
+<blockquote>
+<p>Adopting the widely used conventions of integration theory, we also set<br>$$<br>\int_Sxd\mathbf{p}:=\mathbb{E}(x\mathbf{1}_S)\mbox{ for any } S\in \Sigma,<br>$$<br>where $\mathbf{1}_S$ is the indicator function of $S$ on $X$. Therefore, recalling the definition of the expectation of a simple random variable, we see that $\int_S d\mathbf{p}$, that is, the Lebesgue integral of the constant function $1$ with respect to $\mathbf{p}$ on $S$, and $\mathbb{E}(\mathbf{1}_S )$ denote the same number, namely, $\mathbf{p}(S)$, for any $S\in\Sigma$.</p>
+</blockquote>
+<blockquote>
+<p>Many authors write<br>$$<br>\int_X x(\omega)\mathbf{p}(dw)<br>$$<br>instead of $\int_Xxd\mathbf{p}$. The Lebesgue integral of the map $\omega\mapsto\omega^2$ on the probability space $([0,1],\mathcal{B}[0,1],\ell)$ is, for instance, written as $\int_{[0,1]}\omega^2\ell(d\omega)$. </p>
+</blockquote>
+<p><strong>Lebesgue Integration of Simple Maps</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\mu )$ be a measure space. </p>
+</li>
+<li><p>By <strong>a nonnegative simple $\Sigma$-measurable map</strong> on $X$, we mean a real function $f\in \mathcal{L}^0(X,\Sigma)$ such that $f\geq0$ and $f(X)$ is finite. </p>
+</li>
+<li><p>The <strong>Lebesgue integral</strong> of any such map with respect to $\mu$ is defined as the number<br>$$<br>\int_Xfd\mu:=\sum_{a\in f(X)}a\mu{f=a},<br>$$</p>
+</li>
+<li><p>where we adopt the convention that $0\cdot\infty$ equals $0$.</p>
+</li>
+</ul>
+<p><strong>Lebesgue Integration of Nonnegative Maps</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\mu)$ be a measure space. </p>
+</li>
+<li><p>The <strong>Lebesgue integral of any $\Sigma$-measurable</strong> $f : X \to [0, \infty]$ with respect to $\mu$ is defined as the (extended) real number<br>$$<br>\int_X fd\mu:=\sup{\int_Xhd\mu:h\in\mathfrak{M}(f)}<br>$$</p>
+</li>
+<li><p>where $\mathfrak{M}(f)$ stands for the set of all nonnegative simple $\Sigma$-measurable maps $h$ on $X$ with $h\leq f$. </p>
+</li>
+<li><p>In turn, we define<br>$$<br>\int_S fd\mu:=\int_X f\mathbf{1}_S d\mu\ \ \ \ \mbox{ for any }S\in\Sigma<br>$$</p>
+</li>
+<li><p>where $\mathbf{1}_S$ is the indicator function of $S$ on $X$.</p>
+</li>
+</ul>
+<p><strong>$\sigma$-finite Measure</strong>:</p>
+<ul>
+<li>Let $(X,\Sigma,\mu)$ be a measure space. </li>
+<li>We say that this space (or $\mu$ itself) is <strong>$\sigma$-finite</strong> if there is a countable partition $\mathcal{S}$ of $X$ such that $\mathcal{S}\subseteq \Sigma$ and $\mu(S) &lt; \infty$ for each $S \in\mathcal{S}$</li>
+</ul>
+<p><strong>Absolutely Continuous, Density Function, Density</strong>:</p>
+<ul>
+<li><p>Let $F$ be a distribution function. </p>
+</li>
+<li><p>We say that $F$ is <strong>absolutely continuous</strong> (with respect to the Lebesgue measure) if there is a Borel measurable map $f : \mathbb{R} \to \mathbb{R}<em>+$ such that<br>$$<br>F(t)=\int</em>{(-\infty,t]}fd\ell<br>$$</p>
+</li>
+<li><p>for every real number $t$.</p>
+</li>
+<li><p>When this is the case, we say that $F$ is induced by the <strong>density function</strong> $f$, and refer to $f$ as a <strong>density</strong> for $F$.</p>
+</li>
+</ul>
+<blockquote>
+<p>When $f$ is a density for $F$, $F(t)-F(s)=\int_{(s,t]}fd\ell$ for any real numbers $s$ and $t$ with $t &gt; s$.</p>
+</blockquote>
+<blockquote>
+<p>Some distribution functions do not have closed form decriptions, but they are rather defined through integrating a density function.</p>
+<p>The most important example of such a function is the so-called <strong>normal distribution</strong> function (with parameters $\mu $ and $\sigma$). For any given real numbers $\mu$ and $\sigma&gt;0$, this function $F$ is defined by<br>$$<br>f(t)=\frac{1}{\sqrt{2\pi}}e^{\frac{(t-\mu)^2}{2\sigma^2}}<br>$$<br>for any real number $t$, it is thus trivially absolutely continuous.</p>
+<p>If  $\mu= 0$ and $\mu = 1$ here, this function is called the <strong>standard normal distribution</strong> <strong>function</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Not all distribution function arises from a density funtion.</p>
+</blockquote>
+<p><strong>Absolutely Continuous Measures</strong>:</p>
+<ul>
+<li>Let $(X,\Sigma)$ be a measurable space, and $\mu$ and $\nu$  two measures on $\Sigma$. </li>
+<li>We say that $\mu$ is <strong>absolutely continuous with respect to $\nu$</strong>, this is denoted by writing    $\mu\ll\nu$ </li>
+<li>if $\mu(S) = 0$ for every $S\in\Sigma$  with $\nu(S) = 0$.</li>
+</ul>
+<blockquote>
+<p>The zero measure on $\Sigma$ is absolutely continuous with respect to any measure on $\Sigma$</p>
+<p>While the counting measure on $\Sigma$ is not absolutely continuous with respect to any measure $\nu$ on $\Sigma$  such that $\nu(S) = 0$ for some nonempty $S\in\Sigma$ .</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 1.1</strong>: </p>
+<ul>
+<li><p>For any $[0,\infty]$-valued random variables $x$ and $y$ (on a given probability space),<br>$$<br>x\geq_{a.s.}y\ \ \ \ \mbox{ implies }\ \ \ \ \mathbb{E}(x) \geq \mathbb{E}(y)<br>$$</p>
+<p>$$<br>x=_{a.s.}y\ \ \ \ \mbox{ implies }\ \ \ \ \mathbb{E}(x) = \mathbb{E}(y)<br>$$</p>
+</li>
+</ul>
+<p><strong>The Monotone Convergence Theorem 1</strong>:</p>
+<ul>
+<li>Let $x, x_1,x_2,\dots$ be $[0,\infty]$-valued random variables on a probability space $(X,\Sigma, \mathbf{p})$. Then,<br>$$<br>x_m \uparrow_{a.s.} x\ \ \ \ \ \mbox{ implies }\ \ \ \ \ \ \mathbb{E}(x_m)\uparrow \mathbb{E}(x)<br>$$</li>
+</ul>
+<p><strong>Proposition 1.2</strong>: </p>
+<ul>
+<li>Let $x$ and $y$ be two $[0,\infty]$-valued random variables on a probability space $(X,\Sigma, \mathbf{p})$. Then, for any $a\geq 0$,<br>$$<br>\mathbb{E}(ax+y)=a\mathbb{E}(x)+\mathbb{E}(y)<br>$$</li>
+</ul>
+<p><strong>Proposition 1.3</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma,\mu )$ be a finite measure space. Then, there is a real number  $\lambda\geq 0$ and a probability measure $\mathbf{p}$ on $\Sigma$ such that<br>$$<br>\int_Xfd\mu=\lambda\int_Xfd\mathbf{p}<br>$$</p>
+</li>
+<li><p>for every $\Sigma$-measurable $f : X \to [0,\infty]$.</p>
+</li>
+</ul>
+<p><strong>Proposition 1.5</strong>:</p>
+<ul>
+<li><p>Given any measure space $(X,\Sigma,\mu )$,<br>$$<br>\int_x(af+g)d\mu=a\int_Xfd\mu+\int_Xgd\mu<br>$$</p>
+</li>
+<li><p>for every $a\geq0$ and $\Sigma$-measurable $f : X \to [0,\infty]$.</p>
+</li>
+</ul>
+<p><strong>Proposition 1.6</strong>: </p>
+<ul>
+<li>Every absolutely continuous distribution function is uniformly continuous.</li>
+</ul>
+<blockquote>
+<p>If a distribution function is not continuous even at a single point, then it cannot possibly possess a density.</p>
+<p>The converse of Proposition 1.6 is false. Indeed, even a continuous distribution function need not possess a density.</p>
+</blockquote>
+<p><strong>Proposition 1.7</strong>:</p>
+<ul>
+<li><p>Let $(X,\Sigma,\nu )$ be a measure space and take any $f\in \mathcal{L}^0_+(X,\Sigma )$. </p>
+</li>
+<li><p>Then, the map $\mu:\Sigma \to\mathbb{R}$ defined by<br>$$<br>\mu(S):=\int_S fd\nu,<br>$$</p>
+</li>
+<li><p>is a measure on $\Sigma$ with  $\mu\ll\nu$ . </p>
+</li>
+<li><p>If $\nu$ is $\sigma$-finite, so is $\mu$.</p>
+</li>
+</ul>
+<p><strong>The Radon-Nikodym Theorem</strong>:</p>
+<ul>
+<li>Let $(X,\Sigma)$ be a measurable space, and $\mu$ and $\nu$ two $\sigma$-finite measures on $\Sigma$ with $\mu\ll\nu$. Then, there is an $f\in \mathcal{L}^0_+ ( X ,\Sigma)$ such that<br>$$<br>\mu(S)=\int_Sfd\nu\mbox{ for every }S\in\Sigma<br>$$</li>
+</ul>
+<blockquote>
+<p>Any map $f\in\mathcal{L}^0_+(X,\Sigma)$ such that above equation holds is commonly referred to as either the <strong>density of $\mu$ with respect to $\nu$</strong> or as the <strong>Radon-Nikodym derivative of $\mu$ with respect to $\nu$</strong>. </p>
+<p>It is quite standard to denote any such map as $\frac{d\mu}{d\nu}$.</p>
+</blockquote>
+<p><strong>Proposition 1.8</strong>:</p>
+<ul>
+<li>Let $F$ be a distribution function and $\mathbf{p}_F$ the Lebesgue-Stieltjes probability measure on $\mathbb{R}$ induced by $F$. </li>
+<li>Then, $F$ is absolutely continuous iff, $\mathbf{p}_F$ is absolutely continuous with respect to $\ell$.</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example 1.1, Binomial Distribution</strong>: </p>
+<ul>
+<li><p>Let $n$ be a positive integer and $p$ a number in $[0, 1]$.</p>
+</li>
+<li><p>A ${0,\dots, n}$-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$ such that<br>$$<br>\mathbf{p}{x=i}=\left(\begin{matrix}n\ i\end{matrix}\right)p^i(1-p)^{n-i},\ \ \ \ i=0,\dots,n<br>$$</p>
+</li>
+<li><p>is said to have a binomial distribution with parameters $n$ and $p$</p>
+</li>
+<li><p>If $n = 1$ here, we say that $x$ has a Bernoulli distribution with parameter $p$</p>
+</li>
+<li><p>When $n = 1$, we have $\mathbb{E}(x) = p(1) + (1-p)(0) = p$, that is, the expected value of any random variable that has a Bernoulli distribution with parameter $p$ is $p$.</p>
+</li>
+<li><p>In this case, we also find that $\mathbb{E}(x^2) = p$, so $\mathbb{V}(x) = p -p^2$</p>
+</li>
+<li><p>More generally, for any random variable that has a binomial distribution with parameters $n$ and $p$, we have<br>$$<br>\mathbb{E}(x)=\sum^n_{i=0}\left(\begin{matrix}n\ i \end{matrix}\right)p^i(1-p)^{n-i}i=np\sum^{n-1}_{i=0}\left(\begin{matrix}n-1\ i \end{matrix}\right)p^i(1-p)^{(n-1)-i}<br>$$</p>
+</li>
+<li><p>so, by the Binomial Theorem, $\mathbb{E}(x) = np(p + (1 -p))^{n-1} = np$. By using a similar</p>
+<p>method, we can also show that $\mathbb{E}(x^2) = n^2 p^2 -np^2 + np$, so $\mathbb{V}(x) = np(1-p)$.</p>
+</li>
+</ul>
+<p><strong>Example 1.3</strong>:</p>
+<ul>
+<li><p>Let $(X,2^X,\mathbf{p})$ be a probability space with $X$ being a countable set. </p>
+</li>
+<li><p>We wish to find an expression for the expectation of an arbitrary nonnegative random variable $x$ on $(X,2^X,\mathbf{p})$.</p>
+</li>
+<li><p>Assume that $X$ is countably infinite, and enumerate it as $X := {\omega_1,\omega_2,\dots}$. </p>
+</li>
+<li><p>For every positive integer $m$, let us define the simple random variable<br>$$<br>x_m(\omega)=\left{\begin{matrix}x(\omega),&amp;\mbox{ if }\omega\in{\omega_1,\dots,\omega_m}\0,&amp;\mbox{otherwise}\end{matrix}\right.<br>$$</p>
+</li>
+<li><p>By definition of $\mathbb{E}$ for simple random variables, we have $\mathbb{E}(x_m) =\sum_{i\in[m]} x(\omega_i)\mathbf{p}{\omega_i}$ for each $m$.</p>
+</li>
+<li><p>But, $x_m \uparrow x$, so we have $\mathbb{E}(x_m)\uparrow \mathbb{E}(x)$ by the Monotone Convergence Theorem 1. Consequently,<br>$$<br>\mathbb{E}(x)=\lim\mathbb{E}(x_m)=\lim\sum_{i\in[m]}x(\omega_i)\mathbf{p}{\omega_i}=\sum^\infty_{i=1}x(\omega_i)\mathbf{p}{\omega_i}=\sum_{x\in X}x(\omega)\mathbf{p}{\omega}<br>$$</p>
+</li>
+<li><p>for any nonnegative random variable $x$ on $(X,2^X,\mathbf{p})$.</p>
+</li>
+</ul>
+<p><strong>Example 1.5</strong>: </p>
+<ul>
+<li><p>For any real numbers $a$ and $b$ with $a &lt; b$, the uniform distribution $F$ on $[a,b]$ is absolutely continuous.</p>
+</li>
+<li><p>The map $f:\mathbb{R}\to\mathbb{R}+$ where<br>$$<br>f(t)=\left{\begin{matrix}\frac{1}{a-b},&amp;0\leq t\leq b\0,&amp;\mbox{otherwise}\end{matrix}\right.<br>$$</p>
+</li>
+<li><p>is a density for that distribution function. </p>
+</li>
+<li><p>Similarly, for any $\lambda &gt; 0$, the exponential distribution with parameter $\lambda$ ,is absolutely continuous.</p>
+</li>
+<li><p>The map $f:\mathbb{R}\to\mathbb{R}+$ where<br>$$<br>f(t)=\left{\begin{matrix}\lambda e^{-\lambda t},&amp; t\geq 0\0,&amp;\mbox{otherwise}\end{matrix}\right.<br>$$</p>
+</li>
+<li><p>is a density for that distribution function. </p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Arbitrary-Random-Variables/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>The Expectation Functional of Arbitrary Random Variables</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">
+        <span>The Distribution of a Random Variable</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Expectation-Functional-of-Simple-Random-Variables"><span class="toc-number">1.</span> <span class="toc-text">The Expectation Functional of Simple Random Variables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositions-and-Theorems"><span class="toc-number">1.2.</span> <span class="toc-text">Propositions and Theorems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.3.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2020 - 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

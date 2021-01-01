@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            The Distribution of a Random Variable | hqin
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-red mdui-theme-accent-deep-orange">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">hqin</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keyword"><input type="hidden" name="sitesearch" value="https://hqin-2020.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">hqin</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://ygnmax.github.io" class="mdui-list-item mdui-ripple">
+                            Guangnan&#39;s Notes
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">The Distribution of a Random Variable</a>
+  <div class="post-header-meta">
+
+    <span>
+      <span class="iconfont icon-folder"></span>
+      &nbsp;<a class="category-link" href="/categories/1-Mathematics/">1 Mathematics</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a class="category-link" href="/categories/1-Mathematics/1-1-Analysis/1-1-I-Random-Variables/">1.1.I Random Variables</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-red" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=The Distribution of a Random Variable&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/&pic=https://hqin-2020.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=The Distribution of a Random Variable&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/&via=hqin" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/&title=The Distribution of a Random Variable" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=hqin&title=The Distribution of a Random Variable&summary=&pics=https://hqin-2020.github.io/null&url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://hqin-2020.github.io/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/&text=The Distribution of a Random Variable" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="The-Distribution-of-a-Random-Variable"><a href="#The-Distribution-of-a-Random-Variable" class="headerlink" title="The Distribution of a Random Variable"></a>The Distribution of a Random Variable</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Image Measure of $\mu$ by $f$</strong>: </p>
+<ul>
+<li>Let $(X_1,\Sigma_1)$ and $(X_2,\Sigma_2)$ be two measurable spaces, and $f : X_1\to X_2$ a $\Sigma_1\backslash\Sigma_2$-measurable function. </li>
+<li>For any measure $\mu$ on $\Sigma_1$, the map $\mu_f : \Sigma_2 \to [0, \infty]$, defined by</li>
+</ul>
+<p>$$<br>\mu_f(S):=\mu(f^{-1}(S))<br>$$</p>
+<ul>
+<li>is called <strong>the image measure of $\mu$ by $f$.</strong></li>
+</ul>
+<p><strong>Distribution</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space. </li>
+<li>For any $Y $-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$, the image measure of $\mu$ by $x$ (where we think of $x$ as $\Sigma\backslash \mathcal{B}(Y )$-measurable) is called the <strong>distribution</strong> of $x$</li>
+<li>that is, $\mathbf {p}_x$ is the Borel measure on $Y$ such that</li>
+</ul>
+<p>$$<br>\mathbf{p}_x(S):=\mathbf{p}(x^{-1}(S))\ \ \mbox{ for each }\ S\in\mathcal{B}(Y)<br>$$</p>
+<blockquote>
+<p>For the single measure on the probability space $(X,\Sigma,\mathbf{p})$, if we have different random variables, we will have different distributions.</p>
+</blockquote>
+<blockquote>
+<p>For any metric space $Y$, the distribution $\mathbf{p}_x$ of a $Y$-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$ describes the probabilities for every event that may involve $x$. </p>
+</blockquote>
+<p><strong>Distribution Function</strong>: </p>
+<ul>
+<li>When $x$ is a random variable that is, $Y = \mathbb{R} $, the distribution function induced by $\mathbf {p}_x $is called the <strong>distribution function</strong> of $x$. </li>
+<li>We denote this distribution function by $F_x$, and say that $x$ is <strong>continuous</strong> if $F_x$ is a continuous function. </li>
+<li>On the other hand, we say that $x$ is discrete if $F_x$ is a <strong>discrete</strong> distribution function.</li>
+</ul>
+<blockquote>
+<p>We often describe the probabilistic behavior of a random variable by specifying its distribution function directly. So, the statement<br>$$<br>x \mbox{ is a random variable on }X \mbox{ with the distribution function }F<br>$$<br>means that $x$ is a random variable on some probability space $(X,\Sigma,\mathbf{p})$ such that the distribution of $x$ is the Lebesgue-Stieltjes probability measure induced by $F$, that is, $F = F_x$.</p>
+</blockquote>
+<blockquote>
+<p>For the single measure on the probability space $(X,\Sigma,\mathbf{p})$, if we have different random variables, we will also have different distribution functions.</p>
+</blockquote>
+<p><strong>Equal $\mu$-almost everywhere, Equal almost surely</strong>: </p>
+<ul>
+<li>Let $Y$ be a separable metric space, and $x$ and $y$ two $Y $-valued random variables on a measure space $(X,\Sigma,\mu)$. </li>
+<li>If $\mu{x\neq y}=0$, we say that $x$ and $y$ are <strong>equal $\mu$-almost everywhere</strong>, and write $x=_{\mu-a.e.} y$. </li>
+<li>But if $\mu$ is a probability measure, and $x$ and $y$ are equal $\mu$-almost everywhere; that is, when $\mu{x = y} = 1$, we say that $x $ and $y$ are <strong>equal almost surely</strong> (assuming that $\mu$ is understood from the context), and write $x =_{a.s.} y$.</li>
+</ul>
+<p><strong>$x$ large than $y$ $\mu$-almost everywhere, larger than $y$ almost surely</strong>: </p>
+<ul>
+<li>Let $x$ and $y$ be two $\overline{\mathbb{R}}$-valued random variables on a measure space $(X,\Sigma,\mu)$. If ${x &lt; y} = 0$, we say that $x$ is <strong>larger than $y$ $\mu$-almost everywhere</strong>, and write $x\geq_{\mu-a.e.} y$. </li>
+<li>But if $\mu$ is a probability measure, and $x$ is larger than $y$ $\mu$-almost everywhere, that is, when ${x \geq y} = 1$, we say that $x$ is <strong>larger than $y$ almost surely</strong> (assuming that $\mu$ is understood from the context), and write $x\geq_{a.s.} y$. </li>
+<li>The expressions “$x\leq_{\mu-a.e.}y$” and “$x\leq_{a.s.} y$” are understood similarly.</li>
+</ul>
+<p><strong>Converge Almost Surely</strong>: </p>
+<ul>
+<li>Let $Y$ be a separable metric space, and let $x,x_1,x_2,\cdots$ be a $Y$-valued random variables on a probability space $(X,\Sigma, \mathbf{p})$. </li>
+<li>We say that $(x_m)$ <strong>converges almost surely to $x$</strong> (or that $x$ is an <strong>almost sure limit</strong> of $(x_m)$) whenever $\mathbf{p}{x_m\to x}=1$, that is,</li>
+</ul>
+<p>$$<br>\mathbf{p}{\omega\in X : d_Y (x_m(\omega),x(\omega)) \to 0} = 1.<br>$$</p>
+<ul>
+<li>In this case, we write $x_m\to_{a.s.} x$, but if $x$ is a constant map, say, $x =\nu $ for some $\nu\in Y$, we abuse notation and write $x_m\to_{a.s.}\nu $.</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Uniform Distribution</strong>: </p>
+<ul>
+<li>Let $a $ and $b$ be two real numbers with $a &lt; b$. </li>
+<li>Consider the distribution function $F$ where $F |<em>{(-\infty,a)} = 0,\ F|</em>{(b,\infty) }= 1$, and</li>
+</ul>
+<p>$$<br>F(t)=\frac{t-a}{b-a},\ \ \ a\leq t\leq b.<br>$$</p>
+<ul>
+<li>This distribution function, as well as the Lebesgue-Stieltjes probability measure induced by it, is called the uniform distribution on $[a, b]$.</li>
+<li>In turn, a random variable with the uniform distribution on $[a,b]$ is often referred to as a “random variable which is uniformly distributed on $[a, b]$”.</li>
+</ul>
+<p><strong>Exponential Distribution</strong>: </p>
+<ul>
+<li>Let $\lambda$ be a positive real number. </li>
+<li>Consider the distribution function $F$ where $F|_{(-\infty;0)} = 0$ and</li>
+</ul>
+<p>$$<br>F(t)=1-e^{-\lambda t}, \ \ \ \ t\geq0.<br>$$</p>
+<ul>
+<li>This distribution function, as well as the Lebesgue-Stieltjes probability measure induced by it, is called the exponential distribution with parameter $\lambda$. </li>
+<li>In turn, a random variable with the exponential distribution with parameter  is often referred to as a “random variable which is exponentially distributed with parameter $\lambda$”.</li>
+</ul>
+<p><strong>Remark 2.1</strong>:</p>
+<ul>
+<li><p>There is a one-to-one correspondence between any two of the following three concepts:</p>
+<ol>
+<li><p>Borel probability measures on $\mathbb{R} $</p>
+</li>
+<li><p>Distribution functions</p>
+</li>
+<li><p>Random variables on $ ((0, 1), \mathcal{B}(0, 1),\ell)$, (with different distributions $\ell_x$, actually)</p>
+<ul>
+<li><p>Every random variable transfers a measure space to a Borel probability space. The measure space is the same, but different random variables transfer it into different Borel probability spaces.</p>
+</li>
+<li><p>The Lebesgue measure on the measure space equals the probability measure on the Borel measure space.</p>
+<ul>
+<li><p>If $\mathbf{p}$ is induced by a strictly increasing distribution function, say $F$. </p>
+</li>
+<li><p>Since $F$ is then a bijection from $\mathbb{R}$ onto $(0,1)$, it is invertible, and we may define in this case $x := F^{-1}$</p>
+</li>
+<li><p>Since $x$ is increasing, we have $x\in \mathcal{L}^0((0,1), \mathcal{B}(0,1))$. </p>
+</li>
+<li><p>Moreover,<br>$$<br>\ell_x(a, b] = \ell(x^{-1}(a), x^{-1}(b)] = F (b)-  F (a) = \mathbf{p}(a, b]<br>$$<br>for any $-\infty \leq a \leq b &lt; 1$<br>$$<br>\ell_x(a,\infty) = 1 - F (a) = \mathbf{p}(a,\infty)<br>$$<br>for any $-\infty\leq  a$.</p>
+</li>
+<li><p>Thus $\ell_x$ and $\mathbf{p}$ agree on the semialgebra of all right-semiclosed intervals. </p>
+</li>
+<li><p>If $F$ is not invertible, need to define</p>
+</li>
+<li><p><strong>Pseudo-Inverse</strong>: Define the pseudo-inverse of a distribution function $F$ as the map $F^{-1} :(0,1)\to \mathbb{R} $ with<br>$$<br>F^{-1}(\omega) := \inf {t\in \mathbb{R} : F(t) \geq\omega}.<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>Example 2.3</strong>:</p>
+<ul>
+<li>Consider the probability space $(\mathbb{N},2^\mathbb{N},\mathbf{p})$ where $\mathbf{p}{i} = 2^{-i}$ for each $i\in \mathbb{N}$. </li>
+<li>Any two ($Y$-valued) random variables $x$ and $y$ on this space is almost surely equal to each other is $x = y$.</li>
+</ul>
+<p><strong>Example 2.3</strong>:</p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$ and take any two random variables $x$ and $y$ on this space. If $x|<em>{[0,1]\setminus\mathbb{Q} }= y|</em>{[0,1]\setminus\mathbb{Q}}$, then $x =_{a.s.} y$. </li>
+<li>Of course, we can replace $\mathbb{Q}$ with any countable subset of $[0, 1]$ in this observation.</li>
+</ul>
+<p><strong>Example 2.4</strong>: </p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$.</li>
+<li>Consider the sequence $(x_m) $ in $\mathbb{R}^{[0,1]}$ where $x_m(\omega) := 1 + \omega^m$. Then, $x_m\to 1$ is false, because $x_m(1) = 2$ for each $m$, and yet ${x_m\to 1} = [0, 1)$, and hence $x_m \to_{a.s.} 1$.</li>
+</ul>
+<p><strong>Example 2.4</strong>: </p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$.</li>
+<li>Consider the sequence $(y_m)$ in $\mathbb{R}^{[0,1]}$ where $y_m$ is the indicator function of $[0, \frac{m+1}{2m}]$ on $[0,1]$. Then, $y_m\to_{a.s}. \mathbf{1}_{[0,\frac{1}{2})}$, but $y_m(\frac{1}{2}) = 1$ for each $m$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/12/15/Mathematics/Analysis/10%20Expectation%20via%20the%20Lebesgue%20Integral/The-Expectation-Functional-of-Simple-Random-Variables/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>The Expectation Functional of Simple Random Variables</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">
+        <span>Random Variables</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-red" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Distribution-of-a-Random-Variable"><span class="toc-number">1.</span> <span class="toc-text">The Distribution of a Random Variable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples-and-Exercises"><span class="toc-number">1.2.</span> <span class="toc-text">Examples and Exercises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.3.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2020 - 2021 
+        
+        hqin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-red" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
