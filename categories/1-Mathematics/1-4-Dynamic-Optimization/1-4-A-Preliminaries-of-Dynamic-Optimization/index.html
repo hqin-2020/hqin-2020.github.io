@@ -7,11 +7,10 @@
 <li>The ques­tion is: How should the firm select the sequence of subprocesses through the five stages in order to minimize the total cost?</li>
 </ul>
 <p>In Fig. 1.1, our problem is transformed to choose a connected sequence of arcs going from left to right, starting at $A$ and terminating at $Z$, such that the sum of the values of the component arcs is minimized. </p>
-<p>![](Fig 1.1.png)</p>
-<p>![](/images/Fig 1.1.png)</p>
+<img src="/2021/01/02/Mathematics/Dynamic%20Optimization/1%20Preliminaries%20of%20Dynamic%20Optimization/The-Nature-of-Dynamic-Optimization/Fig_1.1.png" class title="[title]">
 
 
-<p>![](/Users/EDBC/Downloads/The-Nature-of-Dynamic-Optimization/Fig 1.1.png)</p>
+
 <ul>
 <li>The optimal solution for the present example is the path $ACEHJZ$, with $14 as the minimum cost of production. </li>
 </ul>
@@ -20,10 +19,8 @@
 <li>Our assigned task is to transport a load of cargo from location $A$ to location $Z$ at minimum cost by selecting an appropriate travel path. </li>
 <li>The cost associated with each possible path de­pends, in general, not only on the distance traveled, but also on the topography on that path. </li>
 </ul>
-<p>![](/images/Fig 1.2.png)</p>
+<img src="/2021/01/02/Mathematics/Dynamic%20Optimization/1%20Preliminaries%20of%20Dynamic%20Optimization/The-Nature-of-Dynamic-Optimization/Fig_1.2.png" class title="[title]">
 
-
-<p>![](/Users/EDBC/Downloads/The-Nature-of-Dynamic-Optimization/Fig 1.2.png)</p>
 <p>Regardless of whether the variables are discrete or continuous, a simple type of dynamic optimization problem would contain the following basic ingredients:</p>
 <ol>
 <li>a given <strong>initial point</strong> and a given <strong>terminal point</strong>;</li>
@@ -45,10 +42,8 @@
 <li>In the latter, $g$ is a function of $f$, and $f$ is in turn a function of $x$; thus, $g$ is in the final analysis a function of $x$. </li>
 <li>In the symbol $V[y(t)]$, on the other hand, the $y(t)$ component comes as an integral unit-to indicate time paths-and there­fore $V$ is actually a <strong>functional</strong> of $y(t)$</li>
 </ul>
-<p>![](/images/Fig 1.3.png)</p>
+<img src="/2021/01/02/Mathematics/Dynamic%20Optimization/1%20Preliminaries%20of%20Dynamic%20Optimization/The-Nature-of-Dynamic-Optimization/Fig_1.3.png" class title="[title]">
 
-
-<p>![](/Users/EDBC/Downloads/The-Nature-of-Dynamic-Optimization/Fig 1.3.png)</p>
 <h2 id="Variable-Endpoints-and-Transversality-Conditions"><a href="#Variable-Endpoints-and-Transversality-Conditions" class="headerlink" title="Variable Endpoints and Transversality Conditions"></a>Variable Endpoints and Transversality Conditions</h2><h3 id="Types-of-Variable-Terminal-Points"><a href="#Types-of-Variable-Terminal-Points" class="headerlink" title="Types of Variable Terminal Points"></a>Types of Variable Terminal Points</h3><p>In Fig. 1.5a, while the planning horizon is fixed at time $T$, any point on the vertical line $t = T$ is acceptable as a terminal point, such as $Z_1$, $Z_2$, and $Z_3$• </p>
 <ul>
 <li>This type of problem is commonly referred to in the literature as a <strong>fixed-time-horizon problem</strong>, <strong>fixed-time problem</strong>, or the <strong>vertical-terminal-line</strong> problem, meaning that the termi­nal time of the problem is fixed rather than free. </li>
@@ -61,10 +56,8 @@
 <ul>
 <li>We shall call this type of problem the <strong>terminal-curve</strong> (or <strong>terminal-surface</strong>) <strong>problem</strong> .</li>
 </ul>
-<p>![](/images/Fig 1.5.png)</p>
+<img src="/2021/01/02/Mathematics/Dynamic%20Optimization/1%20Preliminaries%20of%20Dynamic%20Optimization/The-Nature-of-Dynamic-Optimization/Fig_1.5.png" class title="[title]">
 
-
-<p>![](/Users/EDBC/Downloads/The-Nature-of-Dynamic-Optimization/Fig 1.5.png)</p>
 <h3 id="Transversality-Condition"><a href="#Transversality-Condition" class="headerlink" title="Transversality Condition"></a>Transversality Condition</h3><p>The common feature of <strong>variable-terminal-point</strong> problems is that the planner has <u>one more degree of freedom</u> than in the <strong>fixed-terminal-point</strong> case. </p>
 <ul>
 <li><p>But this fact automatically implies that, in deriving the optimal solution, <u>an extra condition is needed to pinpoint the exact path chosen</u>. </p>
@@ -143,12 +136,8 @@
 <li><p>From this, we can also construct an <strong>optimal policy function</strong>, which will tell us how best to proceed from any specific initial point $i$, in order to attain $V^*(i)$ by the proper selection of a sequence of arcs leading from point $i$ to the terminal point $Z$.</p>
 </li>
 </ul>
-<p>![](/Users/EDBC/Blog/hqin-2020/source/_posts/Mathematics/Dynamic Optimization/1 Preliminaries of Dynamic Optimization/The-Nature-of-Dynamic-Optimization/Fig 1.1.png)</p>
-<p>![](/images/Fig 1.6.png)</p>
-<p>![](/Users/EDBC/Downloads/source/images/Fig 1.6.png)</p>
+<img src="/2021/01/02/Mathematics/Dynamic%20Optimization/1%20Preliminaries%20of%20Dynamic%20Optimization/The-Nature-of-Dynamic-Optimization/Fig_1.6.png" class title="[title]">
 
-
-<p>![](/Users/EDBC/Downloads/The-Nature-of-Dynamic-Optimization/Fig 1.6.png)</p>
 <p>Returning to Fig. 1.6, imagine that our immediate problem is merely that of determining the optimal values for stage 5, associated with the three initial points $I$, $J$, and $K$. </p>
 <ul>
 <li><p>The answer is easily seen to be<br>$$<br>V^*(I) = 3,\ V^*(J) = 1,\ V^*(K) =2\tag{1.10}<br>$$</p>
