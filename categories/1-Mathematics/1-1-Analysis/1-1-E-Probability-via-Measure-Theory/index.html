@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Category: 1.1.E Probability via Measure Theory - hqin</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hqin"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hqin"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="hqin"><meta property="og:url" content="https://hqin-2020.github.io/"><meta property="og:site_name" content="hqin"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://hqin-2020.github.io/img/og_image.png"><meta property="article:author" content="hqin"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hqin-2020.github.io"},"headline":"hqin","image":["https://hqin-2020.github.io/img/og_image.png"],"author":{"@type":"Person","name":"hqin"},"description":""}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hqin" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">hqin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/1-Mathematics/">1 Mathematics</a></li><li><a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a></li><li class="is-active"><a href="#" aria-current="page">1.1.E Probability via Measure Theory</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-15T13:51:59.000Z" title="12/15/2020, 9:51:59 PM">2020-12-15</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/">1.1.E Probability via Measure Theory</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/The-Distribution-of-a-Random-Variable/">The Distribution of a Random Variable</a></h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Image Measure of $\mu$ by $f$</strong>: </p>
+<ul>
+<li>Let $(X_1,\Sigma_1)$ and $(X_2,\Sigma_2)$ be two measurable spaces, and $f : X_1\to X_2$ a $\Sigma_1\backslash\Sigma_2$-measurable function. </li>
+<li>For any measure $\mu$ on $\Sigma_1$, the map $\mu_f : \Sigma_2 \to [0, \infty]$, defined by</li>
+</ul>
+<p>$$<br>\mu_f(S):=\mu(f^{-1}(S))<br>$$</p>
+<ul>
+<li>is called <strong>the image measure of $\mu$ by $f$.</strong></li>
+</ul>
+<p><strong>Distribution</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space. </li>
+<li>For any $Y $-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$, the image measure of $\mu$ by $x$ (where we think of $x$ as $\Sigma\backslash \mathcal{B}(Y )$-measurable) is called the <strong>distribution</strong> of $x$</li>
+<li>that is, $\mathbf {p}_x$ is the Borel measure on $Y$ such that</li>
+</ul>
+<p>$$<br>\mathbf{p}_x(S):=\mathbf{p}(x^{-1}(S))\ \ \mbox{ for each }\ S\in\mathcal{B}(Y)<br>$$</p>
+<blockquote>
+<p>For the single measure on the probability space $(X,\Sigma,\mathbf{p})$, if we have different random variables, we will have different distributions.</p>
+</blockquote>
+<blockquote>
+<p>For any metric space $Y$, the distribution $\mathbf{p}_x$ of a $Y$-valued random variable $x$ on a probability space $(X,\Sigma,\mathbf{p})$ describes the probabilities for every event that may involve $x$. </p>
+</blockquote>
+<p><strong>Distribution Function</strong>: </p>
+<ul>
+<li>When $x$ is a random variable that is, $Y = \mathbb{R} $, the distribution function induced by $\mathbf {p}_x $is called the <strong>distribution function</strong> of $x$. </li>
+<li>We denote this distribution function by $F_x$, and say that $x$ is <strong>continuous</strong> if $F_x$ is a continuous function. </li>
+<li>On the other hand, we say that $x$ is discrete if $F_x$ is a <strong>discrete</strong> distribution function.</li>
+</ul>
+<blockquote>
+<p>We often describe the probabilistic behavior of a random variable by specifying its distribution function directly. So, the statement<br>$$<br>x \mbox{ is a random variable on }X \mbox{ with the distribution function }F<br>$$<br>means that $x$ is a random variable on some probability space $(X,\Sigma,\mathbf{p})$ such that the distribution of $x$ is the Lebesgue-Stieltjes probability measure induced by $F$, that is, $F = F_x$.</p>
+</blockquote>
+<blockquote>
+<p>For the single measure on the probability space $(X,\Sigma,\mathbf{p})$, if we have different random variables, we will also have different distribution functions.</p>
+</blockquote>
+<p><strong>Equal $\mu$-almost everywhere, Equal almost surely</strong>: </p>
+<ul>
+<li>Let $Y$ be a separable metric space, and $x$ and $y$ two $Y $-valued random variables on a measure space $(X,\Sigma,\mu)$. </li>
+<li>If $\mu{x\neq y}=0$, we say that $x$ and $y$ are <strong>equal $\mu$-almost everywhere</strong>, and write $x=_{\mu-a.e.} y$. </li>
+<li>But if $\mu$ is a probability measure, and $x$ and $y$ are equal $\mu$-almost everywhere; that is, when $\mu{x = y} = 1$, we say that $x $ and $y$ are <strong>equal almost surely</strong> (assuming that $\mu$ is understood from the context), and write $x =_{a.s.} y$.</li>
+</ul>
+<p><strong>$x$ large than $y$ $\mu$-almost everywhere, larger than $y$ almost surely</strong>: </p>
+<ul>
+<li>Let $x$ and $y$ be two $\overline{\mathbb{R}}$-valued random variables on a measure space $(X,\Sigma,\mu)$. If ${x &lt; y} = 0$, we say that $x$ is <strong>larger than $y$ $\mu$-almost everywhere</strong>, and write $x\geq_{\mu-a.e.} y$. </li>
+<li>But if $\mu$ is a probability measure, and $x$ is larger than $y$ $\mu$-almost everywhere, that is, when ${x \geq y} = 1$, we say that $x$ is <strong>larger than $y$ almost surely</strong> (assuming that $\mu$ is understood from the context), and write $x\geq_{a.s.} y$. </li>
+<li>The expressions “$x\leq_{\mu-a.e.}y$” and “$x\leq_{a.s.} y$” are understood similarly.</li>
+</ul>
+<p><strong>Converge Almost Surely</strong>: </p>
+<ul>
+<li>Let $Y$ be a separable metric space, and let $x,x_1,x_2,\cdots$ be a $Y$-valued random variables on a probability space $(X,\Sigma, \mathbf{p})$. </li>
+<li>We say that $(x_m)$ <strong>converges almost surely to $x$</strong> (or that $x$ is an <strong>almost sure limit</strong> of $(x_m)$) whenever $\mathbf{p}{x_m\to x}=1$, that is,</li>
+</ul>
+<p>$$<br>\mathbf{p}{\omega\in X : d_Y (x_m(\omega),x(\omega)) \to 0} = 1.<br>$$</p>
+<ul>
+<li>In this case, we write $x_m\to_{a.s.} x$, but if $x$ is a constant map, say, $x =\nu $ for some $\nu\in Y$, we abuse notation and write $x_m\to_{a.s.}\nu $.</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Uniform Distribution</strong>: </p>
+<ul>
+<li>Let $a $ and $b$ be two real numbers with $a &lt; b$. </li>
+<li>Consider the distribution function $F$ where $F |<em>{(-\infty,a)} = 0,\ F|</em>{(b,\infty) }= 1$, and</li>
+</ul>
+<p>$$<br>F(t)=\frac{t-a}{b-a},\ \ \ a\leq t\leq b.<br>$$</p>
+<ul>
+<li>This distribution function, as well as the Lebesgue-Stieltjes probability measure induced by it, is called the uniform distribution on $[a, b]$.</li>
+<li>In turn, a random variable with the uniform distribution on $[a,b]$ is often referred to as a “random variable which is uniformly distributed on $[a, b]$”.</li>
+</ul>
+<p><strong>Exponential Distribution</strong>: </p>
+<ul>
+<li>Let $\lambda$ be a positive real number. </li>
+<li>Consider the distribution function $F$ where $F|_{(-\infty;0)} = 0$ and</li>
+</ul>
+<p>$$<br>F(t)=1-e^{-\lambda t}, \ \ \ \ t\geq0.<br>$$</p>
+<ul>
+<li>This distribution function, as well as the Lebesgue-Stieltjes probability measure induced by it, is called the exponential distribution with parameter $\lambda$. </li>
+<li>In turn, a random variable with the exponential distribution with parameter  is often referred to as a “random variable which is exponentially distributed with parameter $\lambda$”.</li>
+</ul>
+<p><strong>Remark 2.1</strong>:</p>
+<ul>
+<li><p>There is a one-to-one correspondence between any two of the following three concepts:</p>
+<ol>
+<li><p>Borel probability measures on $\mathbb{R} $</p>
+</li>
+<li><p>Distribution functions</p>
+</li>
+<li><p>Random variables on $ ((0, 1), \mathcal{B}(0, 1),\ell)$, (with different distributions $\ell_x$, actually)</p>
+<ul>
+<li><p>Every random variable transfers a measure space to a Borel probability space. The measure space is the same, but different random variables transfer it into different Borel probability spaces.</p>
+</li>
+<li><p>The Lebesgue measure on the measure space equals the probability measure on the Borel measure space.</p>
+<ul>
+<li><p>If $\mathbf{p}$ is induced by a strictly increasing distribution function, say $F$. </p>
+</li>
+<li><p>Since $F$ is then a bijection from $\mathbb{R}$ onto $(0,1)$, it is invertible, and we may define in this case $x := F^{-1}$</p>
+</li>
+<li><p>Since $x$ is increasing, we have $x\in \mathcal{L}^0((0,1), \mathcal{B}(0,1))$. </p>
+</li>
+<li><p>Moreover,<br>$$<br>\ell_x(a, b] = \ell(x^{-1}(a), x^{-1}(b)] = F (b)-  F (a) = \mathbf{p}(a, b]<br>$$<br>for any $-\infty \leq a \leq b &lt; 1$<br>$$<br>\ell_x(a,\infty) = 1 - F (a) = \mathbf{p}(a,\infty)<br>$$<br>for any $-\infty\leq  a$.</p>
+</li>
+<li><p>Thus $\ell_x$ and $\mathbf{p}$ agree on the semialgebra of all right-semiclosed intervals. </p>
+</li>
+<li><p>If $F$ is not invertible, need to define</p>
+</li>
+<li><p><strong>Pseudo-Inverse</strong>: Define the pseudo-inverse of a distribution function $F$ as the map $F^{-1} :(0,1)\to \mathbb{R} $ with<br>$$<br>F^{-1}(\omega) := \inf {t\in \mathbb{R} : F(t) \geq\omega}.<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>Example 2.3</strong>:</p>
+<ul>
+<li>Consider the probability space $(\mathbb{N},2^\mathbb{N},\mathbf{p})$ where $\mathbf{p}{i} = 2^{-i}$ for each $i\in \mathbb{N}$. </li>
+<li>Any two ($Y$-valued) random variables $x$ and $y$ on this space is almost surely equal to each other is $x = y$.</li>
+</ul>
+<p><strong>Example 2.3</strong>:</p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$ and take any two random variables $x$ and $y$ on this space. If $x|<em>{[0,1]\setminus\mathbb{Q} }= y|</em>{[0,1]\setminus\mathbb{Q}}$, then $x =_{a.s.} y$. </li>
+<li>Of course, we can replace $\mathbb{Q}$ with any countable subset of $[0, 1]$ in this observation.</li>
+</ul>
+<p><strong>Example 2.4</strong>: </p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$.</li>
+<li>Consider the sequence $(x_m) $ in $\mathbb{R}^{[0,1]}$ where $x_m(\omega) := 1 + \omega^m$. Then, $x_m\to 1$ is false, because $x_m(1) = 2$ for each $m$, and yet ${x_m\to 1} = [0, 1)$, and hence $x_m \to_{a.s.} 1$.</li>
+</ul>
+<p><strong>Example 2.4</strong>: </p>
+<ul>
+<li>Consider the probability space $([0,1], \mathcal{B}[0, 1], \ell)$.</li>
+<li>Consider the sequence $(y_m)$ in $\mathbb{R}^{[0,1]}$ where $y_m$ is the indicator function of $[0, \frac{m+1}{2m}]$ on $[0,1]$. Then, $y_m\to_{a.s}. \mathbf{1}_{[0,\frac{1}{2})}$, but $y_m(\frac{1}{2}) = 1$ for each $m$.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-15T13:51:55.000Z" title="12/15/2020, 9:51:55 PM">2020-12-15</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/">1.1.E Probability via Measure Theory</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/15/Mathematics/Analysis/9%20Random%20Variables/Random-Variables/">Random Variables</a></h1><div class="content"><p>One is often interested in a particular characteristic of the (uncertain) outcomes of an experiment. To deal with such situations we may want to transform the given probability space (that models the underlying experiment) into another probability space the sample space of which contains the set of all values of the characteristic that we are interested in. </p>
+<p>This is achieved by means of a measurable function, which is more commonly referred to as a random variable in probability theory. In the most general sense of the term, such a function maps one measurable space into another. </p>
+<p>However, most measurable functions that are encountered in practice map a measurable space into a metric space, leading to the notion of Borel measurability. </p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Measurable</strong>: </p>
+<ul>
+<li>Let $(X_1,\Sigma_1)$ and $(X_2,\Sigma_2)$ be two measurable spaces. </li>
+<li>We say that a function $f : X_1\rightarrow X _2$ is **$\Sigma_1\backslash\Sigma_2$-measurable** if $f^{-1}(S) \in \Sigma_1$ for every $S \in \Sigma_2 $.</li>
+</ul>
+<p><strong>Random Variable, $\Sigma$-Measurable Real Function, Borel Measurable</strong>: </p>
+<ul>
+<li><p>Let $(X,\Sigma)$ be a measurable space and $Y$ a metric space. </p>
+</li>
+<li><p>A function $x : X\rightarrow Y$ is called a <strong>$Y$-valued random variable</strong> on $(X,\Sigma)$ if it is $\Sigma\backslash \mathcal{B}(Y)$-measurable, that is, if $x^{-1}(S)\in\Sigma$  for every $S\in \mathcal{B}(Y )$. </p>
+</li>
+<li><p>An $\mathbb{R} $-valued random variable is simply called a <strong>random variable</strong> on $(X,\Sigma)$.</p>
+<ul>
+<li>The set of all random variables on a measurable space $(X,\Sigma )$ is denoted by $\mathcal {L}^0(X,\Sigma)$. Moreover, we define<br>$$<br>L^0_+(X,\Sigma) := {x \in \mathcal{L}^0(X,\Sigma) : x\geq 0}.<br>$$</li>
+</ul>
+</li>
+<li><p>In real analysis what we call here a random variable on $(X,\Sigma )$ is called a <strong>$\Sigma$-measurable real function</strong> on $X$. </p>
+</li>
+<li><p>Furthermore, a ($Y$-valued) random variable on a Borel probability space is said to be <strong>Borel measurable</strong>. </p>
+</li>
+</ul>
+<blockquote>
+<p>Let $(X,\Sigma)$ be a measurable space and $Y$ a metric space. In principle, to verify that a map $x:X\to Y$ is a $Y$-valued random variable, we need to show that $x^{-1}(B)\in\Sigma$ for every Borel subset $B$ of $Y$ .</p>
+<p>Fortunately, there is a nice short-cut. If we can find a collection $\mathcal{A}$ of subsets of $Y$ that generates $\mathcal{B}(Y)$ and if we manage to verify that $x^{-1}(\mathcal{A})$  for every $A\in\mathcal{A}$ we may then conclude that $x$ is a $Y$-valued random variable.</p>
+<p>For instance, if<br>$$<br>x^{-1}(O)\in\Sigma\mbox{ for every open subset }O \mbox{ of }Y,<br>$$<br>or<br>$$<br>x^{-1}(C)\in\Sigma\mbox{ for every closed subset }C \mbox{ of }Y,<br>$$<br>then $x$ is sure to be a $Y$-valued random variable.</p>
+</blockquote>
+<blockquote>
+<p>The fact that the set of all intervals of the form $(-\infty,a]$, or of the form $(1,a)$, generates $\mathcal{B}(\mathbb{R})$ is used frequently, so it is probably a good idea to state it separately.</p>
+<p>Given any measurable space $(X,\Sigma)$ and a map $x : X \rightarrow \mathbb{R} $, we have<br>$$<br>x\in\mathcal{L}^0(X,\Sigma)\mbox{ iff }{\omega\in X:x(\omega)\leq a}\in\Sigma\  \mbox{ for every } a\in\mathbb{R}<br>$$</p>
+<p>and<br>$$<br>x\in\mathcal{L}^0(X,\Sigma)\mbox{ iff }{\omega\in X:x(\omega)&lt; a}\in\Sigma\  \mbox{ for every } a\in\mathbb{R}<br>$$</p>
+<p>In measure theory and probability, we simply write ${x \leq a}$ for the set ${ \omega\in X : x(\omega) \leq a}$. While it may take a bit getting used to at first, this type of shorthand notation simplifies complex expressions considerably. For instance, with this notational convention, they we have<br>$$<br>x\in \mathcal{L}^0(X,\Sigma)\mbox{ iff }{x\leq a}\in\Sigma\ \mbox{ for every } a\in\mathbb{R}<br>$$<br>In what follows, we will work with these sorts of expressions routinely. All you need to do is to remember that, given a probability (or measure) space $(X,\Sigma, \mathbf{p})$, the set<br>$$<br>{\mbox{a statement about random variables defined on this space}}<br>$$<br>equals, by convention,<br>$$<br>{\omega\in X :\mbox{ this statement is true}}<br>$$<br>For any $x,y \in \mathcal{L}^0(X )$, the event that the absolute value of the difference between $x$ and $y$ is strictly larger than $3$ is written as ${|x-y|&gt; 3} $ instead of the mouthful ${\omega\in X : |x(\omega) -y(\omega)| &gt; 3}$. </p>
+<p>In turn, the probability of this event is written simply as $\mathbf{p}{|x- y| &gt; 3}$:</p>
+</blockquote>
+<p><strong>Random $n$-vector, Random Real Sequence, Random Bounded Map, Random Element</strong>: </p>
+<ul>
+<li>An $\mathbb{R}^n$-valued random variable as a <strong>random $n$-vector</strong> if $n \geq 2$. </li>
+<li>Analogously, an $\mathbb{R}^{\infty}$-valued random variable may be called a <strong>random real sequence</strong></li>
+<li>A $\mathbf{B}[0,1]$-valued random variable is a <strong>random bounded map</strong> on $[0,1]$ and so on. </li>
+<li>More generally, a $Y$-valued random variable (for any metric space $Y$) is sometimes referred to as a <strong>random element</strong> of $Y$.</li>
+</ul>
+<p><strong>Simple</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space. A $Y$-valued random variable $x$ is called <strong>simple</strong> if it takes finitely many values, that is, when the range of $x$ is a finite set.</li>
+</ul>
+<p><strong>Postive Parts, Negative Parts</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set and $x$ an $\overline{\mathbb{R} }$-valued function on $X$: We define the positive and negative parts of $x$ as</li>
+</ul>
+<p>$$<br>x^+:= \max {x, 0}\mbox{ and }x^-:= \max {-x,0}<br>$$</p>
+<ul>
+<li><p>respectively. </p>
+</li>
+<li><p>Clearly, both $x^+$ and $x^-$ are $[0, \infty]$-valued functions on $X$, and we have<br>$$<br>x=x^+ -x^-<br>$$</p>
+</li>
+<li><p>The absolute value of $x$ is also decomposed into these two functions as follows:<br>$$<br>|x|=x^+ +x^-<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>It is plain that the positive and negative parts of an $\overline{\mathbb{R}}$-valued function inherits the measurability of that function. </p>
+<p>In other words, if $x$ is an $\overline{\mathbb{R}}$-valued random variable on a probability space $(X,\Sigma,\mathbf{p})$, then both $x^+$ and $x^-$ are $[0,\infty]$-valued random variables on $(X,\Sigma, \mathbf{p})$. </p>
+<p>Conversely, if $x^+$ and $x^-$ are $[0,\infty]$-valued random variables on $(X,\Sigma,\mathbf{p})$, then $x$ must itself be an $\overline{\mathbb{R}}$-valued random variable on $(X,\Sigma,\mathbf{p})$.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Proposition 1.1</strong>: </p>
+<ul>
+<li>Let $X$ and $Y$ be two metric spaces, and $x: X \rightarrow Y$ a map that is continuous at all but countably many points. Then, $x$ is a $Y $-valued random variable on $(X,\mathcal{B}(X))$.</li>
+</ul>
+<blockquote>
+<p>Continuity at everywhere but countably many points is suffcient for Borel measurability. The converse is false. Even a map that is discontinuous everywhere may be Borel measurable.</p>
+</blockquote>
+<p><strong>Proposition 1.2</strong>: </p>
+<ul>
+<li>Let $(X_i,\Sigma_ i)$ be a measurable space for each $i \in [3]$. </li>
+<li>If $f : X_1 \rightarrow X_2$ is a $\Sigma_1\backslash\Sigma_2$-measurable map and $g : X_2 \rightarrow X_3$ is a $\Sigma_2\backslash\Sigma_3$-measurable map, then $g \circ f$ is a $\Sigma_1\backslash\Sigma_3$-measurable map from $X_1$ into $X_3$.</li>
+</ul>
+<p><strong>Proposition 1.5</strong>: </p>
+<ul>
+<li>Let $Y$ be a metric space and $(x_m)$ a sequence of $Y $-valued random variables on a measurable space $(X,\Sigma )$ such that $x_m\rightarrow x $ for some function $x: X \rightarrow Y$ . Then, $x$ is a $Y $-valued random variable on $(X,\Sigma )$.</li>
+</ul>
+<blockquote>
+<p>If $(x_m)$ is a sequence of metric space-valued random variables on some measurable space, $\lim x_m$ is well-defined as a random variable on that space</p>
+<p>This is unlike what is the case with continuous functions.</p>
+</blockquote>
+<p><strong>Corollary 1.6</strong>: </p>
+<ul>
+<li>Let $(x_m)$ be an increasing sequence of $\overline{\mathbb{R} }$-valued random variables on a measurable space $(X,\Sigma )$. Then, $\lim x_m$ is an $\overline{\mathbb{R}}$-valued random variable on $(X,\Sigma )$.</li>
+</ul>
+<p><strong>Theorem 1.7</strong>: </p>
+<ul>
+<li>Let $Y$ be a compact metric space and $x$ a $Y $-valued random variable on a measurable space $(X,\Sigma)$. </li>
+<li>Then, there is a sequence $(x_m)$ of simple $Y$-valued random variables on $(X,\Sigma )$ such that $x_m\rightarrow x$ uniformly.</li>
+</ul>
+<blockquote>
+<p>For a random variable with compact range, we can approximate a given random variable on a measurable space by means of simple random variables on that space. </p>
+</blockquote>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example 1.1</strong>: </p>
+<ul>
+<li>If $X$ is a nonempty set and $Y$ a metric space, then any map from $X$ into $Y$ is a $Y$-valued random variable on $(X,2^X )$. </li>
+<li>In particular, $\mathbb{R}^X = \mathcal{L}^0(X, 2^X )$.</li>
+<li>If $X$ is finite, then any such function is a simple random variable on $(X,2^X )$. </li>
+</ul>
+<p><strong>Example 1.3</strong>:</p>
+<ul>
+<li>Let $X$ and $Y$ be two metric spaces. If $x : X\to Y$ is continuous, then $x$ is a $Y $-valued random variable on $(X,\mathcal{B}(X))$.</li>
+<li>Indeed, continuity of $x$ implies that the inverse image of every open set in $Y$ under $x$ is open in $X$. </li>
+<li>So this is enough to conclude that $x$ is a $Y$-valued random variable. </li>
+<li>In particular, $\mathbf{C}(X) \subseteq \mathcal{L}^0(X,\mathcal{B}(X))$</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>$x\in \mathcal{L}^0(X,\Sigma)$ implies $ax\in \mathcal{L}^0(X,\Sigma )$ for any real number $a$. </li>
+<li>$x + y \in \mathcal{L}^0(X,\Sigma )$ for any $x,y\in \mathcal{L}^0(X,\Sigma)$. </li>
+<li>Thus, $\mathcal{L}^0(X,\Sigma)$ is a linear space under the usual (pointwise) addition and scalar multiplication operations. <ul>
+<li>The set of all simple random variables on $(X,\Sigma) $ constitutes a linear subspace of this linear space, which is itself a linear $X$ subspace of $\mathbb{R}^X $ .  </li>
+<li>If $X$ is a metric space, then $\mathbf{C}(X)$ is also a linear subspace of $\mathcal{L}^0(X,\mathcal{B}(X))$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-15T13:11:55.000Z" title="12/15/2020, 9:11:55 PM">2020-12-15</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/">1.1.E Probability via Measure Theory</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Constructing-Probability-Spaces/">Constructing Probability Spaces</a></h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Distribution Function</strong>: </p>
+<ul>
+<li>A map $F\in \mathbb{R} \rightarrow [0, 1]$ is said to be a <strong>distribution function</strong> if it is increasing, right-continuous, and $F(-\infty) = 0 = 1-F(\infty)$.</li>
+</ul>
+<blockquote>
+<p>Every Borel probability measure on $\mathbb{R}$ induces a distribution function in a natural manner. Indeed, it is easy to see that the map $t \mapsto\mathbf{p}(-\infty, t]$ on $\mathbb{R}$ is a distribution function for any $\mathbf{p}\in \Delta(\mathbb{R})$</p>
+</blockquote>
+<p><strong>Distribution function induced by</strong> $\mathbf{p}$:</p>
+<ul>
+<li><p>For any $\mathbf{p}\in \Delta(\mathbb{R})$, the map $F_\mathbf{p} :\mathbb{R}\to [0, 1]$ defined by $F (t) := \mathbf{p}(-\infty, t]$, is a distribution function. </p>
+</li>
+<li><p>We refer to $F_\mathbf{p}$ <strong>the distribution function induced by $\mathbf{p}$.</strong></p>
+</li>
+</ul>
+<p><strong>Lebesgue-Stieltjes Probability Measure induced by $F$ on $\mathbb{R} $</strong>: </p>
+<ul>
+<li>Let $\mathcal{S}$ be the semialgebra of all right-semiclosed intervals. </li>
+<li>Taking any distribution function $F$, define the map $\mathbf{q}\in[0, 1]^{\mathcal {S}}$ as</li>
+</ul>
+<p>$$<br>\mathbf{q}(a,b]:=F(b)-F(a).\ \ \ -\infty\leq a\leq b&lt;\infty<br>$$</p>
+<ul>
+<li><p>and<br>$$<br>\mathbf{q}(a,\infty):=1-F(a),\ \ \ \ -\infty\leq a.<br>$$</p>
+</li>
+<li><p>The probability measure on $\sigma(\mathcal{S})=\mathcal{B}(\mathbb{R} )$ which accords with $\mathbf{q}$, and denoted by $\mathbf{p}_F$ is called the <strong>Lebesgue-Stieltjes probability measure induced by $F$ on $\mathbb{R} $.</strong></p>
+<ul>
+<li><p>Carathéodory’s Extension Theorem would then say that there is a unique extension of $\mathbf{q}$ to a probability measure on $\mathcal{B}(\mathbb{R} )$.</p>
+</li>
+<li><p>To prove $\mathbf{q}$ is $\sigma$-additive on $\mathcal{S}$, let us take any countably infinite set $\mathcal{T}$ of pairwise disjoint right-semiclosed intervals, and assume that $\bigsqcup{T}$ is itself a right-semiclosed interval, say, $(a,b]$. </p>
+</li>
+<li><p>As things are trivial when $a = b$, we assume in what follows that $a &lt; b$ </p>
+</li>
+<li><p>We will assume here that $\bigsqcup \mathcal{T}$ is bounded from above, that is, it is an interval of the form $(a,b]$,  where $-\infty\leq a &lt; b &lt;\infty$</p>
+</li>
+<li><p>Let us then enumerate $T$ as ${f(a_1, b_1], (a_2, b_2],\cdots}$. </p>
+</li>
+<li><p>Then we can show that<br>$$<br>\mathbf{q}(a,b]=\sum^\infty_{i=1}\mathbf{q}(a_i,b_i].<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A Borel probability measure on $\mathbb{R} $ can actually be identified with a distribution function.</p>
+</blockquote>
+<p><strong>Lebesgue-Stieltjes probability measure induced by $F$ on $(a, b]$ / Lebesgue-Stieltjes measure induced by $F$ on $(a, b]$</strong>: </p>
+<ul>
+<li>If $X := (a, b]$ with $-\infty&lt; a &lt; b &lt; \infty$, and $F \in [0,1]^X$ is an increasing and right-continuous function with $F(a+) = 0$ and $F(b) = 1$, then we can define <strong>the Lebesgue-Stieltjes probability measure induced by $F$ on $(a, b] $</strong>, analogously.</li>
+<li>Drop the conditions $F(a+) = 0$ and $F(b) = 1$, and allow $F \in \mathbb{R}^X$ then we can define <strong>the Lebesgue-Stieltjes measure induced by $F$ on $(a, b] $</strong>, analogously.</li>
+</ul>
+<p><strong>Lebesque Measure on $\mathbb{R} $</strong>: </p>
+<ul>
+<li><p>Take any integer $i$, let $X_i := (i,i+1]$, and define $F_i : X_i \rightarrow [0,1]$ by $F_i(t) := t-i$.</p>
+</li>
+<li><p>Let $\ell_i$ denote the Lebesgue-Stieltjes measure induced by $F_i$ on $X_i$ for each $i$</p>
+</li>
+<li><p>We define the <strong>Lebesgue measure on $\mathbb{R} $</strong> as the $[0,\infty]$-valued map $\ell$ on $\mathcal{B}(\mathbb{R} )$ with<br>$$<br>\ell(S):=\sum_{i\in\mathbb{Z}}\ell_i(S\cap X_i)<br>$$</p>
+</li>
+</ul>
+<blockquote>
+<p>As such, $\ell$ is both regular and tight.</p>
+<p>Furthermore, it assigns to any interval its length as its measure. </p>
+<p>In particular, it is readily verified that $\ell(a, b] = b$  a for any real numbers $a$ and $b$ with $a &lt; b$, while $\ell(I) = \infty$ for any unbounded interval $I$</p>
+</blockquote>
+<blockquote>
+<p>Lebesque Measure on $\mathbb{R} $ is, geometrically speaking, the natural measure on the real line.</p>
+<p>This is indeed a $\sigma$-finite measure on $\mathcal{B}(\mathbb{R} )$.</p>
+<p>The restriction of $\ell$ to any Borel subset $X$ of $\mathbb{R}$ is a Borel measure on $X$; that is, $(X,\mathcal{B}(X),\ell|_{\mathcal{B}(X)})$ is a Borel measure space for any $X\in\mathcal{B}(\mathbb{R} )$. </p>
+<p>For brevity, we denote this measure space simply as $(X,\mathcal{B}(X),\ell)$ in what follows. For instance, $([0,1],\mathcal{B}([0,1]),\ell)$ is a Borel probability space.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Carathéodory’s Extension Theorem</strong>: </p>
+<ul>
+<li><p>Let $\mathcal{S}$ be a semialgebra on a nonempty set $X$ and take any $\mathbf{q}: \mathcal{S}\rightarrow [0,\infty]$. </p>
+</li>
+<li><p>If $\mathbf{q}$ is $\sigma$-additive, then there exists a measure $\mathbf{p}$ on $\sigma(\mathcal{S})$ such that $\mathbf{p}(S) = \mathbf{q}(S)$ for each $S \in \mathcal{S}$. </p>
+</li>
+<li><p>Moreover, if $\mathbf{q}(X) &lt; \infty$, then $\mathbf{p}$ is unique.</p>
+</li>
+</ul>
+<blockquote>
+<p>We can always extend a $\sigma$-additive $[0,\infty]$-valued map on an algebra $\mathcal{A}$ to a $\sigma$-additive $[0,\infty]$-valued map on $\sigma(\mathcal{A})$ </p>
+<p>Moreover, this extension is unique, provided that our map is real-valued.</p>
+</blockquote>
+<blockquote>
+<p>We can always obtain a probability measure, uniquely, on a $\sigma$-algebra by specifying the behavior of the measure only on a semialgebra that generates this $\sigma$-algebra. Since semialgebras and algebras are often easier than $\sigma$-algebras to work with, this fact is quite useful in constructing probability measures.</p>
+</blockquote>
+<p><strong>Proposition 3.1</strong>: </p>
+<ul>
+<li>For any real number a and Borel subset $S$ of $\mathbb{R} $, the set $S + a$ is Borel, and $\ell (S + a) =\ell (S)$.</li>
+</ul>
+<p><strong>Proposition 3.4</strong>: </p>
+<ul>
+<li><p>Let $f$ be an additive self-map on $\mathbb{R} $.</p>
+</li>
+<li><p>If $f$ is bounded on some Borel subset $S$ of $\mathbb{R} $ with $\ell(S) &gt; 0$, then it is linear.</p>
+</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example</strong>:</p>
+<ul>
+<li>Any singleton set in $\mathbb{R}$ has Lebesgue measure zero.</li>
+<li>Since the Lebesgue measure of any singleton is zero, so must be the Lebesgue measure of any countable subset of $\mathbb{R}$, because the $\sigma$-additivity of $\ell$ implies that $\ell{a_1, a_2\dots, } = \sum^\infty \ell{a_i}=0$ for any real sequence $(a_m)$. </li>
+<li>For instance: $\ell(\mathbb{Q}) = 0$</li>
+</ul>
+<p><strong>Example 3.5</strong>:</p>
+<ul>
+<li><p>There are in fact uncountable sets in $\mathbb{R}$ which have Lebesgue measure zero.</p>
+</li>
+<li><p>For example, the Contor Set.</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-15T12:51:55.000Z" title="12/15/2020, 8:51:55 PM">2020-12-15</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/">1.1.E Probability via Measure Theory</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Elements-of-Probability-Theory/">Elements of Probability Theory</a></h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Finitely Additive, $\sigma$-additive</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set and $\mathcal{A}$ a collection of subsets of $X$ which constains $\empty$. </li>
+<li>A map $\mathbf{p}:\mathcal{A}\mapsto [0,+\infty]$ is said to be <strong>finitely additive</strong> (**$\sigma$-additive**, responsive.) if $\mathbf{p}(\empty)=0$ and</li>
+</ul>
+<p>$$<br>\mathbf{p}(\bigsqcup\mathcal{S})=\sum_{S\in\mathcal{S}}\mathbf{p}(S)<br>$$</p>
+<ul>
+<li>for any nonempty finite (countable, resp.) set $\mathcal{S}$ of pariwise disjoint elements of $\mathcal{A}$ such that $\bigsqcup \mathcal{S}\in \mathcal{A}$.</li>
+</ul>
+<blockquote>
+<p>$\sigma$-additivity implies the likelihood of the union of countably many pairwise disjoint events is simply the sum of the individual probabilities of each of these events.</p>
+</blockquote>
+<blockquote>
+<p>The additivity property is the heart of the measure theory, entails several other useful properties for measures.</p>
+</blockquote>
+<p><strong>Measure, Measure Space</strong>: </p>
+<ul>
+<li>Let $(X,\Sigma)$ be a measurable space. </li>
+<li>Any $\sigma$-additive function $\mu: \Sigma\mapsto[0,\infty]$ is called a <strong>measure</strong> on $\Sigma$, and in that case the ordered triplet $(X,\Sigma , \mu)$ is said to be a <strong>measure space</strong>. </li>
+<li>If $\mu(X) &lt;\infty $; then $\mu$ is called a <strong>finite measure</strong>, and $(X,\Sigma ,\mu )$ is referred to as a <strong>finite measure space</strong>. </li>
+<li>If there is a countable subset $\mathcal{T}$ of $\Sigma$ such that $X =\bigsqcup \mathcal{T}$ and $\mu(T) &lt; \infty$ for each $T\in \mathcal{T }$, we say that $\mu$ is a **$\sigma$-finite measure**, and refer to $(X,\Sigma,\mu)$ as a **$\sigma$-finite measure space**.</li>
+</ul>
+<blockquote>
+<p>A useful interpretation is to think of a measure on $\Sigma$ as a function that tells us the “size” of each set in $\Sigma$ in some geometric sense.</p>
+<p>Depending on the context, for instance, this may correspond to, say, area or volume or mass, etc., of the members of $\Sigma$.</p>
+</blockquote>
+<p><strong>Probability Measure, Probability Space</strong>: </p>
+<ul>
+<li>Let $(X,\Sigma,\mu)$ be a measure space. </li>
+<li>If $\mu(X) = 1$, then $\mu$ is said to be a <strong>probability measure</strong>, and in this case, $(X,\Sigma,\mu)$ is called a <strong>probability space</strong>.</li>
+</ul>
+<blockquote>
+<p>Roughly speaking, a probability measure tells us the likelihood of observing any conceivable event in an experiment the outcome of which is uncertain.</p>
+</blockquote>
+<p><strong>Borel Measure, Borel Space, Borel Probability Space</strong>: </p>
+<ul>
+<li>Given a metric space $X$, any measure $\mathbf{p}$ on $\mathcal{B}(X)$ is called a <strong>Borel measure</strong> on $X$, and in this case $(X,\mathcal{B}(X),\mathbf{p})$ is referred to as a <strong>Borel space</strong>. </li>
+<li>If, in addition, $\mathbf{p}$ is a probability measure, then $(X,\mathcal{B}(X),\mathbf{p})$ is called a <strong>Borel probability space</strong>.<ul>
+<li>We denote the set of all Borel probability measures on a metric space $X$ by $\Delta(X)$.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Regular</strong>: </p>
+<ul>
+<li><p>Let $X$ be a metric space and $\mathbf{p}\in\Delta(X)$.</p>
+</li>
+<li><p>Let $\mathcal{O}_X$ and $\mathcal{C}_X$ denote the class of all open and closed subsets of $X$, respectively. </p>
+</li>
+<li><p>A Borel measure $\mathbf{p}$ on a metric space $X$ is said to be <strong>regular</strong> if<br>$$<br>\inf{\mathbf{p}(O): S\subseteq O\in \mathcal{O}_X}=\mathbf{p}(S) = \sup \mathbf{p}(C) : {S\supseteq  C\in \mathcal{C}_X}<br>$$</p>
+</li>
+<li><p>holds for any $S\in \mathcal{B}(X)$.</p>
+</li>
+</ul>
+<blockquote>
+<p>Much of the diffculty with working with probability measures stems from the fact that the contents of the $\sigma$-algebra of a probability space are often obscure. The situation reads markedly better in the case of Borel probability spaces, for the $\sigma$-algebra of such a space is generated by sets that are somewhat concrete (such as open (or closed) subsets of the sample space). </p>
+<p>Moreover, in the context of any Borel probability space, it is possible to approximate the probability of any event by using only the open and closed sets. </p>
+<p>Put more formally, if $X$ is a metric space and $\mathbf{p}\in\Delta(X)$, then, for any Borel subset $S$ of $X$ and $\varepsilon&gt; 0$, we can find an open subset $O$ and a closed subset $C$ of $X$ such that $C\subseteq S\subseteq O$ and $\mathbf{p}(O\setminus C) &lt;\varepsilon$.</p>
+</blockquote>
+<blockquote>
+<p>Every Borel probability measure is regular.</p>
+<p>Every finite Borel measure on a metric space is regular.</p>
+</blockquote>
+<p><strong>Tight</strong>: </p>
+<ul>
+<li>A finite Borel measure $\mathbf{p}$ on a metric space $X$ is said to be <strong>tight</strong> if for each $\varepsilon &gt; 0$, there is a compact subset $K$ of $X$ such that $p(X\backslash K) &lt;\varepsilon$.</li>
+</ul>
+<blockquote>
+<p>Every Borel probability measure on a complete and separable metric space is tight.</p>
+</blockquote>
+<h2 id="Propositions-and-Theorems"><a href="#Propositions-and-Theorems" class="headerlink" title="Propositions and Theorems"></a>Propositions and Theorems</h2><p><strong>Lemma 2.1</strong>: </p>
+<ul>
+<li>Let $\mathcal{S}$ be a semialgebra on a nonempty set $X$, and $\mathbf{q} : \mathcal{S}\mapsto [0,+\infty]$ a finitely additive map. Then, there is a unique finitely additive map $\mathbf{p} : \alpha(\mathcal{S})\mapsto[0,+\infty]$ such that $\mathbf{p}(S) = \mathbf{q}(S)$ for each $S \in \mathcal{S}$.</li>
+</ul>
+<p><strong>Lemma 2.2</strong>: </p>
+<ul>
+<li>Let $\mathcal{S}$ be a semialgebra on a nonempty set $X$, and $\mathbf{q}: \mathcal{S} \mapsto [0,+\infty]$ a $\sigma$-additive map. Then, there is a unique $\sigma$-additive map $\mathcal{p}:\sigma(\mathcal{S})\mapsto [0,+\infty]$ such that $\mathbf{p}(S) = \mathbf{q}(S)$ for each $S\in \mathcal{S}$.</li>
+</ul>
+<blockquote>
+<p>Every finitely additive (finitely additive and $\sigma$-subadditive) $[0,\infty]$-valued map on a semialgebra $\mathcal{S}$ can be extended, uniquely, to a finitely additive ($\sigma$-additive) $[0,\infty]$-valued map on the algebra generated by $\mathcal{S}$.</p>
+</blockquote>
+<p><strong>Lemma 2.3</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set, $\mathcal{A}$ an algebra on $X$, and $\mu:\mathcal{A}\mapsto[0,\infty]$ a $\sigma$-additive map on $\mathcal{A}$. Then, $\mu$ is finitely additive. Consequently,</li>
+</ul>
+<p>$$<br>\mu(B\backslash A)=\mu(B)-\mu(A)\mbox{ for any} A,B\in \mathcal{A}\ \mbox{with}\ A\subseteq B,<br>$$</p>
+<ul>
+<li><p>which shows that $\mu$ is $\supseteq$-increasing (that is, $\mu(A)\leq\mu(B)$ for any $A,B\in \mathcal{A}$ with</p>
+<p>$A\subseteq B$). Moreover,<br>$$<br>\mu(\bigcup\mathcal{S})\leq\sum_{S\in\mathcal{S}}\mu(S)<br>$$</p>
+</li>
+<li><p>for any countable $\mathcal{S}\subseteq \mathcal{A}$ with $\bigcup\mathcal{S}\in\mathcal{A}$.</p>
+</li>
+</ul>
+<p><strong>Boole’s Inequality</strong>: </p>
+<ul>
+<li>Let $(X,\Sigma,\mathbf{p})$ be a probability space. Then,</li>
+</ul>
+<p>$$<br>\mathbf{p}(\bigcup\mathcal{S})\leq\sum_{S\in\mathcal{S}}\mathbf{p}(S)\ \mbox{for any nonempty countable}\ \mathcal{S}\subseteq\Sigma<br>$$</p>
+<p><strong>Proposition 2.4</strong>: </p>
+<ul>
+<li>Let $(X,\Sigma, \mu)$ be a finite measure space, and let $(A_m)\in\Sigma^\infty$. If $A_1\subseteq A_2\subseteq\cdots$  (in which case we say that $(A_m)$ is an increasing sequence), then</li>
+</ul>
+<p>$$<br>\lim\mu(A_m)=\mu\left(\bigcup^\infty_{i=1}A_i\right).<br>$$</p>
+<ul>
+<li>On the other hand, if $A_1\supseteq A_2\supseteq \cdots$  (in which case we say that $(A_m)$ is a decreasing sequence), then<br>$$<br>\lim\mu(A_m)=\mu \left(\bigcap^\infty_{i=1}A_i\right) .<br>$$</li>
+</ul>
+<blockquote>
+<p>These two properties of a finite measure measure are often referred to as the properties of continuity (from below and above, resp.) of a finite measure.</p>
+</blockquote>
+<p><strong>Proposition 2.5</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set, $\mathcal{A}$ be an algebra on $X$, and  $\mu:A\rightarrow [0,\infty]$ a finitely additive function such that $\mu(C_m)\downarrow 0$ for any $(C_m)\in A^\infty$ with $C_m\downarrow\empty$. Then, $\mu$ is $\sigma$-additive.</li>
+</ul>
+<blockquote>
+<p>Finite additivity and continuity of a set function jointly imply its $\sigma$-additivity. A finitely additive $[0,\infty]$-valued function on an algebra that is continuous from above at $\emptyset$ is $\sigma$-additive.</p>
+</blockquote>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-12-15T12:41:55.000Z" title="12/15/2020, 8:41:55 PM">2020-12-15</time></span><span class="level-item"><a class="link-muted" href="/categories/1-Mathematics/">1 Mathematics</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a><span> / </span><a class="link-muted" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/">1.1.E Probability via Measure Theory</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/15/Mathematics/Analysis/8%20Probability%20via%20Measure%20Theory/Measurable-Spaces/">Measurable Spaces</a></h1><div class="content"><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><p><strong>Algebra</strong></p>
+<ul>
+<li>Let $X$ be a nonempty set. </li>
+<li>A nonempty collection $\mathcal{A} $ of subsets of $X$ is called an <strong>algebra</strong> on $X$ if<ol>
+<li>$X\backslash A\in \mathcal{A}$ for all $A \in \mathcal{A}$; and</li>
+<li>$A\cup B\in \mathcal{A}$ for all $A, B\in \mathcal{A}$.</li>
+</ol>
+</li>
+<li>We say that $\mathcal{A}$ is a <strong>finite algebra</strong> on $X$ if it is an algebra on $X$ such that $| \mathcal{A}| &lt; \infty$.</li>
+</ul>
+<blockquote>
+<p>In words, an algebra on a nonempty set $X$ is a nonempty collection of subsets of $X$ that is closed under complementation and taking pairwise (and thus finite) unions, and a finite algebra on $X$ is one that contains finitely many elements. (Obviously, any algebra on a finite set is a finite algebra on that set.)</p>
+</blockquote>
+<blockquote>
+<p>Both $\emptyset$ and $X$ belong to any algebra $\mathcal{A}$ on $X$</p>
+<p>By the de Morgan Law, an algebra $\mathcal{A}$ on $X$ is closed under taking finite intersections. That is, if $\mathcal{S}$ is a finite subset of $\mathcal{A}$, then $\bigcap\mathcal{S}\in\mathcal{A}$</p>
+</blockquote>
+<p><strong>$\sigma$-algebra, $\Sigma$-measureable set, Measureable Space</strong>: </p>
+<ul>
+<li>Let $X$ be a nonempty set. A nonempty collection of subsets of $X$ is called <strong>$\sigma$-algebra</strong> on $X$ if<ol>
+<li> $X\backslash A\in\Sigma$ for all $A \in \Sigma$; and</li>
+<li> $\bigcup^\infty A_i\in\Sigma$ whenever $A_i\in\Sigma$ for each $i=1,2…$</li>
+</ol>
+</li>
+<li>Any element of $\Sigma$ is called a **$\Sigma$-measurable set** in $X$. </li>
+<li>If $\Sigma$ is a $\sigma$-algebra on $X$, we refer to the pair $(X,\Sigma)$ as a <strong>measurable space</strong>.</li>
+</ul>
+<blockquote>
+<p>A $\sigma$-algebra on $X$ is a nonempty collection of subsets of $X$ that is closed under complementation and taking countably infinite unions. </p>
+<p>In particular, there is no difference between an algebra and a $\sigma$-algebra when the ground set $X$ under consideration is finite. </p>
+<p>More generally, every finite algebra on $X$ is a $\sigma$-algebra on $X$</p>
+</blockquote>
+<blockquote>
+<p>By the de Morgan Law, an $\sigma$-algebra on $X$ is closed under taking finite intersections. That is, if $\mathcal{C}$ is a countable subset of a $\sigma$-algebra $\Sigma$ on $X$, then $\bigcap\mathcal{C}\in\Sigma$</p>
+</blockquote>
+<p><strong>Sample Space</strong>:</p>
+<ul>
+<li>Given a nonempty set $X$ and a $\sigma$-algebra $\Sigma$ on $X$, we think of $X$ as the set of all possible outcomes that may result in an experiment, the so-called <strong>sample space</strong>, and view any one member of $\Sigma$ (and only such a subset of $X$) as an “event” that may take place in the experiment.</li>
+</ul>
+<p><strong>Event, Event Space</strong>:</p>
+<ul>
+<li>Given a $\sigma$-algebra $\Sigma$ on $X$, the intuitive concept of an “<strong>event</strong>“ is formalized as any $\Sigma$-measurable set in $X$. </li>
+<li>That is, we say that $A$ is an event if and only if $A\in\Sigma$ , and for this reason a $\sigma$-algebra on $X$ is often referred to as an <strong>event space</strong> on $X$. </li>
+</ul>
+<blockquote>
+<p>One may define many different event spaces on a given sample space, so what an “event” really is depends on the model one chooses to work with.</p>
+</blockquote>
+<p><strong>Semialgebra</strong>: </p>
+<ul>
+<li><p>Let $X$ be a nonempty set and $\mathcal{S}$ a collection of subsets of $X$. </p>
+</li>
+<li><p>We say that $\mathcal{S}$ is a <strong>semialgebra</strong> on $X$ if </p>
+<ol>
+<li>both $\empty$ and $X$ belong to $\mathcal{S}$; </li>
+<li>$\mathcal{S}$ is closed under taking finite intersections, and </li>
+<li>for any $S \in \mathcal{S}$, the set $X\backslash S$ can be written as the union of a collection of finitely many pairwise disjoint elements of $\mathcal{S}$.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Generated Algebra</strong>: </p>
+<ul>
+<li><p>Let $X$ be a nonempty set and $\mathcal{S}$ a subset of $2^X$. </p>
+</li>
+<li><p>The smallest algebra on $X$ that contains $\mathcal{S}$ (in the sense that this algebra is included in any other algebra that contains $\mathcal{S}$) is called the <strong>algebra generated by $\mathcal{S}$</strong>; and is denoted as $\alpha(\mathcal{S})$.</p>
+<ul>
+<li>we have $\mathcal{A} =\alpha(\mathcal{A})$ for any algebra $\mathcal{A}$ on any nonempty set.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Generated $\sigma$-algebra</strong>: </p>
+<ul>
+<li><p>Let $X$ be a nonempty set and $\mathcal{S}$ a nonempty subset of $2^X $. </p>
+</li>
+<li><p>The smallest $\sigma$-algebra on $X$ that contains $\mathcal{S}$ (in the sense that this $\sigma$-algebra is included in any other $\sigma$-algebra that contains $\mathcal{S}$) is called the $\sigma$-algebra generated by $\mathcal{S}$; and is denoted as $\sigma (\mathcal{S})$.<br>$$<br>\sigma(\mathcal{S})=\bigcap{\Sigma:\Sigma\mbox{ is a }\sigma\mbox{-algebra on }X\mbox{ such that }\mathcal{S}\subseteq\Sigma}<br>$$</p>
+</li>
+</ul>
+<p><strong>Borel $\sigma$-algerbra</strong>: </p>
+<ul>
+<li>Let $X$ be a metric space, and, let $\mathcal{O}_X$ stand for the collection of all open, and $\mathcal{C}_X$ for that of all closed, subsets of $X$. <ul>
+<li>The members of $\mathcal{O}_X$, or of $\mathcal{C}_X$, are of obvious importance, but unfortunately neither of these collections is an algebra in general. </li>
+</ul>
+</li>
+<li>In metric spaces, then, it is natural to consider the $\sigma$-algebra generated by $\mathcal{O}_X$, called the <strong>Borel $\sigma$-algebra</strong> on $X$; and its members are referred to as <strong>Borel sets</strong> (or in probabilistic jargon, <strong>Borel events</strong>). </li>
+<li>We denote the Borel $\sigma$-algebra on a metric space $X$ by $\mathcal{B}_X$. </li>
+<li>By denifition, therefore, we have $\mathcal{B}(X):=\sigma(\mathcal{O}_X)$.<ul>
+<li>We usually write $\mathcal{B}[a, b]$ for $\mathcal{B}([a, b])$, and $\mathcal{B}(a, b]$ for $\mathcal{B}((a, b])$, where $-\infty &lt; a &lt; b &lt; \infty$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Examples-and-Exercises"><a href="#Examples-and-Exercises" class="headerlink" title="Examples and Exercises"></a>Examples and Exercises</h2><p><strong>Example 1.3</strong></p>
+<ol>
+<li>The collection of all intervals is a semialgebra on $\mathbb{R}$, but it is not an algebra.</li>
+<li>The collection of all open intervals is not a semialgebra on $\mathbb{R}$.</li>
+<li>The collection of all right-semiclosed intervals is a semialgebra on $\mathbb{R}$; but it is not an algebra. </li>
+<li>The smallest algebra on $\mathbb{R}$ that contains all right-semiclosed intervals is the collection of all finite disjoint unions of right-semiclosed intervals. This algebra is not a $\sigma$-algebra. </li>
+</ol>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>if $X := {a,b,c}$,then <ul>
+<li>$\alpha(\emptyset) = \alpha({\emptyset}) = \alpha({X}) = {\emptyset,X}$</li>
+<li>$\alpha({\emptyset, X, {a}}) = {\emptyset,X,{a},{b,c}}$</li>
+<li>$\alpha({\emptyset,X,{a},{b}}) = 2^X$</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example 1.5</strong>:</p>
+<ul>
+<li>By definition, $\mathcal{B}(\mathbb{R}) = (\mathcal{O}_\mathbb{R})$; but one does not actually need all open sets in $\mathbb{R}$ for generating $\mathcal{B}(\mathbb{R})$<ul>
+<li>For instance, what if we used instead the class of all open and bounded intervals, call it $\mathcal{A}_1$, then $\sigma(\mathcal{A}_1)=\mathcal{B}(\mathbb{R})$.</li>
+<li>$\mathcal{A}_2:=$ the set of all closed and bounded intervals</li>
+<li>$\mathcal{A}_3:=$ the set of all closed sets in $\mathbb{R}$</li>
+<li>$\mathcal{A}_4:=$ the set of all bounded intervals of the form $(a, b]$</li>
+<li>$\mathcal{A}_5:=$ the set of all intervals of the form $(-\infty,a]$</li>
+<li>$\mathcal{A}_5:=$ the set of all intervals of the form $(-\infty,a)$</li>
+<li>All of these collections generate the same $\sigma$-algebra, namely, $\mathcal{B}(\mathbb{R})$<ul>
+<li>For any metric space $X$, $\mathcal{B}(X):=\sigma(\mathcal{O}_X)=\sigma(\mathcal{C}_X)$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Efe A. Ok, “Measure and Probability Theory with Economic Applications”;</li>
+<li>Lecture notes, ECON 30400 2, Autumn 2020, Introduction: Mathematical Methods In Economics;</li>
+<li>Walter Rudin, 1987, “Real and Complex Analysis”; </li>
+<li>Walter Rudin, 1976, “Principle of Mathematical Analysis”; </li>
+</ol>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="hqin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hqin</p><p class="is-size-6 is-block">A Student in Economics</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Zhengzhou, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-24T14:52:59.000Z">2020-12-24</time></p><p class="title"><a href="/2020/12/24/Mathematics/Algebra/2%20Linear%20Algebra/Geometric-Linear-Algebra/">Geometric Linear Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/">1.2.B Linear Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-24T14:52:00.000Z">2020-12-24</time></p><p class="title"><a href="/2020/12/24/Mathematics/Algebra/1%20Abstract%20Algebra/Elements-of-Abstract-Algebra/">Elements of Abstract Algebra</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-2-Algebra/">1.2 Algebra</a> / <a href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/">1.2.A Abstract Algebra</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:50:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Propertities-of-Conditional-Expectation/">Propertities of Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Stochastic-Independence-and-Dependence/">1.1.H Stochastic Independence and Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:49:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/15%20Stochastic%20Dependence/Conditional-Expectation/">Conditional Expectation</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Stochastic-Independence-and-Dependence/">1.1.H Stochastic Independence and Dependence</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-15T14:48:59.000Z">2020-12-15</time></p><p class="title"><a href="/2020/12/15/Mathematics/Analysis/14%20A%20Primer%20on%20Probability%20Limit%20Theorems/Law-of-Large-Numbers/">Law of Large Numbers</a></p><p class="categories"><a href="/categories/1-Mathematics/">1 Mathematics</a> / <a href="/categories/1-Mathematics/1-1-Analysis/">1.1 Analysis</a> / <a href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Weak-Convergence-and-Probability-Limit/">1.1.G Weak Convergence and Probability Limit</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://ygnmax.github.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Guangnan Yang</span></span><span class="level-right"><span class="level-item tag">ygnmax.github.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Abstract-Algebra/"><span class="tag">Abstract Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linear-Algebra/"><span class="tag">Linear Algebra</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Measure-Theoretic-Probability/"><span class="tag">Measure Theoretic Probability</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Real-Analysis/"><span class="tag">Real Analysis</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/1-Mathematics/"><span class="level-start"><span class="level-item">1 Mathematics</span></span><span class="level-end"><span class="level-item tag">46</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/"><span class="level-start"><span class="level-item">1.1 Analysis</span></span><span class="level-end"><span class="level-item tag">44</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-A-Preliminaries-of-Real-Analysis/"><span class="level-start"><span class="level-item">1.1.A Preliminaries of Real Analysis</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-B-Metric-Spaces-and-Continuity/"><span class="level-start"><span class="level-item">1.1.B Metric Spaces and Continuity</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-C-Linear-Spaces-and-Convexity/"><span class="level-start"><span class="level-item">1.1.C Linear Spaces and Convexity</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-D-Metric-Linear-Spaces-and-Normed-Linear-Spaces/"><span class="level-start"><span class="level-item">1.1.D Metric Linear Spaces and Normed Linear Spaces</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-E-Probability-via-Measure-Theory/"><span class="level-start"><span class="level-item">1.1.E Probability via Measure Theory</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-F-Expectation-Lebesgue-Integral-and-Stieltjes-Integral/"><span class="level-start"><span class="level-item">1.1.F Expectation, Lebesgue Integral, and Stieltjes Integral</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-G-Weak-Convergence-and-Probability-Limit/"><span class="level-start"><span class="level-item">1.1.G Weak Convergence and Probability Limit</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-1-Analysis/1-1-H-Stochastic-Independence-and-Dependence/"><span class="level-start"><span class="level-item">1.1.H Stochastic Independence and Dependence</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/"><span class="level-start"><span class="level-item">1.2 Algebra</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-A-Abstract-Algebra/"><span class="level-start"><span class="level-item">1.2.A Abstract Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/1-Mathematics/1-2-Algebra/1-2-B-Linear-Algebra/"><span class="level-start"><span class="level-item">1.2.B Linear Algebra</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">hqin</a><p class="is-size-7"><span>&copy; 2020 - 2021 hqin</span>  </p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
